@@ -1,0 +1,13 @@
+[{
+  "stocking_location_id": "1",
+  "sku": "1",
+  "inbound_inventory_id": 1,
+  "expiration_class": "A",
+  "expiration_date": "2014-12-31T15:06:15.654477Z",
+  "total_qty": 4,
+  "available_qty": 2,
+  "arrival_date": "2014-12-14T13:01:24.654477Z",
+  "wholesale_cost": 23.47,
+  "manufacturer_id": 3,
+  "name": "Some Test Product"
+}]

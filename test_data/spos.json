@@ -1,0 +1,42 @@
+[{
+  "status": "Confirmed",
+  "supplier_id": 1,
+  "date_ordered": "2014-12-17T17:46:49.670535Z",
+  "date_confirmed": "2014-12-17T17:46:49.670535Z",
+  "date_shipped": null,
+  "date_arrived": null,
+  "products": [
+    {
+      "sku": "test1",
+      "requested_qty": 2,
+      "confirmed_qty": null,
+      "wholesale_cost": null,
+      "expiration_class": null
+    },
+    {
+      "sku": "test2",
+      "requested_qty": 1,
+      "confirmed_qty": null,
+      "wholesale_cost": null,
+      "expiration_class": null
+    }
+  ]
+},
+{
+  "status": "Confirmed",
+  "supplier_id": 1,
+  "date_ordered": "2014-12-17T17:48:49.670535Z",
+  "date_confirmed": "2014-12-17T17:48:49.670535Z",
+  "date_shipped": "2014-12-17T17:48:49.670535Z",
+  "date_arrived": null,
+  "products": [
+    {
+      "sku": "test3",
+      "requested_qty": 4,
+      "confirmed_qty": 4,
+      "wholesale_cost": null,
+      "expiration_class": "B"
+    }
+  ]
+}
+]

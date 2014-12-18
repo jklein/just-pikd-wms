@@ -1,0 +1,11 @@
+[{
+  "stocking_purchase_order_product_id": 1,
+  "sku": "1",
+  "expected_arrival": "2014-12-18T15:06:15.654477Z",
+  "actual_arrival": null,
+  "confirmed_qty": 2,
+  "received_qty": null,
+  "status": "Ordered",
+  "expiration_class": "A",
+  "stocking_location_id": null
+}]

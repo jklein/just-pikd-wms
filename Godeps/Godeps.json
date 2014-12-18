@@ -1,0 +1,41 @@
+{
+	"ImportPath": "just-pikd-wms",
+	"GoVersion": "go1.4",
+	"Deps": [
+		{
+			"ImportPath": "github.com/codegangsta/negroni",
+			"Comment": "v0.1-51-g2b6e86b",
+			"Rev": "2b6e86bff68451fcd38bd9e2da90e0b70e85983d"
+		},
+		{
+			"ImportPath": "github.com/gorilla/context",
+			"Rev": "50c25fb3b2b3b3cc724e9b6ac75fb44b3bccd0da"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Rev": "e444e69cbd2e2e3e0749a2f3c717cec491552bbf"
+		},
+		{
+			"ImportPath": "github.com/jmoiron/sqlx",
+			"Comment": "sqlx-v1.0-58-gac7070c",
+			"Rev": "ac7070c8a115e759a26e524fd299efdac81b7e86"
+		},
+		{
+			"ImportPath": "github.com/lib/pq",
+			"Rev": "cd423da7cd9a8aec58208a1109c59e87002792f4"
+		},
+		{
+			"ImportPath": "github.com/phyber/negroni-gzip/gzip",
+			"Rev": "48f82605778a579cb8172122897f589e4023b537"
+		},
+		{
+			"ImportPath": "gopkg.in/guregu/null.v2",
+			"Comment": "v2.1.1",
+			"Rev": "5bc3c32da7d04df1bcea52382b239d6dcf4e6ded"
+		},
+		{
+			"ImportPath": "gopkg.in/unrolled/render.v1",
+			"Rev": "4796b5bc747483bf9b20a50b2c80e00ed2c85fab"
+		}
+	]
+}
