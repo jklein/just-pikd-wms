@@ -12,6 +12,6 @@ Development Setup:
     `export PATH=$GOPATH:$PATH
 6. I use gin for live code reloading: `go get github.com/codegangsta/gin`
 7. Dependency management: `go get github.com/tools/godep`
-8. Set cwd to the WMS directory: `cd /opt/go/src/just-pikd/wms`
+8. Set cwd to the WMS directory: `cd /opt/go/src/just-pikd-wms`
 9. Install deps: `godep restore`
 10. Run `gin` to start the app, and it should reload when you change code (it can be somewhat slow).
