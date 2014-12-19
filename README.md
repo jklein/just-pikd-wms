@@ -15,3 +15,5 @@ Development Setup:
 8. Set cwd to the WMS directory: `cd /opt/go/src/just-pikd-wms`
 9. Install deps: `godep restore`
 10. Run `gin` to start the app, and it should reload when you change code (it can be somewhat slow).
+
+I'm also using GoSublime. I had to set GOPATH and install some packages on my mac to get formatting/syntax highlighting to work. Standardizing that is another TODO item.
