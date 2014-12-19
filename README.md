@@ -16,4 +16,12 @@ Development Setup:
 9. Install deps: `godep restore`
 10. Run `gin` to start the app, and it should reload when you change code (it can be somewhat slow).
 
-I'm also using GoSublime. I had to set GOPATH and install some packages on my mac to get formatting/syntax highlighting to work. Standardizing that is another TODO item.
+I'm also using GoSublime. I had to set GOPATH and install some packages on my mac to get formatting/syntax highlighting to work. Standardizing that is another TODO item. In GoSublime package settings, I did this:
+
+```
+{
+        "shell": ["/usr/bin/bash"],
+        "env": {"GOPATH": "/Users/Scott/go/",
+        "GOROOT": "/opt/local/go"},
+}
+```
