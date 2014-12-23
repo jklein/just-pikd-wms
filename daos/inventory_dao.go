@@ -14,7 +14,7 @@ func (dao *Inventory_DAO) Get_Static(static_inventory_id int) (models.StaticInve
 
 	err := dao.DB.Get(&static,
 		`SELECT static_inventory_id, stocking_location_id, sku, stocking_purchase_order_product_id,
-        expiration_class, expiration_date, total_qty, available_qty, arrival_date, manufacturer_id,
+        expiration_class, expiration_date, total_qty, available_qty, arrival_date, emptied_date,  manufacturer_id,
         name, length, width, height, weight
         FROM static_inventory
         WHERE static_inventory_id = $1;`, static_inventory_id)
@@ -26,9 +26,9 @@ func (dao *Inventory_DAO) Create_Static(static_model models.StaticInventory) (mo
 	//see https://github.com/lib/pq/issues/24
 	rows, err := dao.DB.NamedQuery(
 		`INSERT INTO static_inventory (stocking_location_id, sku, stocking_purchase_order_product_id, expiration_class,
-        expiration_date, total_qty, available_qty, arrival_date, manufacturer_id, name, length, width, height, weight)
+        expiration_date, total_qty, available_qty, arrival_date, emptied_date, manufacturer_id, name, length, width, height, weight)
         VALUES (:stocking_location_id, :sku, :stocking_purchase_order_product_id, :expiration_class, :expiration_date,
-            :total_qty, :available_qty, :arrival_date, :manufacturer_id, :name, :length, :width, :height, :weight)
+            :total_qty, :available_qty, :arrival_date, :emptied_date, :manufacturer_id, :name, :length, :width, :height, :weight)
         RETURNING static_inventory_id`,
 		static_model)
 	if err != nil {

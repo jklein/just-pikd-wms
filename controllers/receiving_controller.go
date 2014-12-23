@@ -89,6 +89,8 @@ func (c *ReceivingController) GetStatic(rw http.ResponseWriter, r *http.Request)
 		return err, http.StatusInternalServerError
 	}
 
+	static.SetThumbnailURL()
+
 	c.JSON(rw, http.StatusOK, static)
 	return nil, http.StatusOK
 }

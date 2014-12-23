@@ -3,11 +3,11 @@
     "stocking_purchase_order_id": 1,
     "status": "Confirmed",
     "supplier_id": 1,
-    "date_ordered": "2014-12-14T00:00:00",
-    "date_confirmed": "2014-12-14T00:00:00",
+    "date_ordered": "2014-12-14T00:00:00Z",
+    "date_confirmed": "2014-12-14T00:00:00Z",
     "date_shipped": null,
     "date_arrived": null,
-    "last_updated": "2014-12-23T15:25:15.682153",
+    "last_updated": "2014-12-23T15:25:15.682153Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 109,
@@ -26,12 +26,12 @@
         "case_width": 10,
         "case_height": 8.6,
         "case_weight": 4.7,
-        "expected_arrival": "2014-12-17T00:00:00",
+        "expected_arrival": "2014-12-17T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1890,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:39.015716"
+        "last_updated": "2014-12-23T16:28:39.015716Z"
       },
       {
         "stocking_purchase_order_product_id": 111,
@@ -50,12 +50,12 @@
         "case_width": 7.2,
         "case_height": 7.1,
         "case_weight": 2.21,
-        "expected_arrival": "2014-12-17T00:00:00",
+        "expected_arrival": "2014-12-17T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1100,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:40.369289"
+        "last_updated": "2014-12-23T16:28:40.369289Z"
       },
       {
         "stocking_purchase_order_product_id": 112,
@@ -74,12 +74,12 @@
         "case_width": 9.6,
         "case_height": 7.8,
         "case_weight": 13.2,
-        "expected_arrival": "2014-12-17T00:00:00",
+        "expected_arrival": "2014-12-17T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1908,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:40.60377"
+        "last_updated": "2014-12-23T16:28:40.60377Z"
       },
       {
         "stocking_purchase_order_product_id": 115,
@@ -98,12 +98,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-17T00:00:00",
+        "expected_arrival": "2014-12-17T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 3065,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:41.329435"
+        "last_updated": "2014-12-23T16:28:41.329435Z"
       },
       {
         "stocking_purchase_order_product_id": 120,
@@ -122,12 +122,12 @@
         "case_width": 11.22,
         "case_height": 4.8,
         "case_weight": 11.1,
-        "expected_arrival": "2014-12-17T00:00:00",
+        "expected_arrival": "2014-12-17T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1344,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:42.385423"
+        "last_updated": "2014-12-23T16:28:42.385423Z"
       },
       {
         "stocking_purchase_order_product_id": 123,
@@ -146,12 +146,12 @@
         "case_width": 11.93,
         "case_height": 4.8,
         "case_weight": 26,
-        "expected_arrival": "2014-12-17T00:00:00",
+        "expected_arrival": "2014-12-17T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1788,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:43.008261"
+        "last_updated": "2014-12-23T16:28:43.008261Z"
       },
       {
         "stocking_purchase_order_product_id": 126,
@@ -170,12 +170,12 @@
         "case_width": 7.8,
         "case_height": 2.3,
         "case_weight": 4.65,
-        "expected_arrival": "2014-12-17T00:00:00",
+        "expected_arrival": "2014-12-17T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1091,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:43.662004"
+        "last_updated": "2014-12-23T16:28:43.662004Z"
       },
       {
         "stocking_purchase_order_product_id": 134,
@@ -194,12 +194,12 @@
         "case_width": 11,
         "case_height": 8,
         "case_weight": 19,
-        "expected_arrival": "2014-12-17T00:00:00",
+        "expected_arrival": "2014-12-17T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 0,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:46.321651"
+        "last_updated": "2014-12-23T16:28:46.321651Z"
       }
     ]
   },
@@ -207,11 +207,11 @@
     "stocking_purchase_order_id": 2,
     "status": "Shipped",
     "supplier_id": 1,
-    "date_ordered": "2014-12-15T00:00:00",
-    "date_confirmed": "2014-12-15T00:00:00",
-    "date_shipped": "2014-12-20T00:00:00",
+    "date_ordered": "2014-12-15T00:00:00Z",
+    "date_confirmed": "2014-12-15T00:00:00Z",
+    "date_shipped": "2014-12-20T00:00:00Z",
     "date_arrived": null,
-    "last_updated": "2014-12-23T15:25:15.708745",
+    "last_updated": "2014-12-23T15:25:15.708745Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 113,
@@ -230,12 +230,12 @@
         "case_width": 10.5,
         "case_height": 4.3,
         "case_weight": 5,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 505,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:40.855317"
+        "last_updated": "2014-12-23T16:28:40.855317Z"
       },
       {
         "stocking_purchase_order_product_id": 117,
@@ -254,12 +254,12 @@
         "case_width": 7.56,
         "case_height": 6.75,
         "case_weight": 0.96,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 819,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:41.748161"
+        "last_updated": "2014-12-23T16:28:41.748161Z"
       },
       {
         "stocking_purchase_order_product_id": 118,
@@ -278,12 +278,12 @@
         "case_width": 8.78,
         "case_height": 4.45,
         "case_weight": 13.7,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1344,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:41.964825"
+        "last_updated": "2014-12-23T16:28:41.964825Z"
       },
       {
         "stocking_purchase_order_product_id": 119,
@@ -302,12 +302,12 @@
         "case_width": 9.25,
         "case_height": 8.07,
         "case_weight": 13.53,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1344,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:42.183831"
+        "last_updated": "2014-12-23T16:28:42.183831Z"
       },
       {
         "stocking_purchase_order_product_id": 121,
@@ -326,12 +326,12 @@
         "case_width": 7.63,
         "case_height": 9,
         "case_weight": 1.23,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 858,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:42.60404"
+        "last_updated": "2014-12-23T16:28:42.60404Z"
       },
       {
         "stocking_purchase_order_product_id": 124,
@@ -350,12 +350,12 @@
         "case_width": 9.4,
         "case_height": 11.25,
         "case_weight": 19.11,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 3120,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:43.24245"
+        "last_updated": "2014-12-23T16:28:43.24245Z"
       },
       {
         "stocking_purchase_order_product_id": 125,
@@ -374,12 +374,12 @@
         "case_width": 8.75,
         "case_height": 3.63,
         "case_weight": 6,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 3840,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:43.444011"
+        "last_updated": "2014-12-23T16:28:43.444011Z"
       },
       {
         "stocking_purchase_order_product_id": 128,
@@ -398,12 +398,12 @@
         "case_width": 10.28,
         "case_height": 6.69,
         "case_weight": 8.86,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 2592,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:44.103304"
+        "last_updated": "2014-12-23T16:28:44.103304Z"
       },
       {
         "stocking_purchase_order_product_id": 130,
@@ -422,12 +422,12 @@
         "case_width": 8,
         "case_height": 9,
         "case_weight": 10.58,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1640,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:44.519581"
+        "last_updated": "2014-12-23T16:28:44.519581Z"
       },
       {
         "stocking_purchase_order_product_id": 132,
@@ -446,12 +446,12 @@
         "case_width": 3.94,
         "case_height": 8.56,
         "case_weight": 3.4,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 0,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:45.918528"
+        "last_updated": "2014-12-23T16:28:45.918528Z"
       },
       {
         "stocking_purchase_order_product_id": 133,
@@ -470,12 +470,12 @@
         "case_width": 10.55,
         "case_height": 7.8,
         "case_weight": 17,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 5025,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:46.115786"
+        "last_updated": "2014-12-23T16:28:46.115786Z"
       }
     ]
   },
@@ -483,11 +483,11 @@
     "stocking_purchase_order_id": 3,
     "status": "Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-18T00:00:00",
-    "date_confirmed": "2014-12-18T00:00:00",
-    "date_shipped": "2014-12-19T00:00:00",
-    "date_arrived": "2014-12-22T00:00:00",
-    "last_updated": "2014-12-23T15:25:15.753409",
+    "date_ordered": "2014-12-18T00:00:00Z",
+    "date_confirmed": "2014-12-18T00:00:00Z",
+    "date_shipped": "2014-12-19T00:00:00Z",
+    "date_arrived": "2014-12-22T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:15.753409Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 1,
@@ -506,12 +506,12 @@
         "case_width": 12.9,
         "case_height": 10.8,
         "case_weight": 11.36,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3948,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:08:56.770663"
+        "last_updated": "2014-12-23T16:08:56.770663Z"
       },
       {
         "stocking_purchase_order_product_id": 2,
@@ -530,12 +530,12 @@
         "case_width": 7.81,
         "case_height": 11.25,
         "case_weight": 13.74,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1992,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:08:58.250014"
+        "last_updated": "2014-12-23T16:08:58.250014Z"
       },
       {
         "stocking_purchase_order_product_id": 7,
@@ -554,12 +554,12 @@
         "case_width": 8.7,
         "case_height": 4.2,
         "case_weight": 5.13,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3390,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:00.250684"
+        "last_updated": "2014-12-23T16:09:00.250684Z"
       },
       {
         "stocking_purchase_order_product_id": 9,
@@ -578,12 +578,12 @@
         "case_width": 10.5,
         "case_height": 5,
         "case_weight": 4.6,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1030,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:01.126166"
+        "last_updated": "2014-12-23T16:09:01.126166Z"
       },
       {
         "stocking_purchase_order_product_id": 13,
@@ -602,12 +602,12 @@
         "case_width": 7.3,
         "case_height": 3.1,
         "case_weight": 6.51,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3840,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:02.588134"
+        "last_updated": "2014-12-23T16:09:02.588134Z"
       },
       {
         "stocking_purchase_order_product_id": 16,
@@ -626,12 +626,12 @@
         "case_width": 8.98,
         "case_height": 4.57,
         "case_weight": 13.74,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1344,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:04.102563"
+        "last_updated": "2014-12-23T16:09:04.102563Z"
       },
       {
         "stocking_purchase_order_product_id": 35,
@@ -650,12 +650,12 @@
         "case_width": 11.8,
         "case_height": 6.4,
         "case_weight": 25,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 5568,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:11.766783"
+        "last_updated": "2014-12-23T16:09:11.766783Z"
       },
       {
         "stocking_purchase_order_product_id": 38,
@@ -674,12 +674,12 @@
         "case_width": 9.02,
         "case_height": 9.25,
         "case_weight": 19.58,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 8570,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:26.890624"
+        "last_updated": "2014-12-23T16:11:26.890624Z"
       },
       {
         "stocking_purchase_order_product_id": 50,
@@ -698,12 +698,12 @@
         "case_width": 10.43,
         "case_height": 2.68,
         "case_weight": 5.91,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2964,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:35.094255"
+        "last_updated": "2014-12-23T16:12:35.094255Z"
       },
       {
         "stocking_purchase_order_product_id": 52,
@@ -722,12 +722,12 @@
         "case_width": 9.13,
         "case_height": 9,
         "case_weight": 25.2,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2040,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:35.552053"
+        "last_updated": "2014-12-23T16:12:35.552053Z"
       },
       {
         "stocking_purchase_order_product_id": 58,
@@ -746,12 +746,12 @@
         "case_width": 11.56,
         "case_height": 4.8,
         "case_weight": 11.13,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2414,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:36.807359"
+        "last_updated": "2014-12-23T16:12:36.807359Z"
       },
       {
         "stocking_purchase_order_product_id": 67,
@@ -770,12 +770,12 @@
         "case_width": 7.5,
         "case_height": 5.5,
         "case_weight": 13.2,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3023,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:38.703294"
+        "last_updated": "2014-12-23T16:12:38.703294Z"
       },
       {
         "stocking_purchase_order_product_id": 69,
@@ -794,12 +794,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3243,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:39.144934"
+        "last_updated": "2014-12-23T16:12:39.144934Z"
       },
       {
         "stocking_purchase_order_product_id": 76,
@@ -818,12 +818,12 @@
         "case_width": 6.22,
         "case_height": 8.54,
         "case_weight": 7.16,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1656,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:40.616247"
+        "last_updated": "2014-12-23T16:12:40.616247Z"
       },
       {
         "stocking_purchase_order_product_id": 85,
@@ -842,12 +842,12 @@
         "case_width": 7.9,
         "case_height": 2.5,
         "case_weight": 4.56,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1091,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:42.511375"
+        "last_updated": "2014-12-23T16:12:42.511375Z"
       }
     ]
   },
@@ -855,11 +855,11 @@
     "stocking_purchase_order_id": 4,
     "status": "Partially Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-18T00:00:00",
-    "date_confirmed": "2014-12-18T00:00:00",
-    "date_shipped": "2014-12-19T00:00:00",
-    "date_arrived": "2014-12-22T00:00:00",
-    "last_updated": "2014-12-23T15:25:15.797216",
+    "date_ordered": "2014-12-18T00:00:00Z",
+    "date_confirmed": "2014-12-18T00:00:00Z",
+    "date_shipped": "2014-12-19T00:00:00Z",
+    "date_arrived": "2014-12-22T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:15.797216Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 97,
@@ -878,12 +878,12 @@
         "case_width": 11.7,
         "case_height": 5,
         "case_weight": 23,
-        "expected_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1240,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:30.126716"
+        "last_updated": "2014-12-23T16:19:30.126716Z"
       },
       {
         "stocking_purchase_order_product_id": 98,
@@ -902,12 +902,12 @@
         "case_width": 9.13,
         "case_height": 9.13,
         "case_weight": 25.69,
-        "expected_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 2736,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:31.206717"
+        "last_updated": "2014-12-23T16:19:31.206717Z"
       },
       {
         "stocking_purchase_order_product_id": 99,
@@ -926,12 +926,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 3243,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:31.505279"
+        "last_updated": "2014-12-23T16:19:31.505279Z"
       },
       {
         "stocking_purchase_order_product_id": 100,
@@ -950,12 +950,12 @@
         "case_width": 7.7,
         "case_height": 3.7,
         "case_weight": 4.95,
-        "expected_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 514,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:31.766126"
+        "last_updated": "2014-12-23T16:19:31.766126Z"
       },
       {
         "stocking_purchase_order_product_id": 101,
@@ -974,12 +974,12 @@
         "case_width": 7.91,
         "case_height": 6.26,
         "case_weight": 3.12,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3650,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:32.025625"
+        "last_updated": "2014-12-23T16:19:32.025625Z"
       },
       {
         "stocking_purchase_order_product_id": 102,
@@ -998,12 +998,12 @@
         "case_width": 15.8,
         "case_height": 10,
         "case_weight": 34.9,
-        "expected_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 4536,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:32.241916"
+        "last_updated": "2014-12-23T16:19:32.241916Z"
       },
       {
         "stocking_purchase_order_product_id": 103,
@@ -1022,12 +1022,12 @@
         "case_width": 11.3,
         "case_height": 4.72,
         "case_weight": 11.18,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1344,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:32.477214"
+        "last_updated": "2014-12-23T16:19:32.477214Z"
       },
       {
         "stocking_purchase_order_product_id": 104,
@@ -1046,12 +1046,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1161,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:32.663525"
+        "last_updated": "2014-12-23T16:19:32.663525Z"
       },
       {
         "stocking_purchase_order_product_id": 105,
@@ -1070,12 +1070,12 @@
         "case_width": 9.88,
         "case_height": 5.5,
         "case_weight": 6.86,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3488,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:32.914076"
+        "last_updated": "2014-12-23T16:19:32.914076Z"
       },
       {
         "stocking_purchase_order_product_id": 106,
@@ -1094,12 +1094,12 @@
         "case_width": 8.37,
         "case_height": 5.31,
         "case_weight": 12.94,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1061,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:33.149313"
+        "last_updated": "2014-12-23T16:19:33.149313Z"
       },
       {
         "stocking_purchase_order_product_id": 107,
@@ -1118,12 +1118,12 @@
         "case_width": 8.5,
         "case_height": 6.5,
         "case_weight": 5.5,
-        "expected_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 3000,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:33.368304"
+        "last_updated": "2014-12-23T16:19:33.368304Z"
       },
       {
         "stocking_purchase_order_product_id": 108,
@@ -1142,12 +1142,12 @@
         "case_width": 9,
         "case_height": 9,
         "case_weight": 26,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3060,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:33.595134"
+        "last_updated": "2014-12-23T16:19:33.595134Z"
       }
     ]
   },
@@ -1155,11 +1155,11 @@
     "stocking_purchase_order_id": 5,
     "status": "Requested",
     "supplier_id": 1,
-    "date_ordered": "2014-12-20T00:00:00",
+    "date_ordered": "2014-12-20T00:00:00Z",
     "date_confirmed": null,
     "date_shipped": null,
     "date_arrived": null,
-    "last_updated": "2014-12-23T15:25:15.820902",
+    "last_updated": "2014-12-23T15:25:15.820902Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 136,
@@ -1178,12 +1178,12 @@
         "case_width": 9.81,
         "case_height": 6.93,
         "case_weight": 3.51,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 3480,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:19.630881"
+        "last_updated": "2014-12-23T16:31:19.630881Z"
       },
       {
         "stocking_purchase_order_product_id": 137,
@@ -1202,12 +1202,12 @@
         "case_width": 8.9,
         "case_height": 3.88,
         "case_weight": 6.2,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1021,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:20.653422"
+        "last_updated": "2014-12-23T16:31:20.653422Z"
       },
       {
         "stocking_purchase_order_product_id": 138,
@@ -1226,12 +1226,12 @@
         "case_width": 11.2,
         "case_height": 8.9,
         "case_weight": 31.75,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 10170,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:20.911068"
+        "last_updated": "2014-12-23T16:31:20.911068Z"
       },
       {
         "stocking_purchase_order_product_id": 139,
@@ -1250,12 +1250,12 @@
         "case_width": 7.65,
         "case_height": 3.75,
         "case_weight": 9.4,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 3780,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:21.160147"
+        "last_updated": "2014-12-23T16:31:21.160147Z"
       },
       {
         "stocking_purchase_order_product_id": 140,
@@ -1274,12 +1274,12 @@
         "case_width": 4.9,
         "case_height": 3.7,
         "case_weight": 7.68,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 900,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:21.415645"
+        "last_updated": "2014-12-23T16:31:21.415645Z"
       },
       {
         "stocking_purchase_order_product_id": 141,
@@ -1298,12 +1298,12 @@
         "case_width": 8.82,
         "case_height": 10,
         "case_weight": 7.15,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1862,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:21.632802"
+        "last_updated": "2014-12-23T16:31:21.632802Z"
       },
       {
         "stocking_purchase_order_product_id": 142,
@@ -1322,12 +1322,12 @@
         "case_width": 11.7,
         "case_height": 6.7,
         "case_weight": 4.6,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1082,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:21.866608"
+        "last_updated": "2014-12-23T16:31:21.866608Z"
       },
       {
         "stocking_purchase_order_product_id": 143,
@@ -1346,12 +1346,12 @@
         "case_width": 8.4,
         "case_height": 8.7,
         "case_weight": 17.8,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1620,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:22.235583"
+        "last_updated": "2014-12-23T16:31:22.235583Z"
       },
       {
         "stocking_purchase_order_product_id": 144,
@@ -1370,12 +1370,12 @@
         "case_width": 10.12,
         "case_height": 4.45,
         "case_weight": 16.48,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 2340,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:22.673095"
+        "last_updated": "2014-12-23T16:31:22.673095Z"
       },
       {
         "stocking_purchase_order_product_id": 145,
@@ -1394,12 +1394,12 @@
         "case_width": 7.38,
         "case_height": 3.63,
         "case_weight": 6.51,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 3840,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:22.976605"
+        "last_updated": "2014-12-23T16:31:22.976605Z"
       },
       {
         "stocking_purchase_order_product_id": 146,
@@ -1418,12 +1418,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-23T00:00:00",
+        "expected_arrival": "2014-12-23T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1850,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:31:23.176006"
+        "last_updated": "2014-12-23T16:31:23.176006Z"
       }
     ]
   },
@@ -1431,11 +1431,11 @@
     "stocking_purchase_order_id": 6,
     "status": "Shipped",
     "supplier_id": 1,
-    "date_ordered": "2014-12-15T00:00:00",
-    "date_confirmed": "2014-12-15T00:00:00",
-    "date_shipped": "2014-12-20T00:00:00",
+    "date_ordered": "2014-12-15T00:00:00Z",
+    "date_confirmed": "2014-12-15T00:00:00Z",
+    "date_shipped": "2014-12-20T00:00:00Z",
     "date_arrived": null,
-    "last_updated": "2014-12-23T15:25:15.847037",
+    "last_updated": "2014-12-23T15:25:15.847037Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 110,
@@ -1454,12 +1454,12 @@
         "case_width": 4.9,
         "case_height": 3.85,
         "case_weight": 7.68,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 900,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:40.111819"
+        "last_updated": "2014-12-23T16:28:40.111819Z"
       },
       {
         "stocking_purchase_order_product_id": 114,
@@ -1478,12 +1478,12 @@
         "case_width": 8,
         "case_height": 3.75,
         "case_weight": 5.01,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 642,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:41.109225"
+        "last_updated": "2014-12-23T16:28:41.109225Z"
       },
       {
         "stocking_purchase_order_product_id": 116,
@@ -1502,12 +1502,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1301,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:41.549669"
+        "last_updated": "2014-12-23T16:28:41.549669Z"
       },
       {
         "stocking_purchase_order_product_id": 122,
@@ -1526,12 +1526,12 @@
         "case_width": 5.2,
         "case_height": 6.93,
         "case_weight": 5.88,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1404,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:42.806555"
+        "last_updated": "2014-12-23T16:28:42.806555Z"
       },
       {
         "stocking_purchase_order_product_id": 127,
@@ -1550,12 +1550,12 @@
         "case_width": 7.81,
         "case_height": 5.63,
         "case_weight": 8.54,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 2100,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:43.88422"
+        "last_updated": "2014-12-23T16:28:43.88422Z"
       },
       {
         "stocking_purchase_order_product_id": 129,
@@ -1574,12 +1574,12 @@
         "case_width": 10.35,
         "case_height": 8.15,
         "case_weight": 4.65,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 2310,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:44.303473"
+        "last_updated": "2014-12-23T16:28:44.303473Z"
       },
       {
         "stocking_purchase_order_product_id": 131,
@@ -1598,12 +1598,12 @@
         "case_width": 11.3,
         "case_height": 4.5,
         "case_weight": 42,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 516,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:45.679392"
+        "last_updated": "2014-12-23T16:28:45.679392Z"
       },
       {
         "stocking_purchase_order_product_id": 135,
@@ -1622,12 +1622,12 @@
         "case_width": 12.13,
         "case_height": 4.84,
         "case_weight": 24.19,
-        "expected_arrival": "2014-12-18T00:00:00",
+        "expected_arrival": "2014-12-18T00:00:00Z",
         "actual_arrival": null,
         "wholesale_cost": 1980,
         "expiration_class": null,
         "receiving_location_id": null,
-        "last_updated": "2014-12-23T16:28:46.50542"
+        "last_updated": "2014-12-23T16:28:46.50542Z"
       }
     ]
   },
@@ -1635,11 +1635,11 @@
     "stocking_purchase_order_id": 7,
     "status": "Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-18T00:00:00",
-    "date_confirmed": "2014-12-18T00:00:00",
-    "date_shipped": "2014-12-19T00:00:00",
-    "date_arrived": "2014-12-22T00:00:00",
-    "last_updated": "2014-12-23T15:25:15.897245",
+    "date_ordered": "2014-12-18T00:00:00Z",
+    "date_confirmed": "2014-12-18T00:00:00Z",
+    "date_shipped": "2014-12-19T00:00:00Z",
+    "date_arrived": "2014-12-22T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:15.897245Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 3,
@@ -1658,12 +1658,12 @@
         "case_width": 11.75,
         "case_height": 15.68,
         "case_weight": 4.6,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1030,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:08:58.704692"
+        "last_updated": "2014-12-23T16:08:58.704692Z"
       },
       {
         "stocking_purchase_order_product_id": 10,
@@ -1682,12 +1682,12 @@
         "case_width": 13.2,
         "case_height": 6.2,
         "case_weight": 5.7,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1776,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:01.344273"
+        "last_updated": "2014-12-23T16:09:01.344273Z"
       },
       {
         "stocking_purchase_order_product_id": 14,
@@ -1706,12 +1706,12 @@
         "case_width": 9.5,
         "case_height": 5,
         "case_weight": 7.38,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1353,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:03.234696"
+        "last_updated": "2014-12-23T16:09:03.234696Z"
       },
       {
         "stocking_purchase_order_product_id": 15,
@@ -1730,12 +1730,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1637,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:03.882886"
+        "last_updated": "2014-12-23T16:09:03.882886Z"
       },
       {
         "stocking_purchase_order_product_id": 18,
@@ -1754,12 +1754,12 @@
         "case_width": 8.1,
         "case_height": 9.3,
         "case_weight": 18.45,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1848,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:04.75698"
+        "last_updated": "2014-12-23T16:09:04.75698Z"
       },
       {
         "stocking_purchase_order_product_id": 26,
@@ -1778,12 +1778,12 @@
         "case_width": 10.75,
         "case_height": 5.81,
         "case_weight": 13.5,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1680,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:08.270701"
+        "last_updated": "2014-12-23T16:09:08.270701Z"
       },
       {
         "stocking_purchase_order_product_id": 34,
@@ -1802,12 +1802,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1301,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:11.53231"
+        "last_updated": "2014-12-23T16:09:11.53231Z"
       },
       {
         "stocking_purchase_order_product_id": 39,
@@ -1826,12 +1826,12 @@
         "case_width": 11.65,
         "case_height": 5.16,
         "case_weight": 4.69,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3248,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:27.140397"
+        "last_updated": "2014-12-23T16:11:27.140397Z"
       },
       {
         "stocking_purchase_order_product_id": 40,
@@ -1850,12 +1850,12 @@
         "case_width": 6.8,
         "case_height": 3,
         "case_weight": 4.92,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 715,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:27.393762"
+        "last_updated": "2014-12-23T16:11:27.393762Z"
       },
       {
         "stocking_purchase_order_product_id": 44,
@@ -1874,12 +1874,12 @@
         "case_width": 7.81,
         "case_height": 5.63,
         "case_weight": 8.54,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2100,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:33.555833"
+        "last_updated": "2014-12-23T16:12:33.555833Z"
       },
       {
         "stocking_purchase_order_product_id": 75,
@@ -1898,12 +1898,12 @@
         "case_width": 11.18,
         "case_height": 5.55,
         "case_weight": 30.51,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2580,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:40.441912"
+        "last_updated": "2014-12-23T16:12:40.441912Z"
       },
       {
         "stocking_purchase_order_product_id": 78,
@@ -1922,12 +1922,12 @@
         "case_width": 10.8,
         "case_height": 4.3,
         "case_weight": 12.6,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1860,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:41.04017"
+        "last_updated": "2014-12-23T16:12:41.04017Z"
       },
       {
         "stocking_purchase_order_product_id": 79,
@@ -1946,12 +1946,12 @@
         "case_width": 9.5,
         "case_height": 8.1,
         "case_weight": 23,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2988,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:41.25625"
+        "last_updated": "2014-12-23T16:12:41.25625Z"
       },
       {
         "stocking_purchase_order_product_id": 86,
@@ -1970,12 +1970,12 @@
         "case_width": 15.8,
         "case_height": 10,
         "case_weight": 34.9,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 4536,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:42.71953"
+        "last_updated": "2014-12-23T16:12:42.71953Z"
       },
       {
         "stocking_purchase_order_product_id": 88,
@@ -1994,12 +1994,12 @@
         "case_width": 8.8,
         "case_height": 9.14,
         "case_weight": 34,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1599,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:43.143031"
+        "last_updated": "2014-12-23T16:12:43.143031Z"
       },
       {
         "stocking_purchase_order_product_id": 91,
@@ -2018,12 +2018,12 @@
         "case_width": 9.88,
         "case_height": 8.4,
         "case_weight": 12.4,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3648,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:43.798833"
+        "last_updated": "2014-12-23T16:12:43.798833Z"
       },
       {
         "stocking_purchase_order_product_id": 93,
@@ -2042,12 +2042,12 @@
         "case_width": 6.26,
         "case_height": 6.69,
         "case_weight": 2.14,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1008,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:44.256791"
+        "last_updated": "2014-12-23T16:12:44.256791Z"
       }
     ]
   },
@@ -2055,11 +2055,11 @@
     "stocking_purchase_order_id": 8,
     "status": "Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-18T00:00:00",
-    "date_confirmed": "2014-12-18T00:00:00",
-    "date_shipped": "2014-12-19T00:00:00",
-    "date_arrived": "2014-12-22T00:00:00",
-    "last_updated": "2014-12-23T15:25:15.917263",
+    "date_ordered": "2014-12-18T00:00:00Z",
+    "date_confirmed": "2014-12-18T00:00:00Z",
+    "date_shipped": "2014-12-19T00:00:00Z",
+    "date_arrived": "2014-12-22T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:15.917263Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 21,
@@ -2078,12 +2078,12 @@
         "case_width": 11.75,
         "case_height": 9.75,
         "case_weight": 12.7,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 0,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:05.395759"
+        "last_updated": "2014-12-23T16:09:05.395759Z"
       },
       {
         "stocking_purchase_order_product_id": 23,
@@ -2102,12 +2102,12 @@
         "case_width": 10.45,
         "case_height": 4.25,
         "case_weight": 9.49,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2556,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:05.860191"
+        "last_updated": "2014-12-23T16:09:05.860191Z"
       },
       {
         "stocking_purchase_order_product_id": 24,
@@ -2126,12 +2126,12 @@
         "case_width": 16,
         "case_height": 12.5,
         "case_weight": 25.91,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 5236,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:06.707955"
+        "last_updated": "2014-12-23T16:09:06.707955Z"
       },
       {
         "stocking_purchase_order_product_id": 28,
@@ -2150,12 +2150,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 990,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:09.615491"
+        "last_updated": "2014-12-23T16:09:09.615491Z"
       },
       {
         "stocking_purchase_order_product_id": 30,
@@ -2174,12 +2174,12 @@
         "case_width": 10.55,
         "case_height": 6.5,
         "case_weight": 27.84,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2448,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:10.340007"
+        "last_updated": "2014-12-23T16:09:10.340007Z"
       },
       {
         "stocking_purchase_order_product_id": 32,
@@ -2198,12 +2198,12 @@
         "case_width": 48,
         "case_height": 52,
         "case_weight": 280,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 49600,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:11.020658"
+        "last_updated": "2014-12-23T16:09:11.020658Z"
       },
       {
         "stocking_purchase_order_product_id": 36,
@@ -2222,12 +2222,12 @@
         "case_width": 7.5,
         "case_height": 5.5,
         "case_weight": 10.3,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1536,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:24.852535"
+        "last_updated": "2014-12-23T16:11:24.852535Z"
       },
       {
         "stocking_purchase_order_product_id": 42,
@@ -2246,12 +2246,12 @@
         "case_width": 11.56,
         "case_height": 4.8,
         "case_weight": 10.83,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2414,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:31.943226"
+        "last_updated": "2014-12-23T16:12:31.943226Z"
       },
       {
         "stocking_purchase_order_product_id": 46,
@@ -2270,12 +2270,12 @@
         "case_width": 7,
         "case_height": 4,
         "case_weight": 4.32,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 904,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:34.159542"
+        "last_updated": "2014-12-23T16:12:34.159542Z"
       },
       {
         "stocking_purchase_order_product_id": 54,
@@ -2294,12 +2294,12 @@
         "case_width": 8.75,
         "case_height": 5.87,
         "case_weight": 12.35,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1944,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:35.99083"
+        "last_updated": "2014-12-23T16:12:35.99083Z"
       },
       {
         "stocking_purchase_order_product_id": 60,
@@ -2318,12 +2318,12 @@
         "case_width": 18.9,
         "case_height": 4.6,
         "case_weight": 12,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 3360,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:37.247687"
+        "last_updated": "2014-12-23T16:12:37.247687Z"
       },
       {
         "stocking_purchase_order_product_id": 63,
@@ -2342,12 +2342,12 @@
         "case_width": 7.5,
         "case_height": 5.88,
         "case_weight": 4.03,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1616,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:37.85552"
+        "last_updated": "2014-12-23T16:12:37.85552Z"
       },
       {
         "stocking_purchase_order_product_id": 64,
@@ -2366,12 +2366,12 @@
         "case_width": 12.2,
         "case_height": 7.3,
         "case_weight": 14.85,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2172,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:38.10381"
+        "last_updated": "2014-12-23T16:12:38.10381Z"
       },
       {
         "stocking_purchase_order_product_id": 65,
@@ -2390,12 +2390,12 @@
         "case_width": 7.5,
         "case_height": 5.5,
         "case_weight": 10.3,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 1536,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:38.287185"
+        "last_updated": "2014-12-23T16:12:38.287185Z"
       },
       {
         "stocking_purchase_order_product_id": 72,
@@ -2414,12 +2414,12 @@
         "case_width": 13.5,
         "case_height": 8.5,
         "case_weight": 25.5,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 2736,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:39.802135"
+        "last_updated": "2014-12-23T16:12:39.802135Z"
       },
       {
         "stocking_purchase_order_product_id": 81,
@@ -2438,12 +2438,12 @@
         "case_width": 6.97,
         "case_height": 3.11,
         "case_weight": 3.21,
-        "expected_arrival": "2014-12-22T00:00:00",
-        "actual_arrival": "2014-12-22T00:00:00",
+        "expected_arrival": "2014-12-22T00:00:00Z",
+        "actual_arrival": "2014-12-22T00:00:00Z",
         "wholesale_cost": 808,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:41.679399"
+        "last_updated": "2014-12-23T16:12:41.679399Z"
       }
     ]
   },
@@ -2451,11 +2451,11 @@
     "stocking_purchase_order_id": 9,
     "status": "Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-15T00:00:00",
-    "date_confirmed": "2014-12-15T00:00:00",
-    "date_shipped": "2014-12-18T00:00:00",
-    "date_arrived": "2014-12-20T00:00:00",
-    "last_updated": "2014-12-23T15:25:15.956859",
+    "date_ordered": "2014-12-15T00:00:00Z",
+    "date_confirmed": "2014-12-15T00:00:00Z",
+    "date_shipped": "2014-12-18T00:00:00Z",
+    "date_arrived": "2014-12-20T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:15.956859Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 4,
@@ -2474,12 +2474,12 @@
         "case_width": 8.98,
         "case_height": 7.28,
         "case_weight": 10.16,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 3000,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:08:59.175157"
+        "last_updated": "2014-12-23T16:08:59.175157Z"
       },
       {
         "stocking_purchase_order_product_id": 5,
@@ -2498,12 +2498,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1161,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:08:59.579866"
+        "last_updated": "2014-12-23T16:08:59.579866Z"
       },
       {
         "stocking_purchase_order_product_id": 11,
@@ -2522,12 +2522,12 @@
         "case_width": 7.6,
         "case_height": 4.6,
         "case_weight": 7,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 942,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:01.73113"
+        "last_updated": "2014-12-23T16:09:01.73113Z"
       },
       {
         "stocking_purchase_order_product_id": 12,
@@ -2546,12 +2546,12 @@
         "case_width": 12.88,
         "case_height": 10.25,
         "case_weight": 36.75,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 4169,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:01.940041"
+        "last_updated": "2014-12-23T16:09:01.940041Z"
       },
       {
         "stocking_purchase_order_product_id": 31,
@@ -2570,12 +2570,12 @@
         "case_width": 7.87,
         "case_height": 6.34,
         "case_weight": 2.82,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 3825,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:10.827756"
+        "last_updated": "2014-12-23T16:09:10.827756Z"
       },
       {
         "stocking_purchase_order_product_id": 33,
@@ -2594,12 +2594,12 @@
         "case_width": 11.3,
         "case_height": 4.69,
         "case_weight": 11.25,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1344,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:11.282847"
+        "last_updated": "2014-12-23T16:09:11.282847Z"
       },
       {
         "stocking_purchase_order_product_id": 41,
@@ -2618,12 +2618,12 @@
         "case_width": 7.12,
         "case_height": 7.25,
         "case_weight": 11.2,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2194,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:28.117827"
+        "last_updated": "2014-12-23T16:11:28.117827Z"
       },
       {
         "stocking_purchase_order_product_id": 48,
@@ -2642,12 +2642,12 @@
         "case_width": 12.94,
         "case_height": 8.56,
         "case_weight": 14.5,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1968,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:34.641894"
+        "last_updated": "2014-12-23T16:12:34.641894Z"
       },
       {
         "stocking_purchase_order_product_id": 51,
@@ -2666,12 +2666,12 @@
         "case_width": 7.81,
         "case_height": 5.88,
         "case_weight": 8.03,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 4431,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:35.329611"
+        "last_updated": "2014-12-23T16:12:35.329611Z"
       },
       {
         "stocking_purchase_order_product_id": 59,
@@ -2690,12 +2690,12 @@
         "case_width": 12.48,
         "case_height": 6.26,
         "case_weight": 19.76,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1872,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:37.044914"
+        "last_updated": "2014-12-23T16:12:37.044914Z"
       }
     ]
   },
@@ -2703,11 +2703,11 @@
     "stocking_purchase_order_id": 10,
     "status": "Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-15T00:00:00",
-    "date_confirmed": "2014-12-15T00:00:00",
-    "date_shipped": "2014-12-18T00:00:00",
-    "date_arrived": "2014-12-20T00:00:00",
-    "last_updated": "2014-12-23T15:25:15.996549",
+    "date_ordered": "2014-12-15T00:00:00Z",
+    "date_confirmed": "2014-12-15T00:00:00Z",
+    "date_shipped": "2014-12-18T00:00:00Z",
+    "date_arrived": "2014-12-20T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:15.996549Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 6,
@@ -2726,12 +2726,12 @@
         "case_width": 8.5,
         "case_height": 10.2,
         "case_weight": 27.5,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1769,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:00.02063"
+        "last_updated": "2014-12-23T16:09:00.02063Z"
       },
       {
         "stocking_purchase_order_product_id": 8,
@@ -2750,12 +2750,12 @@
         "case_width": 6.22,
         "case_height": 8.5,
         "case_weight": 7.2,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1656,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:00.86828"
+        "last_updated": "2014-12-23T16:09:00.86828Z"
       },
       {
         "stocking_purchase_order_product_id": 17,
@@ -2774,12 +2774,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2500,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:04.319645"
+        "last_updated": "2014-12-23T16:09:04.319645Z"
       },
       {
         "stocking_purchase_order_product_id": 19,
@@ -2798,12 +2798,12 @@
         "case_width": 11.5,
         "case_height": 6.25,
         "case_weight": 8.71,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 3144,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:04.964049"
+        "last_updated": "2014-12-23T16:09:04.964049Z"
       },
       {
         "stocking_purchase_order_product_id": 20,
@@ -2822,12 +2822,12 @@
         "case_width": 9.9,
         "case_height": 3.13,
         "case_weight": 3.6,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 972,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:05.180223"
+        "last_updated": "2014-12-23T16:09:05.180223Z"
       },
       {
         "stocking_purchase_order_product_id": 22,
@@ -2846,12 +2846,12 @@
         "case_width": 20,
         "case_height": 14.1,
         "case_weight": 28.47,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 4984,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:05.650763"
+        "last_updated": "2014-12-23T16:09:05.650763Z"
       },
       {
         "stocking_purchase_order_product_id": 25,
@@ -2870,12 +2870,12 @@
         "case_width": 15.44,
         "case_height": 11.56,
         "case_weight": 14.12,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 4688,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:07.404296"
+        "last_updated": "2014-12-23T16:09:07.404296Z"
       },
       {
         "stocking_purchase_order_product_id": 27,
@@ -2894,12 +2894,12 @@
         "case_width": 12.9,
         "case_height": 11.9,
         "case_weight": 12.9,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 3948,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:09.379804"
+        "last_updated": "2014-12-23T16:09:09.379804Z"
       },
       {
         "stocking_purchase_order_product_id": 29,
@@ -2918,12 +2918,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 990,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:10.104491"
+        "last_updated": "2014-12-23T16:09:10.104491Z"
       },
       {
         "stocking_purchase_order_product_id": 37,
@@ -2942,12 +2942,12 @@
         "case_width": 5.3,
         "case_height": 8.4,
         "case_weight": 3.45,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1164,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:26.183337"
+        "last_updated": "2014-12-23T16:11:26.183337Z"
       },
       {
         "stocking_purchase_order_product_id": 47,
@@ -2966,12 +2966,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 0,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:34.412341"
+        "last_updated": "2014-12-23T16:12:34.412341Z"
       },
       {
         "stocking_purchase_order_product_id": 53,
@@ -2990,12 +2990,12 @@
         "case_width": 8.63,
         "case_height": 4.75,
         "case_weight": 6.37,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1086,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:35.719175"
+        "last_updated": "2014-12-23T16:12:35.719175Z"
       },
       {
         "stocking_purchase_order_product_id": 57,
@@ -3014,12 +3014,12 @@
         "case_width": 8,
         "case_height": 3.75,
         "case_weight": 5.01,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 642,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:36.623832"
+        "last_updated": "2014-12-23T16:12:36.623832Z"
       },
       {
         "stocking_purchase_order_product_id": 73,
@@ -3038,12 +3038,12 @@
         "case_width": 8.86,
         "case_height": 3.9,
         "case_weight": 11.5,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 870,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:39.975711"
+        "last_updated": "2014-12-23T16:12:39.975711Z"
       },
       {
         "stocking_purchase_order_product_id": 84,
@@ -3062,12 +3062,12 @@
         "case_width": 12.4,
         "case_height": 5.5,
         "case_weight": 10.5,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 3830,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:42.303982"
+        "last_updated": "2014-12-23T16:12:42.303982Z"
       },
       {
         "stocking_purchase_order_product_id": 95,
@@ -3086,12 +3086,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1875,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:44.727747"
+        "last_updated": "2014-12-23T16:12:44.727747Z"
       }
     ]
   },
@@ -3099,11 +3099,11 @@
     "stocking_purchase_order_id": 11,
     "status": "Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-15T00:00:00",
-    "date_confirmed": "2014-12-15T00:00:00",
-    "date_shipped": "2014-12-18T00:00:00",
-    "date_arrived": "2014-12-20T00:00:00",
-    "last_updated": "2014-12-23T15:25:16.036188",
+    "date_ordered": "2014-12-15T00:00:00Z",
+    "date_confirmed": "2014-12-15T00:00:00Z",
+    "date_shipped": "2014-12-18T00:00:00Z",
+    "date_arrived": "2014-12-20T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:16.036188Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 62,
@@ -3122,12 +3122,12 @@
         "case_width": 6.02,
         "case_height": 8.46,
         "case_weight": 7.58,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1656,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:37.655147"
+        "last_updated": "2014-12-23T16:12:37.655147Z"
       },
       {
         "stocking_purchase_order_product_id": 66,
@@ -3146,12 +3146,12 @@
         "case_width": 6.25,
         "case_height": 5,
         "case_weight": 9.61,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2952,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:38.525281"
+        "last_updated": "2014-12-23T16:12:38.525281Z"
       },
       {
         "stocking_purchase_order_product_id": 68,
@@ -3170,12 +3170,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2500,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:38.926906"
+        "last_updated": "2014-12-23T16:12:38.926906Z"
       },
       {
         "stocking_purchase_order_product_id": 70,
@@ -3194,12 +3194,12 @@
         "case_width": 9.45,
         "case_height": 8.15,
         "case_weight": 9.56,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2130,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:39.364172"
+        "last_updated": "2014-12-23T16:12:39.364172Z"
       },
       {
         "stocking_purchase_order_product_id": 74,
@@ -3218,12 +3218,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2558,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:40.239416"
+        "last_updated": "2014-12-23T16:12:40.239416Z"
       },
       {
         "stocking_purchase_order_product_id": 80,
@@ -3242,12 +3242,12 @@
         "case_width": 8.94,
         "case_height": 4.53,
         "case_weight": 12.77,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 960,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:41.500358"
+        "last_updated": "2014-12-23T16:12:41.500358Z"
       },
       {
         "stocking_purchase_order_product_id": 82,
@@ -3266,12 +3266,12 @@
         "case_width": 12.25,
         "case_height": 3.7,
         "case_weight": 10.79,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2556,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:41.92053"
+        "last_updated": "2014-12-23T16:12:41.92053Z"
       },
       {
         "stocking_purchase_order_product_id": 83,
@@ -3290,12 +3290,12 @@
         "case_width": 9,
         "case_height": 3.88,
         "case_weight": 6,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1022,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:42.095381"
+        "last_updated": "2014-12-23T16:12:42.095381Z"
       },
       {
         "stocking_purchase_order_product_id": 96,
@@ -3314,12 +3314,12 @@
         "case_width": 7.5,
         "case_height": 5.5,
         "case_weight": 8.55,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1355,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:44.94309"
+        "last_updated": "2014-12-23T16:12:44.94309Z"
       }
     ]
   },
@@ -3327,11 +3327,11 @@
     "stocking_purchase_order_id": 12,
     "status": "Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-15T00:00:00",
-    "date_confirmed": "2014-12-15T00:00:00",
-    "date_shipped": "2014-12-18T00:00:00",
-    "date_arrived": "2014-12-20T00:00:00",
-    "last_updated": "2014-12-23T15:25:16.072866",
+    "date_ordered": "2014-12-15T00:00:00Z",
+    "date_confirmed": "2014-12-15T00:00:00Z",
+    "date_shipped": "2014-12-18T00:00:00Z",
+    "date_arrived": "2014-12-20T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:16.072866Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 45,
@@ -3350,12 +3350,12 @@
         "case_width": 9.4,
         "case_height": 10.2,
         "case_weight": 25.8,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2094,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:33.855341"
+        "last_updated": "2014-12-23T16:12:33.855341Z"
       },
       {
         "stocking_purchase_order_product_id": 71,
@@ -3374,12 +3374,12 @@
         "case_width": 12.1,
         "case_height": 7.8,
         "case_weight": 26.45,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1862,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:39.543198"
+        "last_updated": "2014-12-23T16:12:39.543198Z"
       },
       {
         "stocking_purchase_order_product_id": 77,
@@ -3398,12 +3398,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1161,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:40.84062"
+        "last_updated": "2014-12-23T16:12:40.84062Z"
       },
       {
         "stocking_purchase_order_product_id": 92,
@@ -3422,12 +3422,12 @@
         "case_width": 7.8,
         "case_height": 6.3,
         "case_weight": 2.89,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2907,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:44.01555"
+        "last_updated": "2014-12-23T16:12:44.01555Z"
       }
     ]
   },
@@ -3435,11 +3435,11 @@
     "stocking_purchase_order_id": 13,
     "status": "Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-15T00:00:00",
-    "date_confirmed": "2014-12-15T00:00:00",
-    "date_shipped": "2014-12-18T00:00:00",
-    "date_arrived": "2014-12-20T00:00:00",
-    "last_updated": "2014-12-23T15:25:16.119332",
+    "date_ordered": "2014-12-15T00:00:00Z",
+    "date_confirmed": "2014-12-15T00:00:00Z",
+    "date_shipped": "2014-12-18T00:00:00Z",
+    "date_arrived": "2014-12-20T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:16.119332Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 55,
@@ -3458,12 +3458,12 @@
         "case_width": 11,
         "case_height": 15.6,
         "case_weight": 19.3,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 5404,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:36.20703"
+        "last_updated": "2014-12-23T16:12:36.20703Z"
       },
       {
         "stocking_purchase_order_product_id": 56,
@@ -3482,12 +3482,12 @@
         "case_width": 10.16,
         "case_height": 6.46,
         "case_weight": 27.18,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2424,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:36.407006"
+        "last_updated": "2014-12-23T16:12:36.407006Z"
       },
       {
         "stocking_purchase_order_product_id": 90,
@@ -3506,12 +3506,12 @@
         "case_width": 12.01,
         "case_height": 4.69,
         "case_weight": 24.69,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1884,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:43.584919"
+        "last_updated": "2014-12-23T16:12:43.584919Z"
       }
     ]
   },
@@ -3519,11 +3519,11 @@
     "stocking_purchase_order_id": 14,
     "status": "Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-15T00:00:00",
-    "date_confirmed": "2014-12-15T00:00:00",
-    "date_shipped": "2014-12-18T00:00:00",
-    "date_arrived": "2014-12-20T00:00:00",
-    "last_updated": "2014-12-23T15:25:16.162717",
+    "date_ordered": "2014-12-15T00:00:00Z",
+    "date_confirmed": "2014-12-15T00:00:00Z",
+    "date_shipped": "2014-12-18T00:00:00Z",
+    "date_arrived": "2014-12-20T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:16.162717Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 43,
@@ -3542,12 +3542,12 @@
         "case_width": 8.88,
         "case_height": 10.25,
         "case_weight": 25.65,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2094,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:33.047807"
+        "last_updated": "2014-12-23T16:12:33.047807Z"
       },
       {
         "stocking_purchase_order_product_id": 61,
@@ -3566,12 +3566,12 @@
         "case_width": 11.9,
         "case_height": 10.1,
         "case_weight": 4.5,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1944,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:37.481691"
+        "last_updated": "2014-12-23T16:12:37.481691Z"
       },
       {
         "stocking_purchase_order_product_id": 89,
@@ -3590,12 +3590,12 @@
         "case_width": null,
         "case_height": null,
         "case_weight": null,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 1875,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:43.417258"
+        "last_updated": "2014-12-23T16:12:43.417258Z"
       }
     ]
   },
@@ -3603,11 +3603,11 @@
     "stocking_purchase_order_id": 15,
     "status": "Delivered",
     "supplier_id": 1,
-    "date_ordered": "2014-12-15T00:00:00",
-    "date_confirmed": "2014-12-15T00:00:00",
-    "date_shipped": "2014-12-18T00:00:00",
-    "date_arrived": "2014-12-20T00:00:00",
-    "last_updated": "2014-12-23T15:25:16.723036",
+    "date_ordered": "2014-12-15T00:00:00Z",
+    "date_confirmed": "2014-12-15T00:00:00Z",
+    "date_shipped": "2014-12-18T00:00:00Z",
+    "date_arrived": "2014-12-20T00:00:00Z",
+    "last_updated": "2014-12-23T15:25:16.723036Z",
     "products": [
       {
         "stocking_purchase_order_product_id": 49,
@@ -3626,12 +3626,12 @@
         "case_width": 11.85,
         "case_height": 6.4,
         "case_weight": 12.9,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 6492,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:34.877741"
+        "last_updated": "2014-12-23T16:12:34.877741Z"
       },
       {
         "stocking_purchase_order_product_id": 87,
@@ -3650,12 +3650,12 @@
         "case_width": 7.8,
         "case_height": 11.25,
         "case_weight": 15.33,
-        "expected_arrival": "2014-12-20T00:00:00",
-        "actual_arrival": "2014-12-20T00:00:00",
+        "expected_arrival": "2014-12-20T00:00:00Z",
+        "actual_arrival": "2014-12-20T00:00:00Z",
         "wholesale_cost": 2244,
         "expiration_class": null,
         "receiving_location_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:42.927746"
+        "last_updated": "2014-12-23T16:12:42.927746Z"
       }
     ]
   }

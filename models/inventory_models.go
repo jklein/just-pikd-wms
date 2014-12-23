@@ -1,9 +1,13 @@
 package models
 
 import (
+	"fmt"
 	"gopkg.in/guregu/null.v2"
+	"strings"
 	"time"
 )
+
+const IMAGE_URL_PREFIX string = "https://s3.amazonaws.com/g2gcdn"
 
 type StaticInventory struct {
 	Id                             int         `db:"static_inventory_id" json:"static_inventory_id"`
@@ -15,12 +19,27 @@ type StaticInventory struct {
 	TotalQty                       int         `db:"total_qty" json:"total_qty"`
 	AvailableQty                   int         `db:"available_qty" json:"available_qty"`
 	ArrivalDate                    *time.Time  `db:"arrival_date" json:"arrival_date"`
+	EmptiedDate                    *time.Time  `db:"emptied_date" json:"emptied_date"`
 	ManufacturerId                 null.Int    `db:"manufacturer_id" json:"manufacturer_id"`
 	Name                           null.String `db:"name" json:"name"`
 	Length                         null.Float  `db:"length" json:"length"`
 	Width                          null.Float  `db:"width" json:"width"`
 	Height                         null.Float  `db:"height" json:"height"`
 	Weight                         null.Float  `db:"weight" json:"weight"`
+	ThumbnailURL                   string      `json:"thumbnail_url"`
+}
+
+//thumbanil URL to display in pick app
+func (s *StaticInventory) SetThumbnailURL() {
+	//https://s3.amazonaws.com/g2gcdn/68/00046000820118_200x200.jpg
+	//replace - with "" in sku, add leading 0
+	sku := strings.Replace(s.Sku, "-", "", -1)
+
+	//result will look like https://s3.amazonaws.com/g2gcdn/68/00046000820118_200x200.jpg
+	//add leading zero because they're all prefixed with that on S3 at the moment
+	s.ThumbnailURL = fmt.Sprintf("%s/%d/0%s_200x200.jpg",
+		IMAGE_URL_PREFIX, s.ManufacturerId.Int64, sku)
+	return
 }
 
 type OutboundInventory struct {
