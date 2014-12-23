@@ -32,8 +32,7 @@ func main() {
 	//initialize controllers
 	rc := &controllers.ReceivingController{Render: rend, DB: db}
 	router.HandleFunc("/spo/{id:[0-9]+}", rc.Action(rc.GetSPO)).Methods("GET")
-	router.HandleFunc("/inventory/inbound/{id:[0-9]+}", rc.Action(rc.GetInbound)).Methods("GET")
-	router.HandleFunc("/inventory/inbound", rc.Action(rc.CreateInbound)).Methods("POST")
+	//router.HandleFunc("/inventory/inbound", rc.Action(rc.CreateInbound)).Methods("POST")
 	router.HandleFunc("/inventory/static/{id:[0-9]+}", rc.Action(rc.GetStatic)).Methods("GET")
 
 	//DEV ONLY: route to reset all data

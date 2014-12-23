@@ -9,6 +9,8 @@ import (
 // Action defines a standard function signature for us to use when creating
 // controller actions. A controller action is basically just a method attached to
 // a controller.
+// We return err, int in that order because the int is only used if the error is not nil
+// as the response code. Non-failure response codes should be set by the Action itself (like redirects)
 type Action func(rw http.ResponseWriter, r *http.Request) (error, int)
 
 // This is our Base Controller

@@ -1,13 +1,31 @@
 [{
-  "stocking_location_id": "1",
-  "sku": "024000322306",
-  "inbound_inventory_id": 1,
-  "expiration_class": "C",
+  "stocking_location_id": "90051789002816",
+  "sku": "0038897531116",
+  "inbound_inventory_id": 9,
+  "expiration_class": "A",
   "expiration_date": "2015-12-31T15:06:15.654477Z",
-  "total_qty": 40,
-  "available_qty": 28,
-  "arrival_date": "2014-12-14T13:01:24.654477Z",
+  "total_qty": 48,
+  "available_qty": 42,
+  "arrival_date": "2014-12-14T17:48:49.670535Z",
   "wholesale_cost": 1.89,
-  "manufacturer_id": 95,
-  "name": "College Inn(R) 99% Fat Free Chicken Broth 14.5 oz. Can"
-}]
+  "manufacturer_id": 133,
+  "name": "Mckenzie's Southland Butternut Squash 12 Oz Tray"
+},
+{
+  "stocking_location_id": "90051789002817",
+  "sku": "0041789002816",
+  "inbound_inventory_id": 10,
+  "expiration_class": "A",
+  "expiration_date": "2015-12-31T15:06:15.654477Z",
+  "total_qty": 36,
+  "available_qty": 16,
+  "arrival_date": "2014-12-14T17:48:49.670535Z",
+  "wholesale_cost": 1.89,
+  "manufacturer_id": 168,
+  "name": "Maruchan(R) Picante Chicken Flavor Ramen Noodle Soup 3 oz. Bag"
+}
+]
+
+
+
+

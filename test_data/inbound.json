@@ -1,11 +1,82 @@
-[{
-  "stocking_purchase_order_product_id": 1,
-  "sku": "1",
-  "expected_arrival": "2014-12-18T15:06:15.654477Z",
+
+{
+  "stocking_purchase_order_product_id": 3,
+  "sku": "0014500011282",
+  "expected_arrival": "2014-12-22T15:06:15.654477Z",
   "actual_arrival": null,
-  "confirmed_qty": 2,
+  "confirmed_qty": 50,
   "received_qty": null,
   "status": "Ordered",
+  "expiration_class": "B",
+  "receiving_location_id": null
+},
+{
+  "stocking_purchase_order_product_id": 3,
+  "sku": "0041789002816",
+  "expected_arrival": "2014-12-22T15:06:15.654477Z",
+  "actual_arrival": null,
+  "confirmed_qty": 20,
+  "received_qty": null,
+  "status": "Ordered",
+  "expiration_class": "B",
+  "receiving_location_id": null
+},
+{
+  "stocking_purchase_order_product_id": 4,
+  "sku": "0041789002816",
+  "expected_arrival": "2014-12-22T15:06:15.654477Z",
+  "actual_arrival": "2014-12-22T12:06:15.654477Z",
+  "confirmed_qty": 68,
+  "received_qty": 68,
+  "status": "Received",
   "expiration_class": "A",
-  "stocking_location_id": null
-}]
+  "receiving_location_id": "90041789002816"
+},
+{
+  "stocking_purchase_order_product_id": 5,
+  "sku": "0053600000512",
+  "expected_arrival": "2014-12-22T15:06:15.654477Z",
+  "actual_arrival": "2014-12-22T12:06:15.654477Z",
+  "confirmed_qty": 48,
+  "received_qty": 48,
+  "status": "Received",
+  "expiration_class": "B",
+  "receiving_location_id": "90041789002817"
+},
+{
+  "stocking_purchase_order_product_id": 5,
+  "sku": "0041789002816",
+  "expected_arrival": "2014-12-22T15:06:15.654477Z",
+  "actual_arrival": null,
+  "confirmed_qty": 68,
+  "received_qty": null,
+  "status": "Ordered",
+  "expiration_class": "B",
+  "receiving_location_id": null
+},
+{
+  "stocking_purchase_order_product_id": 6,
+  "sku": "0038897531116",
+  "expected_arrival": "2014-12-14T17:48:49.670535Z",
+  "actual_arrival": "2014-12-14T17:48:49.670535Z",
+  "confirmed_qty": 48,
+  "received_qty": 48,
+  "status": "Stocked",
+  "expiration_class": "A",
+  "receiving_location_id": "90041789002816"
+},
+{
+  "stocking_purchase_order_product_id": 6,
+  "sku": "0041789002816",
+  "expected_arrival": "2014-12-14T17:48:49.670535Z",
+  "actual_arrival": "2014-12-14T17:48:49.670535Z",
+  "confirmed_qty": 36,
+  "received_qty": 36,
+  "status": "Stocked",
+  "expiration_class": "A",
+  "receiving_location_id": "90041789002817"
+}
+]
+
+
+

@@ -7,50 +7,179 @@
   "date_arrived": null,
   "products": [
     {
-      "sku": "024000322306",
+      "sku": "0024000322306",
       "requested_qty": 50,
       "confirmed_qty": 50,
       "wholesale_cost": 1.49,
-      "expiration_class": "C"
+      "expiration_class": "C",
+      "expected_arrival": "2014-12-22T15:25:30.670535Z",
+      "actual_arrival": null,
+      "received_qty": null,
+      "status": "Ordered",
+      "receiving_location_id": null
     },
     {
-      "sku": "051000000118",
+      "sku": "0051000000118",
       "requested_qty": 48,
-      "confirmed_qty": 24,
       "wholesale_cost": 1.39,
-      "expiration_class": "C"
+      "expected_arrival": "2014-12-18T15:06:15.654477Z",
+      "actual_arrival": null,
+      "confirmed_qty": 24,
+      "received_qty": null,
+      "status": "Ordered",
+      "expiration_class": "C",
+      "receiving_location_id": null
     },
     {
-      "sku": "81829001228",
+      "sku": "0070470006543",
       "requested_qty": 36,
       "confirmed_qty": 30,
       "wholesale_cost": 2.09,
-      "expiration_class": "A"
+      "expiration_class": "A",
+      "expected_arrival": "2014-12-18T15:06:15.654477Z",
+      "actual_arrival": null,
+      "received_qty": null,
+      "status": "Ordered",
+      "receiving_location_id": null
     },
     {
-      "sku": "89470001033",
+      "sku": "0036632027160",
       "requested_qty": 36,
       "confirmed_qty": 0,
       "wholesale_cost": 2.09,
+      "expiration_class": "A",
+      "expected_arrival": null,
+      "actual_arrival": null,
+      "received_qty": null,
+      "status": "Ordered",
+      "receiving_location_id": null
+    }
+  ]
+},
+{
+  "status": "Requested",
+  "supplier_id": 1,
+  "date_ordered": "2014-12-17T17:48:49.670535Z",
+  "date_confirmed": null,
+  "date_shipped": null,
+  "date_arrived": null,
+  "products": [
+    {
+      "sku": "0076808280739",
+      "requested_qty": 50,
+      "confirmed_qty": null,
+      "wholesale_cost": 0.95,
+      "expiration_class": "B",
+      "expected_arrival": null,
+      "actual_arrival": null,
+      "received_qty": null,
+      "status": "Ordered",
+      "receiving_location_id": null
+    },
+    {
+      "sku": "0014500001894",
+      "requested_qty": 25,
+      "confirmed_qty": null,
+      "wholesale_cost": 1.95,
+      "expiration_class": "A",
+      "expected_arrival": null,
+      "actual_arrival": null,
+      "received_qty": null,
+      "status": "Ordered",
+      "receiving_location_id": null
+    }
+  ]
+},
+{
+  "status": "Shipped",
+  "supplier_id": 1,
+  "date_ordered": "2014-12-16T17:48:49.670535Z",
+  "date_confirmed": "2014-12-17T17:48:49.670535Z",
+  "date_shipped": "2014-12-18T17:48:49.670535Z",
+  "date_arrived": null,
+  "products": [
+    {
+      "sku": "0014500011282",
+      "requested_qty": 50,
+      "confirmed_qty": 50,
+      "wholesale_cost": 1.25,
+      "expiration_class": "B"
+    },
+    {
+      "sku": "0041789002816",
+      "requested_qty": 25,
+      "confirmed_qty": 20,
+      "wholesale_cost": 1.85,
+      "expiration_class": "B"
+    }
+  ]
+},
+{
+  "status": "Delivered",
+  "supplier_id": 1,
+  "date_ordered": "2014-12-16T17:48:49.670535Z",
+  "date_confirmed": "2014-12-17T17:48:49.670535Z",
+  "date_shipped": "2014-12-18T17:48:49.670535Z",
+  "date_arrived": "2014-12-19T12:48:49.670535Z",
+  "products": [
+    {
+      "sku": "0070470006536",
+      "requested_qty": 68,
+      "confirmed_qty": 68,
+      "wholesale_cost": 1.75,
       "expiration_class": "A"
     }
   ]
 },
 {
-  "status": "Confirmed",
+  "status": "Partially Delivered",
   "supplier_id": 1,
-  "date_ordered": "2014-12-17T17:48:49.670535Z",
+  "date_ordered": "2014-12-16T17:48:49.670535Z",
   "date_confirmed": "2014-12-17T17:48:49.670535Z",
-  "date_shipped": "2014-12-17T17:48:49.670535Z",
+  "date_shipped": "2014-12-18T17:48:49.670535Z",
   "date_arrived": null,
   "products": [
     {
-      "sku": "test3",
-      "requested_qty": 4,
-      "confirmed_qty": 4,
-      "wholesale_cost": null,
+      "sku": "0053600000512",
+      "requested_qty": 48,
+      "confirmed_qty": 48,
+      "wholesale_cost": 1.25,
       "expiration_class": "B"
+    },
+    {
+      "sku": "0041196915075",
+      "requested_qty": 25,
+      "confirmed_qty": 15,
+      "wholesale_cost": 1.85,
+      "expiration_class": "B"
+    }
+  ]
+},
+{
+  "status": "Delivered",
+  "supplier_id": 1,
+  "date_ordered": "2014-12-12T17:48:49.670535Z",
+  "date_confirmed": "2014-12-12T19:48:49.670535Z",
+  "date_shipped": "2014-12-13T17:48:49.670535Z",
+  "date_arrived": "2014-12-14T17:48:49.670535Z",
+  "products": [
+    {
+      "sku": "0038897531116",
+      "requested_qty": 48,
+      "confirmed_qty": 48,
+      "wholesale_cost": 1.25,
+      "expiration_class": "B"
+    },
+    {
+      "sku": "0041789002816",
+      "requested_qty": 36,
+      "confirmed_qty": 36,
+      "wholesale_cost": 1.85,
+      "expiration_class": "A"
     }
   ]
 }
 ]
+
+
+
