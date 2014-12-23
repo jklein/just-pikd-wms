@@ -25,7 +25,7 @@ type StockingPurchaseOrderProduct struct {
 	ConfirmedQty            null.Int    `db:"confirmed_qty" json:"confirmed_qty"`
 	ReceivedQty             null.Int    `db:"received_qty" json:"received_qty"`
 	CaseUpc                 null.String `db:"case_upc" json:"case_upc"`
-	ItemsPerCase            null.Int    `db:"items_per_case" json:"items_per_case"`
+	UnitsPerCase            null.Int    `db:"units_per_case" json:"units_per_case"`
 	RequestedCaseQty        null.Int    `db:"requested_case_qty" json:"requested_case_qty"`
 	ConfirmedCaseQty        null.Int    `db:"confirmed_case_qty" json:"confirmed_case_qty"`
 	ReceivedCaseQty         null.Int    `db:"received_case_qty" json:"received_case_qty"`

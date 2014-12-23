@@ -25,7 +25,7 @@ func (dao *StockingPurchaseOrder_DAO) Get_SPO(spo_id int) (models.StockingPurcha
 		`select spo.stocking_purchase_order_id, spo.status, spo.supplier_id,
         spo.date_ordered, spo.date_confirmed, spo.date_shipped, spo.date_arrived,
         spop.stocking_purchase_order_product_id, spop.sku, spop.status, spop.requested_qty,
-        spop.confirmed_qty, spop.received_qty, spop.case_upc, spop.items_per_case,
+        spop.confirmed_qty, spop.received_qty, spop.case_upc, spop.units_per_case,
         spop.requested_case_qty, spop.confirmed_case_qty, spop.received_case_qty, spop.case_length,
         spop.case_width, spop.case_height, spop.case_weight, spop.expected_arrival, spop.actual_arrival,
         spop.wholesale_cost, spop.expiration_class, spop.receiving_location_id
@@ -97,9 +97,9 @@ func (dao *StockingPurchaseOrder_DAO) insert_SPO(spo_model models.StockingPurcha
 func (dao *StockingPurchaseOrder_DAO) insert_SPO_Product(spo_product_model models.StockingPurchaseOrderProduct) (models.StockingPurchaseOrderProduct, error) {
 	rows, err := dao.DB.NamedQuery(
 		`INSERT INTO stocking_purchase_order_products (stocking_purchase_order_id, sku, status, requested_qty, confirmed_qty, received_qty, case_upc,
-			items_per_case, requested_case_qty, confirmed_case_qty, received_case_qty, case_length, case_width, case_height, case_weight,
+			units_per_case, requested_case_qty, confirmed_case_qty, received_case_qty, case_length, case_width, case_height, case_weight,
 			expected_arrival, actual_arrival, wholesale_cost, expiration_class, receiving_location_id)
-        VALUES (:stocking_purchase_order_id, :sku, :status, :requested_qty, :confirmed_qty, :received_qty, :case_upc, :items_per_case,
+        VALUES (:stocking_purchase_order_id, :sku, :status, :requested_qty, :confirmed_qty, :received_qty, :case_upc, :units_per_case,
         	:requested_case_qty, :confirmed_case_qty, :received_case_qty, :case_length, :case_width, :case_height, :case_weight,
         	:expected_arrival, :actual_arrival, :wholesale_cost, :expiration_class, :receiving_location_id)
         RETURNING stocking_purchase_order_product_id`,
