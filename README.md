@@ -25,3 +25,8 @@ I'm also using GoSublime. I had to set GOPATH and install some packages on my ma
         "GOROOT": "/opt/local/go"},
 }
 ```
+
+Test Data Generation:
+-------------
+In the test_data folder, generate_sql.xlsx was used to generate some static records.
+generate_test_data.sql contains statements based off of that to generate additional data, as well as examples of how to dump it to json files
