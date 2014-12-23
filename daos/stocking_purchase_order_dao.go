@@ -24,7 +24,7 @@ func (dao *StockingPurchaseOrder_DAO) Get_SPO(spo_id int) (models.StockingPurcha
 	err := dao.DB.Select(&rows,
 		`select spo.stocking_purchase_order_id, spo.status, spo.supplier_id,
         spo.date_ordered, spo.date_confirmed, spo.date_shipped, spo.date_arrived,
-        spop.stocking_purchase_order_product_id, spop.sku, spop.status, spop.requested_qty,
+        spop.stocking_purchase_order_product_id, spop.sku, spop.status as spopstatus, spop.requested_qty,
         spop.confirmed_qty, spop.received_qty, spop.case_upc, spop.units_per_case,
         spop.requested_case_qty, spop.confirmed_case_qty, spop.received_case_qty, spop.case_length,
         spop.case_width, spop.case_height, spop.case_weight, spop.expected_arrival, spop.actual_arrival,
