@@ -49,6 +49,7 @@ insert into receiving_locations (receiving_location_id, receiving_location_type,
 insert into receiving_locations (receiving_location_id, receiving_location_type, temperature_zone) values ('204178900328?', 'Pallet Receiving', 'dry');
 insert into receiving_locations (receiving_location_id, receiving_location_type, temperature_zone) values ('204178900329?', 'Pallet Receiving', 'dry');
 insert into receiving_locations (receiving_location_id, receiving_location_type, temperature_zone) values ('204178900330?', 'Pallet Receiving', 'dry');
+insert into receiving_locations (receiving_location_id, receiving_location_type, temperature_zone) values ('204178900331?', 'DSD Receiving Bay', 'dry');
 
 --via excel
 insert into stocking_locations (stocking_location_id, temperature_zone, stocking_location_type, pick_segment, aisle, bay, shelf, shelf_slot, height, width, depth) values ('204168900281?', 'dry'::temperature_zone, 'Pallet Storage'::stocking_location_type, 1, 1, 1, 1, 1, 48, 48, 48);

@@ -94,3 +94,47 @@ func (c *ReceivingController) GetStatic(rw http.ResponseWriter, r *http.Request)
 	c.JSON(rw, http.StatusOK, static)
 	return nil, http.StatusOK
 }
+
+//note, this is actually part of stocking not receiving
+func (c *ReceivingController) GetStockingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
+	stocking_location_id := mux.Vars(r)["id"]
+
+	var location models.StockingLocation
+	dao := daos.Location_DAO{DB: c.DB}
+	location, err := dao.Get_StockingLocation(stocking_location_id)
+	if err == sql.ErrNoRows {
+		//no need to log 404?
+		return err, http.StatusNotFound
+	} else if err != nil {
+		c.LogError(err.Error())
+		return err, http.StatusInternalServerError
+	}
+
+	location.SetLocationCode()
+
+	c.JSON(rw, http.StatusOK, location)
+	return nil, http.StatusOK
+}
+
+//note, this is actually part of stocking not receiving
+func (c *ReceivingController) GetReceivingLocations(rw http.ResponseWriter, r *http.Request) (error, int) {
+	hp := r.FormValue("has_product")
+	temperature_zone := r.FormValue("temperature_zone")
+	var has_product bool
+
+	if hp == "1" || hp == "true" {
+		has_product = true
+	}
+
+	var locations []models.ReceivingLocation
+	dao := daos.Location_DAO{DB: c.DB}
+	locations, err := dao.Get_ReceivingLocations(temperature_zone, has_product)
+	//no need to throw error if no rows are found as that is a normal case
+	if err != nil && err != sql.ErrNoRows {
+		c.LogError(err.Error())
+		return err, http.StatusInternalServerError
+	}
+
+	c.JSON(rw, http.StatusOK, locations)
+	return nil, http.StatusOK
+}

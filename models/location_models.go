@@ -6,9 +6,10 @@ import (
 )
 
 type ReceivingLocation struct {
-	Id              string `db:"receiving_location_id" json:"receiving_location_id"`
-	Type            string `db:"receiving_location_type" json:"receiving_location_type"`
-	TemperatureZone string `db:"temperature_zone" json:"temperature_zone"`
+	Id                 string   `db:"receiving_location_id" json:"receiving_location_id"`
+	Type               string   `db:"receiving_location_type" json:"receiving_location_type"`
+	TemperatureZone    string   `db:"temperature_zone" json:"temperature_zone"`
+	SupplierShipmentId null.Int `db:"supplier_shipment_id" json:"supplier_shipment_id"`
 }
 
 type StockingLocation struct {

@@ -34,7 +34,8 @@ func main() {
 	router.HandleFunc("/spo/{id:[0-9]+}", rc.Action(rc.GetSPO)).Methods("GET")
 	//router.HandleFunc("/inventory/inbound", rc.Action(rc.CreateInbound)).Methods("POST")
 	router.HandleFunc("/inventory/static/{id:[0-9]+}", rc.Action(rc.GetStatic)).Methods("GET")
-
+	router.HandleFunc("/locations/stocking/{id:[0-9-]+}", rc.Action(rc.GetStockingLocation)).Methods("GET")
+	router.HandleFunc("/locations/receiving", rc.Action(rc.GetReceivingLocations)).Methods("GET").Queries("temperature_zone", "{temperature_zone:[a-z]+}")
 	//DEV ONLY: route to reset all data
 	router.HandleFunc("/reset", rc.Action(rc.Reset)).Methods("POST")
 
