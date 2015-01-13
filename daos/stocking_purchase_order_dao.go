@@ -99,7 +99,7 @@ func (dao *StockingPurchaseOrder_DAO) insert_SPO_Product(spo_product_model model
 		`INSERT INTO stocking_purchase_order_products (stocking_purchase_order_id, sku, status, requested_qty, confirmed_qty, received_qty, case_upc,
 			units_per_case, requested_case_qty, confirmed_case_qty, received_case_qty, case_length, case_width, case_height, case_weight,
 			expected_arrival, actual_arrival, wholesale_cost, expiration_class, receiving_location_id)
-        VALUES (:stocking_purchase_order_id, :sku, :status, :requested_qty, :confirmed_qty, :received_qty, :case_upc, :units_per_case,
+        VALUES (:stocking_purchase_order_id, :sku, :spopstatus, :requested_qty, :confirmed_qty, :received_qty, :case_upc, :units_per_case,
         	:requested_case_qty, :confirmed_case_qty, :received_case_qty, :case_length, :case_width, :case_height, :case_weight,
         	:expected_arrival, :actual_arrival, :wholesale_cost, :expiration_class, :receiving_location_id)
         RETURNING stocking_purchase_order_product_id`,
