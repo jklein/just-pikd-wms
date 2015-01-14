@@ -1,3 +1,5 @@
+// Copyright G2G Market Inc, 2015
+
 package daos
 
 import (
@@ -5,11 +7,11 @@ import (
 	"just-pikd-wms/models"
 )
 
-type Inventory_DAO struct {
+type InventoryDAO struct {
 	*sqlx.DB
 }
 
-func (dao *Inventory_DAO) Get_Static(static_inventory_id int) (models.StaticInventory, error) {
+func (dao *InventoryDAO) GetStatic(static_inventory_id int) (models.StaticInventory, error) {
 	var static models.StaticInventory
 
 	err := dao.DB.Get(&static,
@@ -21,7 +23,7 @@ func (dao *Inventory_DAO) Get_Static(static_inventory_id int) (models.StaticInve
 	return static, err
 }
 
-func (dao *Inventory_DAO) Create_Static(static_model models.StaticInventory) (models.StaticInventory, error) {
+func (dao *InventoryDAO) CreateStatic(static_model models.StaticInventory) (models.StaticInventory, error) {
 	//insert using NamedQuery instead of NamedExec due to the need of getting the last inserted ID back
 	//see https://github.com/lib/pq/issues/24
 	rows, err := dao.DB.NamedQuery(

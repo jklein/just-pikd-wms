@@ -1,15 +1,18 @@
+// Copyright G2G Market Inc, 2015
+
 package daos
 
 import (
+	"database/sql"
 	"github.com/jmoiron/sqlx"
 	"just-pikd-wms/models"
 )
 
-type StockingPurchaseOrder_DAO struct {
+type StockingPurchaseOrderDAO struct {
 	*sqlx.DB
 }
 
-func (dao *StockingPurchaseOrder_DAO) Get_SPO(spo_id int) (models.StockingPurchaseOrder, error) {
+func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchaseOrder, error) {
 	var spo models.StockingPurchaseOrder
 
 	//create an inline type to represent the join of the two tables
@@ -32,8 +35,14 @@ func (dao *StockingPurchaseOrder_DAO) Get_SPO(spo_id int) (models.StockingPurcha
         from stocking_purchase_orders spo
         join stocking_purchase_order_products spop using (stocking_purchase_order_id)
         where spo.stocking_purchase_order_id = $1;`, spo_id)
+
 	if err != nil {
 		return spo, err
+	}
+
+	// the sqlx.Select method does not return ErrNoRows if no rows found so we have to check for it manually
+	if len(rows) == 0 {
+		return spo, sql.ErrNoRows
 	}
 
 	//assemble the spo to return from the results
@@ -49,8 +58,8 @@ func (dao *StockingPurchaseOrder_DAO) Get_SPO(spo_id int) (models.StockingPurcha
 	return spo, nil
 }
 
-func (dao *StockingPurchaseOrder_DAO) Create_SPO(spo_model models.StockingPurchaseOrder) (models.StockingPurchaseOrder, error) {
-	spo_model, err := dao.insert_SPO(spo_model)
+func (dao *StockingPurchaseOrderDAO) CreateSPO(spo_model models.StockingPurchaseOrder) (models.StockingPurchaseOrder, error) {
+	spo_model, err := dao.insertSPO(spo_model)
 	if err != nil {
 		return spo_model, err
 	}
@@ -59,7 +68,7 @@ func (dao *StockingPurchaseOrder_DAO) Create_SPO(spo_model models.StockingPurcha
 	//should be able to create an insert_SPO_Products method that accepts a slice of models
 	for i, product := range spo_model.Products {
 		product.StockingPurchaseOrderId = spo_model.Id
-		result, err := dao.insert_SPO_Product(product)
+		result, err := dao.insertSPOProduct(product)
 		if err != nil {
 			return spo_model, err
 		}
@@ -68,7 +77,7 @@ func (dao *StockingPurchaseOrder_DAO) Create_SPO(spo_model models.StockingPurcha
 	return spo_model, err
 }
 
-func (dao *StockingPurchaseOrder_DAO) insert_SPO(spo_model models.StockingPurchaseOrder) (models.StockingPurchaseOrder, error) {
+func (dao *StockingPurchaseOrderDAO) insertSPO(spo_model models.StockingPurchaseOrder) (models.StockingPurchaseOrder, error) {
 	rows, err := dao.DB.NamedQuery(
 		`INSERT INTO stocking_purchase_orders (status, supplier_id, date_ordered,
         date_confirmed, date_shipped, date_arrived)
@@ -94,7 +103,7 @@ func (dao *StockingPurchaseOrder_DAO) insert_SPO(spo_model models.StockingPurcha
 	return spo_model, err
 }
 
-func (dao *StockingPurchaseOrder_DAO) insert_SPO_Product(spo_product_model models.StockingPurchaseOrderProduct) (models.StockingPurchaseOrderProduct, error) {
+func (dao *StockingPurchaseOrderDAO) insertSPOProduct(spo_product_model models.StockingPurchaseOrderProduct) (models.StockingPurchaseOrderProduct, error) {
 	rows, err := dao.DB.NamedQuery(
 		`INSERT INTO stocking_purchase_order_products (stocking_purchase_order_id, sku, status, requested_qty, confirmed_qty, received_qty, case_upc,
 			units_per_case, requested_case_qty, confirmed_case_qty, received_case_qty, case_length, case_width, case_height, case_weight,

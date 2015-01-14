@@ -1,3 +1,5 @@
+// Copyright G2G Market Inc, 2015
+
 package controllers
 
 import (
@@ -13,10 +15,10 @@ import (
 // as the response code. Non-failure response codes should be set by the Action itself (like redirects)
 type Action func(rw http.ResponseWriter, r *http.Request) (error, int)
 
-// This is our Base Controller
+// BaseController holds basic methods that will be used by all controllers, which embed this struct
 type BaseController struct{}
 
-// Basic error logging function
+// LogError contains basic error logging functionality available to controllers
 // TODO add request context (TXID) type values
 // TODO log to file and/or third party service (asynchronously with a goroutine)
 func (c *BaseController) LogError(err string) {
@@ -26,14 +28,26 @@ func (c *BaseController) LogError(err string) {
 	fmt.Println(error_message)
 }
 
-// The action function helps with error handling in a controller
+// Action helps with error handling in a controller and wraps HandlerFuncs so that we can pass
+// things like sql connections to them via their structs
 func (c *BaseController) Action(a Action) http.HandlerFunc {
 	return http.HandlerFunc(func(rw http.ResponseWriter, r *http.Request) {
 		if err, status_code := a(rw, r); err != nil {
+			//extract error message
+			error_message := err.Error()
+
+			//default to status code 500 on error
 			if status_code == 0 {
 				status_code = http.StatusInternalServerError
 			}
-			http.Error(rw, err.Error(), status_code)
+
+			//overwrite the default error, which is often "sql: no rows in result set" in case of 404
+			if status_code == http.StatusNotFound {
+				error_message = "404 not found"
+			}
+
+			//return error message and code
+			http.Error(rw, error_message, status_code)
 		}
 	})
 }

@@ -1,3 +1,5 @@
+// Copyright G2G Market Inc, 2015
+
 package models
 
 import (
@@ -29,9 +31,9 @@ type StaticInventory struct {
 	ThumbnailURL                   string      `json:"thumbnail_url"`
 }
 
-//thumbanil URL to display in pick app
+// SetThumbnailURL computes the thumbnail URL to display to the user for
+// assistance visually identifying the product.
 func (s *StaticInventory) SetThumbnailURL() {
-	//https://s3.amazonaws.com/g2gcdn/68/00046000820118_200x200.jpg
 	//replace - with "" in sku, add leading 0
 	sku := strings.Replace(s.Sku, "-", "", -1)
 

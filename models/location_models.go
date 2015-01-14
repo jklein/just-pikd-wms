@@ -1,3 +1,5 @@
+// Copyright G2G Market Inc, 2015
+
 package models
 
 import (
@@ -28,6 +30,8 @@ type StockingLocation struct {
 	LocationCode         string      `json:"location_code"`
 }
 
+// SetLocationCode computes the location code value, which is a more human readable
+// display of the location that can help to find it in the store.
 func (loc *StockingLocation) SetLocationCode() {
 	//short display letter for temperature zones
 	var zone string

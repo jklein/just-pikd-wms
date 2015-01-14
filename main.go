@@ -1,3 +1,5 @@
+// Copyright G2G Market Inc, 2015
+
 package main
 
 import (
@@ -8,7 +10,6 @@ import (
 	"github.com/phyber/negroni-gzip/gzip"
 	"gopkg.in/unrolled/render.v1"
 	"just-pikd-wms/controllers"
-
 	"net/http"
 	"os"
 )
@@ -23,6 +24,13 @@ func main() {
 		panic(err)
 	}
 
+	//consider it to be in dev if user is vagrant - this may need to change at some point
+	user := os.Getenv("USER")
+	var is_dev bool
+	if user == "vagrant" {
+		is_dev = true
+	}
+
 	//create gorilla/mux router
 	router := mux.NewRouter()
 
@@ -30,12 +38,13 @@ func main() {
 	rend := render.New(render.Options{IndentJSON: true})
 
 	//initialize controllers
-	rc := &controllers.ReceivingController{Render: rend, DB: db}
+	rc := &controllers.ReceivingController{Render: rend, DB: db, Dev: is_dev}
 	router.HandleFunc("/spo/{id:[0-9]+}", rc.Action(rc.GetSPO)).Methods("GET")
 	//router.HandleFunc("/inventory/inbound", rc.Action(rc.CreateInbound)).Methods("POST")
 	router.HandleFunc("/inventory/static/{id:[0-9]+}", rc.Action(rc.GetStatic)).Methods("GET")
 	router.HandleFunc("/locations/stocking/{id:[0-9-]+}", rc.Action(rc.GetStockingLocation)).Methods("GET")
 	router.HandleFunc("/locations/receiving", rc.Action(rc.GetReceivingLocations)).Methods("GET").Queries("temperature_zone", "{temperature_zone:[a-z]+}")
+	router.HandleFunc("/locations/receiving", rc.Action(rc.PutReceivingLocation)).Methods("PUT")
 	//DEV ONLY: route to reset all data
 	router.HandleFunc("/reset", rc.Action(rc.Reset)).Methods("POST")
 

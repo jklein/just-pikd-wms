@@ -1,3 +1,5 @@
+// Copyright G2G Market Inc, 2015
+
 package models
 
 type Supplier struct {

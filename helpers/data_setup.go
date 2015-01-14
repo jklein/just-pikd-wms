@@ -1,3 +1,6 @@
+// Copyright G2G Market Inc, 2015
+
+// Package helpers contains helpers for testing
 package helpers
 
 import (
@@ -34,9 +37,9 @@ func loadTestStatic(DB *sqlx.DB) {
 		panic(err)
 	}
 
-	dao := daos.Inventory_DAO{DB: DB}
+	dao := daos.InventoryDAO{DB: DB}
 	for _, x := range sc {
-		if _, err := dao.Create_Static(x); err != nil {
+		if _, err := dao.CreateStatic(x); err != nil {
 			panic(err)
 		}
 	}
@@ -52,9 +55,9 @@ func loadTestSPOs(DB *sqlx.DB) {
 		panic(err)
 	}
 
-	dao := daos.StockingPurchaseOrder_DAO{DB: DB}
+	dao := daos.StockingPurchaseOrderDAO{DB: DB}
 	for _, x := range sc {
-		if _, err := dao.Create_SPO(x); err != nil {
+		if _, err := dao.CreateSPO(x); err != nil {
 			panic(err)
 		}
 	}
