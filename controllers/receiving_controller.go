@@ -159,10 +159,10 @@ func (c *ReceivingController) GetReceivingLocations(rw http.ResponseWriter, r *h
 	return nil, http.StatusOK
 }
 
-// PutReceivingLocation updates a receiving location based on a passed in model
+// UpdateReceivingLocation updates a receiving location based on a passed in model
 // and is used to set or unset the supplier_shipment_id field to mark it as full or empty with product
 // update receiving location to mark it as empty or filled with a specific supplier_shipment_id
-func (c *ReceivingController) PutReceivingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
+func (c *ReceivingController) UpdateReceivingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
 	// extract identifier from url - while we don't use this, it helps follow REST principles to have it in the URI
 	// and could later be used for something like varnish cache invalidation
 	receiving_location_id := mux.Vars(r)["id"]
@@ -178,7 +178,7 @@ func (c *ReceivingController) PutReceivingLocation(rw http.ResponseWriter, r *ht
 
 	// pass the decoded model to the dao to update the DB
 	dao := daos.LocationDAO{DB: c.DB}
-	err = dao.PutReceivingLocation(location)
+	err = dao.UpdateReceivingLocation(location)
 
 	if err == sql.ErrNoRows {
 		// return 404 if the row was not found
@@ -221,10 +221,10 @@ func (c *ReceivingController) GetShipments(rw http.ResponseWriter, r *http.Reque
 	return nil, http.StatusOK
 }
 
-// PutShipment updates a supplier shipment based on a passed in model
+// UpdateShipment updates a supplier shipment based on a passed in model
 // and is used to set the arrival date field when scanning in a received shipment
 // based on supplier_shipment_id
-func (c *ReceivingController) PutShipment(rw http.ResponseWriter, r *http.Request) (error, int) {
+func (c *ReceivingController) UpdateShipment(rw http.ResponseWriter, r *http.Request) (error, int) {
 	shipment_id, _ := strconv.Atoi(mux.Vars(r)["id"])
 
 	// parse request body for a JSON receiving shipment model
@@ -243,7 +243,7 @@ func (c *ReceivingController) PutShipment(rw http.ResponseWriter, r *http.Reques
 
 	// pass the decoded model to the dao to update the DB
 	dao := daos.SupplierDAO{DB: c.DB}
-	err = dao.PutShipment(shipment)
+	err = dao.UpdateShipment(shipment)
 
 	if err == sql.ErrNoRows {
 		// return 404 if the row was not found

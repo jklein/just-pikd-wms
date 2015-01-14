@@ -45,11 +45,11 @@ func (dao *SupplierDAO) GetShipments(shipment_id string, stocking_purchase_order
 	return shipments, err
 }
 
-// PutShipment updates a supplier shipment and returns any errors it received
+// UpdateShipment updates a supplier shipment and returns any errors it received
 // The passed in model should be a shipment that already exists
 // Only the mutable field - actual_delivery, is updated
 // Other fields are considered immutable and are not updated.
-func (dao *SupplierDAO) PutShipment(shipment models.SupplierShipment) error {
+func (dao *SupplierDAO) UpdateShipment(shipment models.SupplierShipment) error {
 	result, err := dao.DB.NamedExec(`UPDATE supplier_shipments
         set actual_delivery = :actual_delivery,
         last_updated = now()

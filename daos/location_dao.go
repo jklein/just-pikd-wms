@@ -50,7 +50,7 @@ func (dao *LocationDAO) GetReceivingLocations(temperature_zone string, has_produ
 // The passed in model should be a location that already exists
 // Only the mutable field - supplier_shipment_id, is updated to tag the location as in use or not in use
 // Other fields are considered immutable and are not updated.
-func (dao *LocationDAO) PutReceivingLocation(location models.ReceivingLocation) error {
+func (dao *LocationDAO) UpdateReceivingLocation(location models.ReceivingLocation) error {
 	result, err := dao.DB.NamedExec(`UPDATE receiving_locations
         set supplier_shipment_id = :supplier_shipment_id,
         last_updated = now()
