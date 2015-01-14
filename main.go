@@ -38,15 +38,20 @@ func main() {
 	rend := render.New(render.Options{IndentJSON: true})
 
 	//initialize controllers
-	rc := &controllers.ReceivingController{Render: rend, DB: db, Dev: is_dev}
+	rc := &controllers.ReceivingController{Render: rend, DB: db}
 	router.HandleFunc("/spo/{id:[0-9]+}", rc.Action(rc.GetSPO)).Methods("GET")
 	//router.HandleFunc("/inventory/inbound", rc.Action(rc.CreateInbound)).Methods("POST")
 	router.HandleFunc("/inventory/static/{id:[0-9]+}", rc.Action(rc.GetStatic)).Methods("GET")
 	router.HandleFunc("/locations/stocking/{id:[0-9-]+}", rc.Action(rc.GetStockingLocation)).Methods("GET")
 	router.HandleFunc("/locations/receiving", rc.Action(rc.GetReceivingLocations)).Methods("GET").Queries("temperature_zone", "{temperature_zone:[a-z]+}")
-	router.HandleFunc("/locations/receiving", rc.Action(rc.PutReceivingLocation)).Methods("PUT")
-	//DEV ONLY: route to reset all data
-	router.HandleFunc("/reset", rc.Action(rc.Reset)).Methods("POST")
+	router.HandleFunc("/locations/receiving/{id:[0-9-]+}", rc.Action(rc.PutReceivingLocation)).Methods("PUT")
+	router.HandleFunc("/suppliers/shipments", rc.Action(rc.GetShipments)).Methods("GET")
+	router.HandleFunc("/suppliers/shipments/{id:[0-9]+}", rc.Action(rc.PutShipment)).Methods("PUT")
+
+	//register dangerous route to reset data in dev only
+	if is_dev {
+		router.HandleFunc("/reset", rc.Action(rc.Reset)).Methods("POST")
+	}
 
 	//parse port to listen on from ENV variables
 	port := os.Getenv("PORT")

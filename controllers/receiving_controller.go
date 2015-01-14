@@ -25,15 +25,11 @@ type ReceivingController struct {
 	BaseController
 	*render.Render
 	*sqlx.DB
-	Dev bool
 }
 
 // Reset is a helper function for resetting test data in dev only
 // It calls the helper to reload data from json files
 func (c *ReceivingController) Reset(rw http.ResponseWriter, r *http.Request) (error, int) {
-	if !c.Dev {
-		return errors.New("Reset can only be called in Dev!"), http.StatusMethodNotAllowed
-	}
 	helpers.Reset(c.DB)
 	rw.Write([]byte("Data reset complete"))
 	return nil, http.StatusOK
@@ -167,18 +163,87 @@ func (c *ReceivingController) GetReceivingLocations(rw http.ResponseWriter, r *h
 // and is used to set or unset the supplier_shipment_id field to mark it as full or empty with product
 // update receiving location to mark it as empty or filled with a specific supplier_shipment_id
 func (c *ReceivingController) PutReceivingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
+	// extract identifier from url - while we don't use this, it helps follow REST principles to have it in the URI
+	// and could later be used for something like varnish cache invalidation
+	receiving_location_id := mux.Vars(r)["id"]
 	// parse request body for a JSON receiving location model
 	decoder := json.NewDecoder(r.Body)
 	var location models.ReceivingLocation
 	err := decoder.Decode(&location)
-	if err != nil {
+	if err != nil || receiving_location_id != location.Id {
 		// return a 400 if the request body doesn't decode to a ReceivingLocation
+		// or if the identifier doesn't match the request body's ID
 		return err, http.StatusBadRequest
 	}
 
 	// pass the decoded model to the dao to update the DB
 	dao := daos.LocationDAO{DB: c.DB}
 	err = dao.PutReceivingLocation(location)
+
+	if err == sql.ErrNoRows {
+		// return 404 if the row was not found
+		return err, http.StatusNotFound
+	} else if err != nil {
+		c.LogError(err.Error())
+		return err, http.StatusInternalServerError
+	}
+
+	// no response body needed for succesful update, just return 200
+	return nil, http.StatusOK
+}
+
+// GetShipments retrieves an array of shipments based on passed in filters, or all shipments if no filters
+func (c *ReceivingController) GetShipments(rw http.ResponseWriter, r *http.Request) (error, int) {
+	// parse form values if passed in
+	shipment_id := r.FormValue("shipment_id")
+	spo := r.FormValue("stocking_purchase_order_id")
+	var stocking_purchase_order_id int
+	if len(spo) > 0 {
+		var err error
+		stocking_purchase_order_id, err = strconv.Atoi(spo)
+		if err != nil {
+			return err, http.StatusBadRequest
+		}
+	}
+
+	// retrieve slice of shipments from dao based on params
+	dao := daos.SupplierDAO{DB: c.DB}
+	shipments, err := dao.GetShipments(shipment_id, stocking_purchase_order_id)
+
+	if err == sql.ErrNoRows {
+		return err, http.StatusNotFound
+	} else if err != nil {
+		c.LogError(err.Error())
+		return err, http.StatusInternalServerError
+	}
+
+	c.JSON(rw, http.StatusOK, shipments)
+	return nil, http.StatusOK
+}
+
+// PutShipment updates a supplier shipment based on a passed in model
+// and is used to set the arrival date field when scanning in a received shipment
+// based on supplier_shipment_id
+func (c *ReceivingController) PutShipment(rw http.ResponseWriter, r *http.Request) (error, int) {
+	shipment_id, _ := strconv.Atoi(mux.Vars(r)["id"])
+
+	// parse request body for a JSON receiving shipment model
+	decoder := json.NewDecoder(r.Body)
+	var shipment models.SupplierShipment
+	err := decoder.Decode(&shipment)
+
+	if err != nil {
+		// return a 400 if the request body doesn't decode to a SupplierShipment
+		return err, http.StatusBadRequest
+	}
+
+	if shipment_id != shipment.Id {
+		return errors.New("Identifier does not match request body for supplier_shipment_id"), http.StatusBadRequest
+	}
+
+	// pass the decoded model to the dao to update the DB
+	dao := daos.SupplierDAO{DB: c.DB}
+	err = dao.PutShipment(shipment)
 
 	if err == sql.ErrNoRows {
 		// return 404 if the row was not found
