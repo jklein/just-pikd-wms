@@ -18,6 +18,11 @@ type Action func(rw http.ResponseWriter, r *http.Request) (error, int)
 // BaseController holds basic methods that will be used by all controllers, which embed this struct
 type BaseController struct{}
 
+// Controller is the interface that all controllers must satisfy
+type Controller interface {
+	Action(a Action) http.HandlerFunc
+}
+
 // LogError contains basic error logging functionality available to controllers
 // TODO add request context (TXID) type values
 // TODO log to file and/or third party service (asynchronously with a goroutine)
