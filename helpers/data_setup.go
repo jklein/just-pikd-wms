@@ -22,6 +22,8 @@ func Reset(DB *sqlx.DB) {
 	DB.MustExec("TRUNCATE TABLE static_inventory")
 	DB.MustExec("ALTER SEQUENCE static_inventory_static_inventory_id_seq RESTART")
 
+	//TODO reset additional tables such as receiving_locations
+
 	loadTestSPOs(DB)
 	loadTestStatic(DB)
 	return
