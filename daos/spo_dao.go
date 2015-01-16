@@ -59,26 +59,37 @@ func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchase
 }
 
 func (dao *StockingPurchaseOrderDAO) CreateSPO(spo_model models.StockingPurchaseOrder) (models.StockingPurchaseOrder, error) {
-	spo_model, err := dao.insertSPO(spo_model)
+	// use transaction so that all inserts either succeed or fail
+	tx, err := dao.DB.Beginx()
 	if err != nil {
+		tx.Rollback()
 		return spo_model, err
 	}
 
-	//TODO is there a good way to do this without running multiple queries?
-	//should be able to create an insert_SPO_Products method that accepts a slice of models
+	spo_model, err = dao.insertSPO(tx, spo_model)
+	if err != nil {
+		tx.Rollback()
+		return spo_model, err
+	}
+
+	// TODO is there a good way to do this without running multiple queries?
+	// should be able to create an insert_SPO_Products method that accepts a slice of models
+	// however we would probably not be able to use prepared statements in that case
 	for i, product := range spo_model.Products {
 		product.StockingPurchaseOrderId = spo_model.Id
-		result, err := dao.insertSPOProduct(product)
+		result, err := dao.insertSPOProduct(tx, product)
 		if err != nil {
+			tx.Rollback()
 			return spo_model, err
 		}
 		spo_model.Products[i] = result
 	}
+	err = tx.Commit()
 	return spo_model, err
 }
 
-func (dao *StockingPurchaseOrderDAO) insertSPO(spo_model models.StockingPurchaseOrder) (models.StockingPurchaseOrder, error) {
-	rows, err := dao.DB.NamedQuery(
+func (dao *StockingPurchaseOrderDAO) insertSPO(tx *sqlx.Tx, spo_model models.StockingPurchaseOrder) (models.StockingPurchaseOrder, error) {
+	rows, err := tx.NamedQuery(
 		`INSERT INTO stocking_purchase_orders (status, supplier_id, date_ordered,
         date_confirmed, date_shipped, date_arrived)
         VALUES (:status, :supplier_id, :date_ordered,
@@ -103,8 +114,8 @@ func (dao *StockingPurchaseOrderDAO) insertSPO(spo_model models.StockingPurchase
 	return spo_model, err
 }
 
-func (dao *StockingPurchaseOrderDAO) insertSPOProduct(spo_product_model models.StockingPurchaseOrderProduct) (models.StockingPurchaseOrderProduct, error) {
-	rows, err := dao.DB.NamedQuery(
+func (dao *StockingPurchaseOrderDAO) insertSPOProduct(tx *sqlx.Tx, spo_product_model models.StockingPurchaseOrderProduct) (models.StockingPurchaseOrderProduct, error) {
+	rows, err := tx.NamedQuery(
 		`INSERT INTO stocking_purchase_order_products (stocking_purchase_order_id, sku, status, requested_qty, confirmed_qty, received_qty, case_upc,
 			units_per_case, requested_case_qty, confirmed_case_qty, received_case_qty, case_length, case_width, case_height, case_weight,
 			expected_arrival, actual_arrival, wholesale_cost, expiration_class, receiving_location_id)
