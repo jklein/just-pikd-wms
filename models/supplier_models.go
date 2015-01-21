@@ -7,15 +7,15 @@ import (
 )
 
 type Supplier struct {
-	Id   int    `db:"supplier_id" json:"supplier_id"`
-	Name string `db:"supplier_name" json:"supplier_name"`
+	Id   int    `json:"su_id"`
+	Name string `json:"su_name"`
 }
 
 type SupplierShipment struct {
-	Id                      int        `db:"supplier_shipment_id" json:"supplier_shipment_id"`
-	ShipmentId              string     `db:"shipment_id" json:"shipment_id"`
-	StockingPurchaseOrderId int        `db:"stocking_purchase_order_id" json:"stocking_purchase_order_id"`
-	SupplierId              int        `db:"supplier_id" json:"supplier_id"`
-	PromisedDelivery        *time.Time `db:"promised_delivery" json:"promised_delivery"`
-	ActualDelivery          *time.Time `db:"actual_delivery" json:"actual_delivery"`
+	Id               int        `json:"shi_id"`
+	ShipmentCode     string     `json:"shi_shipment_code"`
+	SpoId            int        `json:"shi_spo_id"`
+	SuId             int        `json:"shi_su_id"`
+	PromisedDelivery *time.Time `json:"shi_promised_delivery"`
+	ActualDelivery   *time.Time `json:"shi_actual_delivery"`
 }

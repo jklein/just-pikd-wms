@@ -4,6 +4,7 @@ package daos
 
 import (
 	"database/sql"
+	"errors"
 	"github.com/jmoiron/sqlx"
 	"just-pikd-wms/models"
 )
@@ -12,11 +13,14 @@ type StockingPurchaseOrderDAO struct {
 	*sqlx.DB
 }
 
+// GetSPO retrieves an SPO object from the database based on its id, assembling models
+// for the SPO and embedding models for each of its products as well
 func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchaseOrder, error) {
 	var spo models.StockingPurchaseOrder
 
-	//create an inline type to represent the join of the two tables
-	//sqlx will automatically map the columns to the right embedded struct as long as names aren't ambiguous
+	// create an inline type to represent the join of the two tables
+	// sqlx will automatically map the columns to the right embedded struct as long as names aren't ambiguous
+	// column names that are ambiguous have to be aliased both in the query and in the struct tags
 	type JoinedSpo struct {
 		models.StockingPurchaseOrder
 		models.StockingPurchaseOrderProduct
@@ -25,22 +29,22 @@ func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchase
 
 	//single query to get the spo and all of its products
 	err := dao.DB.Select(&rows,
-		`select spo.stocking_purchase_order_id, spo.status, spo.supplier_id,
-        spo.date_ordered, spo.date_confirmed, spo.date_shipped, spo.date_arrived,
-        spop.stocking_purchase_order_product_id, spop.sku, spop.status as spopstatus, spop.requested_qty,
-        spop.confirmed_qty, spop.received_qty, spop.case_upc, spop.units_per_case,
-        spop.requested_case_qty, spop.confirmed_case_qty, spop.received_case_qty, spop.case_length,
-        spop.case_width, spop.case_height, spop.case_weight, spop.expected_arrival, spop.actual_arrival,
-        spop.wholesale_cost, spop.expiration_class, spop.receiving_location_id
-        from stocking_purchase_orders spo
-        join stocking_purchase_order_products spop using (stocking_purchase_order_id)
-        where spo.stocking_purchase_order_id = $1;`, spo_id)
+		`select spo_id, spo_status, spo_su_id,
+        spo_date_ordered, spo_date_confirmed, spo_date_shipped, spo_date_arrived,
+        spop_id, spop_spo_id, spop_pr_sku, spop_status, spop_requested_qty,
+        spop_confirmed_qty, spop_received_qty, spop_case_upc, spop_units_per_case,
+        spop_requested_case_qty, spop_confirmed_case_qty, spop_received_case_qty, spop_case_length,
+        spop_case_width, spop_case_height, spop_case_weight, spop_expected_arrival, spop_actual_arrival,
+        spop_wholesale_cost, spop_expiration_class, spop_rcl_id
+        from stocking_purchase_orders
+        join stocking_purchase_order_products on spop_spo_id = spo_id
+        where spo_id = $1;`, spo_id)
 
 	if err != nil {
 		return spo, err
 	}
 
-	// the sqlx.Select method does not return ErrNoRows if no rows found so we have to check for it manually
+	// the sqlx.Select method does not return ErrNoRows if no rows found so we have to check for it manually so the app can return 404
 	if len(rows) == 0 {
 		return spo, sql.ErrNoRows
 	}
@@ -58,6 +62,8 @@ func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchase
 	return spo, nil
 }
 
+// CreateSPO creates a stocking purchase order object based on the pased in model, looping over the embedded
+// products and creating those as well.
 func (dao *StockingPurchaseOrderDAO) CreateSPO(spo_model models.StockingPurchaseOrder) (models.StockingPurchaseOrder, error) {
 	// use transaction so that all inserts either succeed or fail
 	tx, err := dao.DB.Beginx()
@@ -66,17 +72,16 @@ func (dao *StockingPurchaseOrderDAO) CreateSPO(spo_model models.StockingPurchase
 		return spo_model, err
 	}
 
+	// insert the base spo
 	spo_model, err = dao.insertSPO(tx, spo_model)
 	if err != nil {
 		tx.Rollback()
 		return spo_model, err
 	}
 
-	// TODO is there a good way to do this without running multiple queries?
-	// should be able to create an insert_SPO_Products method that accepts a slice of models
-	// however we would probably not be able to use prepared statements in that case
+	// insert each product after setting its StockingPurchaseOrderId field to the Id generated above
 	for i, product := range spo_model.Products {
-		product.StockingPurchaseOrderId = spo_model.Id
+		product.SpoId = spo_model.Id
 		result, err := dao.insertSPOProduct(tx, product)
 		if err != nil {
 			tx.Rollback()
@@ -84,60 +89,106 @@ func (dao *StockingPurchaseOrderDAO) CreateSPO(spo_model models.StockingPurchase
 		}
 		spo_model.Products[i] = result
 	}
+
 	err = tx.Commit()
 	return spo_model, err
 }
 
-func (dao *StockingPurchaseOrderDAO) insertSPO(tx *sqlx.Tx, spo_model models.StockingPurchaseOrder) (models.StockingPurchaseOrder, error) {
-	rows, err := tx.NamedQuery(
-		`INSERT INTO stocking_purchase_orders (status, supplier_id, date_ordered,
-        date_confirmed, date_shipped, date_arrived)
-        VALUES (:status, :supplier_id, :date_ordered,
-        :date_confirmed, :date_shipped, :date_arrived)
-        RETURNING stocking_purchase_order_id`,
+// CreateSPOProduct creates a stocking_purchase_order_product based on the pased in model
+func (dao *StockingPurchaseOrderDAO) CreateSPOProduct(spo_product_model models.StockingPurchaseOrderProduct) (models.StockingPurchaseOrderProduct, error) {
+	spo_product_model, err := dao.insertSPOProduct(dao.DB, spo_product_model)
+	return spo_product_model, err
+}
+
+// insertSPO inserts a StockingPurchaseOrder model into the database and returns the model
+// with its Id field updated based on the auto generated id from the database
+func (dao *StockingPurchaseOrderDAO) insertSPO(e NamedExecer, spo_model models.StockingPurchaseOrder) (models.StockingPurchaseOrder, error) {
+	rows, err := e.NamedQuery(
+		`INSERT INTO stocking_purchase_orders (spo_status, spo_su_id, spo_date_ordered,
+        spo_date_confirmed, spo_date_shipped, spo_date_arrived)
+        VALUES (:spo_status, :spo_su_id, :spo_date_ordered,
+        :spo_date_confirmed, :spo_date_shipped, :spo_date_arrived)
+        RETURNING spo_id`,
 		spo_model)
+
 	if err != nil {
 		return spo_model, err
 	}
-	defer rows.Close()
-	//get the inserted ID from the rowset, which will only ever be one row
-	for rows.Next() {
-		var id int
-		err := rows.Scan(&id)
-		if err != nil {
-			return spo_model, err
-		}
-		spo_model.Id = id
-	}
-	err = rows.Err()
 
+	spo_model.Id, err = extractLastInsertId(rows)
 	return spo_model, err
 }
 
-func (dao *StockingPurchaseOrderDAO) insertSPOProduct(tx *sqlx.Tx, spo_product_model models.StockingPurchaseOrderProduct) (models.StockingPurchaseOrderProduct, error) {
-	rows, err := tx.NamedQuery(
-		`INSERT INTO stocking_purchase_order_products (stocking_purchase_order_id, sku, status, requested_qty, confirmed_qty, received_qty, case_upc,
-			units_per_case, requested_case_qty, confirmed_case_qty, received_case_qty, case_length, case_width, case_height, case_weight,
-			expected_arrival, actual_arrival, wholesale_cost, expiration_class, receiving_location_id)
-        VALUES (:stocking_purchase_order_id, :sku, :spopstatus, :requested_qty, :confirmed_qty, :received_qty, :case_upc, :units_per_case,
-        	:requested_case_qty, :confirmed_case_qty, :received_case_qty, :case_length, :case_width, :case_height, :case_weight,
-        	:expected_arrival, :actual_arrival, :wholesale_cost, :expiration_class, :receiving_location_id)
-        RETURNING stocking_purchase_order_product_id`,
+// insertSPOProduct inserts a StockingPurchaseOrderProduct model into the database and returns the model
+// with its Id field updated based on the auto generated id from the database
+func (dao *StockingPurchaseOrderDAO) insertSPOProduct(e NamedExecer, spo_product_model models.StockingPurchaseOrderProduct) (models.StockingPurchaseOrderProduct, error) {
+	rows, err := e.NamedQuery(
+		`INSERT INTO stocking_purchase_order_products (spop_spo_id, spop_pr_sku, spop_status,
+			spop_requested_qty, spop_confirmed_qty, spop_received_qty, spop_case_upc,
+			spop_units_per_case, spop_requested_case_qty, spop_confirmed_case_qty,
+			spop_received_case_qty, spop_case_length, spop_case_width, spop_case_height, spop_case_weight,
+			spop_expected_arrival, spop_actual_arrival, spop_wholesale_cost, spop_expiration_class, spop_rcl_id)
+        VALUES (:spop_spo_id, :spop_pr_sku, :spop_status,
+        	:spop_requested_qty, :spop_confirmed_qty, :spop_received_qty, :spop_case_upc,
+			:spop_units_per_case, :spop_requested_case_qty, :spop_confirmed_case_qty,
+			:spop_received_case_qty, :spop_case_length, :spop_case_width, :spop_case_height, :spop_case_weight,
+			:spop_expected_arrival, :spop_actual_arrival, :spop_wholesale_cost, :spop_expiration_class, :spop_rcl_id)
+        RETURNING spop_id`,
 		spo_product_model)
+
 	if err != nil {
 		return spo_product_model, err
 	}
-	defer rows.Close()
-	//get the inserted ID from the rowset, which will only ever be one row
-	for rows.Next() {
-		var id int
-		err := rows.Scan(&id)
-		if err != nil {
-			return spo_product_model, err
-		}
-		spo_product_model.Id = id
-	}
-	err = rows.Err()
 
+	spo_product_model.Id, err = extractLastInsertId(rows)
 	return spo_product_model, err
+}
+
+// UpdateSPO updates an SPO, updating only the passed-in fields
+// Both the model and the raw json dictionary are required as inputs
+// The model is used for properly typed and annotated fields to bind to a NamedExec sql statement
+// The dict is used to generate the sql update statement based only on the fields that are actually passed in, so that we don't overwrite
+// other fields with Go's 0 value for that type
+func (dao *StockingPurchaseOrderDAO) UpdateSPO(spo_model models.StockingPurchaseOrder, dict map[string]interface{}) error {
+	tx, err := dao.DB.Beginx()
+	if err != nil {
+		tx.Rollback()
+		return err
+	}
+
+	// update the base SPO object if any of its fields were passed in
+	stmt := buildPatchUpdate("stocking_purchase_orders", "stocking_purchase_order_id", dict)
+	err = execCheckRows(tx, stmt, spo_model)
+	if err != nil {
+		tx.Rollback()
+		return err
+	}
+
+	// update individual product object
+	if count := len(spo_model.Products); count > 0 {
+		products_dict, ok := dict["products"].([]interface{})
+		if !ok || len(products_dict) != count {
+			tx.Rollback()
+			return errors.New("Mismatch decoding input - dict['products'] is not a slice")
+		}
+
+		// update individual products
+		for i, product := range spo_model.Products {
+			//redefine dict here for just that subset
+			product_dict, ok := products_dict[i].(map[string]interface{})
+			if !ok {
+				tx.Rollback()
+				return errors.New("Mismatch decoding embedded document")
+			}
+			stmt := buildPatchUpdate("stocking_purchase_order_products", "stocking_purchase_order_product_id", product_dict)
+			err = execCheckRows(tx, stmt, product)
+			if err != nil {
+				tx.Rollback()
+				return err
+			}
+		}
+	}
+
+	err = tx.Commit()
+	return err
 }

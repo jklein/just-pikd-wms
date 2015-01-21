@@ -5,30 +5,114 @@ curl -4 -i -X POST http://localhost:3000/reset
 
 #test PUTing receiving location - can change the supplier_shipment_id as well
 curl -4 -i -X PATCH http://localhost:3000/locations/receiving/204-178900284-5 -d '{
-    "receiving_location_id": "204-178900284-5",
-    "supplier_shipment_id": 14
+    "rcl_id": "204-178900284-5",
+    "rcl_shi_shipment_code": 14
   }'
 
 #should return a big list of shipments
 curl -4 -i http://localhost:3000/suppliers/shipments
 
 #should return a single id
-curl -4 -i http://localhost:3000/suppliers/shipments?shipment_id=397787316
+curl -4 -i http://localhost:3000/suppliers/shipments?shipment_code=397787316
 
 #should return a single id
-curl -4 -i http://localhost:3000/suppliers/shipments?shipment_id=397787316&stocking_purchase_order_id=2
+curl -4 -i http://localhost:3000/suppliers/shipments?shipment_code=397787316&spo_id=2
 
 #should return 404
-curl -4 -i http://localhost:3000/suppliers/shipments?shipment_id=397787316&stocking_purchase_order_id=1
+curl -4 -i http://localhost:3000/suppliers/shipments?shipment_code=397787316&spo_id=1
 
 #should return 200
 curl -4 -i -X PATCH http://localhost:3000/suppliers/shipments/4 -d '{
-    "supplier_shipment_id": 4,
-    "actual_delivery": "2015-01-14T00:00:00Z"
+    "shi_shiment_code": 4,
+    "shi_actual_delivery": "2015-01-14T00:00:00Z"
   }'
 
 #should return 400 bad request
 curl -4 -i -X PATCH http://localhost:3000/suppliers/shipments/5 -d '{
-    "supplier_shipment_id": 4,
-    "actual_delivery": "2015-01-17T00:00:00Z"
-  }'
+    "shi_shiment_code": 4,
+    "shi_actual_delivery": "2015-01-17T00:00:00Z"
+}'
+
+#should 404
+curl -4 -i -X PATCH http://localhost:3000/suppliers/shipments/10000 -d '{
+    "shi_shiment_code": 10000,
+    "shi_actual_delivery": "2015-01-17T00:00:00Z"
+}'
+
+#should succeed
+curl -4 -i -X PATCH http://localhost:3000/spos/1 -d '{
+    "spo_id": 1,
+    "spo_date_arrived": "2015-01-14T00:00:00Z"
+}'
+
+#should 400
+curl -4 -i -X PATCH http://localhost:3000/spos/2 -d '{
+    "spo_id": 1,
+    "spo_date_arrived": "2015-01-14T00:00:00Z"
+}'
+
+#should 404
+curl -4 -i -X PATCH http://localhost:3000/spos/2000 -d '{
+    "spo_id": 2000,
+    "spo_date_arrived": "2015-01-14T00:00:00Z"
+}'
+
+#should succeed
+curl -4 -i -X PATCH http://localhost:3000/spos/1 -d '{
+    "spo_id": 1,
+    "products": [
+      {
+        "spop_id": 109,
+        "spop_confirmed_qty": 2,
+        "spop_received_qty": 2
+      }
+    ]
+}'
+
+#should succeed and update both the SPO and two products
+curl -4 -i -X PATCH http://localhost:3000/spos/1 -d '{
+    "spo_id": 1,
+    "spo_date_arrived": "2015-01-16T00:00:00Z",
+    "products": [
+      {
+        "spop_id": 109,
+        "spop_confirmed_qty": 3,
+        "spop_received_qty": 3
+      },
+      {
+        "spop_id": 111,
+        "spop_confirmed_qty": 5,
+        "spop_received_qty": 5
+      }
+    ]
+}'
+
+#should 404
+curl -4 -i -X PATCH http://localhost:3000/spos/1 -d '{
+    "spo_id": 1,
+    "spo_date_arrived": "2015-01-14T00:00:00Z",
+    "products": [
+      {
+        "spop_id": 123123123,
+        "spop_confirmed_qty": 3,
+        "spop_received_qty": 3
+      },
+      {
+        "spop_id": 111,
+        "spop_confirmed_qty": 2,
+        "spop_received_qty": 2
+      }
+    ]
+}'
+
+#leaving the ID out of the embedded document entirely should also 404
+curl -4 -i -X PATCH http://localhost:3000/spos/1 -d '{
+    "spo_id": 1,
+    "spo_date_arrived": "2015-01-14T00:00:00Z",
+    "products": [
+      {
+        "spop_confirmed_qty": 3,
+        "spop_received_qty": 3
+      }
+    ]
+}'

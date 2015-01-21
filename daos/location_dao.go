@@ -14,14 +14,14 @@ type LocationDAO struct {
 	*sqlx.DB
 }
 
-func (dao *LocationDAO) GetStockingLocation(stocking_location_id string) (models.StockingLocation, error) {
+func (dao *LocationDAO) GetStockingLocation(stl_id string) (models.StockingLocation, error) {
 	var location models.StockingLocation
 
 	err := dao.DB.Get(&location,
-		`SELECT stocking_location_id, temperature_zone, stocking_location_type, pick_segment,
-        aisle, bay, shelf, shelf_slot, height, width, depth, assigned_sku
+		`SELECT stl_id, stl_temperature_zone, stl_type, stl_pick_segment,
+        stl_aisle, stl_bay, stl_shelf, stl_shelf_slot, stl_height, stl_width, stl_depth, stl_assigned_sku
         FROM stocking_locations
-        WHERE stocking_location_id = $1;`, stocking_location_id)
+        WHERE stl_id = $1;`, stl_id)
 	return location, err
 }
 
@@ -34,13 +34,13 @@ func (dao *LocationDAO) GetReceivingLocations(temperature_zone string, has_produ
 	//if has_product is true, add a where clause suffix looking for non-null shipment ids
 	var where_suffix string
 	if has_product {
-		where_suffix = " AND supplier_shipment_id IS NOT NULL"
+		where_suffix = " AND rcl_shi_shipment_code IS NOT NULL"
 	}
 
-	sql := `SELECT receiving_location_id, receiving_location_type,
-        temperature_zone, supplier_shipment_id
+	sql := `SELECT rcl_id, rcl_type,
+        rcl_temperature_zone, rcl_shi_shipment_code
         FROM receiving_locations
-        WHERE temperature_zone = $1` + where_suffix
+        WHERE rcl_temperature_zone = $1` + where_suffix
 
 	err := dao.DB.Select(&locations, sql, temperature_zone)
 	return locations, err
@@ -52,9 +52,9 @@ func (dao *LocationDAO) GetReceivingLocations(temperature_zone string, has_produ
 // Other fields are considered immutable and are not updated.
 func (dao *LocationDAO) UpdateReceivingLocation(location models.ReceivingLocation) error {
 	result, err := dao.DB.NamedExec(`UPDATE receiving_locations
-        set supplier_shipment_id = :supplier_shipment_id,
+        set rcl_shi_shipment_code = :rcl_shi_shipment_code,
         last_updated = now()
-        WHERE receiving_location_id = :receiving_location_id`, location)
+        WHERE rcl_id = :rcl_id`, location)
 
 	if err == nil {
 		// if the update doesn't match any rows, return this so the client knows it was unsuccessful

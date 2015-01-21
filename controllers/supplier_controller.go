@@ -25,12 +25,12 @@ type SupplierController struct {
 // GetShipments retrieves an array of shipments based on passed in filters, or all shipments if no filters
 func (c *SupplierController) GetShipments(rw http.ResponseWriter, r *http.Request) (error, int) {
 	// parse form values if passed in
-	shipment_id := r.FormValue("shipment_id")
-	spo := r.FormValue("stocking_purchase_order_id")
-	var stocking_purchase_order_id int
+	shipment_code := r.FormValue("shipment_code")
+	spo := r.FormValue("spo_id")
+	var spo_id int
 	if len(spo) > 0 {
 		var err error
-		stocking_purchase_order_id, err = strconv.Atoi(spo)
+		spo_id, err = strconv.Atoi(spo)
 		if err != nil {
 			return err, http.StatusBadRequest
 		}
@@ -38,7 +38,7 @@ func (c *SupplierController) GetShipments(rw http.ResponseWriter, r *http.Reques
 
 	// retrieve slice of shipments from dao based on params
 	dao := daos.SupplierDAO{DB: c.DB}
-	shipments, err := dao.GetShipments(shipment_id, stocking_purchase_order_id)
+	shipments, err := dao.GetShipments(shipment_code, spo_id)
 
 	if err == sql.ErrNoRows {
 		return err, http.StatusNotFound

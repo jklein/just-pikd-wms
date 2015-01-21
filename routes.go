@@ -10,6 +10,7 @@ import (
 	"just-pikd-wms/controllers"
 )
 
+// MakeRouter creates a gorilla/mux router and sets all routes to hit our controllers
 func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	//create gorilla/mux router
 	router := mux.NewRouter()
@@ -22,9 +23,12 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	//initialize controllers and then their routes
 	sc := &controllers.StockingPurchaseOrderController{Render: rend, DB: db}
 	router.HandleFunc("/spos/{id:[0-9]+}", sc.Action(sc.GetSPO)).Methods("GET")
-	//router.HandleFunc("/spos", sc.Action(sc.CreateSPO)).Methods("POST") NYI - purchasing
-	//router.HandleFunc("/spos/{id:[0-9]+}", sc.Action(sc.UpdateSPO)).Methods("PUT") NYI - purchasing, stocking. this updates spo and its products.
-	//TODO do we need /spos/{id}/products and /spos/{id}/products/{id} endpoints?
+	router.HandleFunc("/spos", sc.Action(sc.CreateSPO)).Methods("POST")
+	router.HandleFunc("/spos/{id:[0-9]+}", sc.Action(sc.UpdateSPO)).Methods("PATCH")
+	router.HandleFunc("/spos/{id:[0-9]+}/products", sc.Action(sc.CreateSPOProduct)).Methods("POST")
+	//router.HandleFunc("/spos/{id:[0-9]+}/products/{product_id:[0-9]+}", sc.Action(sc.GetSPOProduct)).Methods("GET") NYI
+	//router.HandleFunc("/spos", sc.Action(sc.GetSPOs)).Methods("GET") NYI - need something to search spos by other fields besides id
+	//additional endpoints might be needed to search
 
 	ic := &controllers.InventoryController{Render: rend, DB: db}
 	router.HandleFunc("/inventory/static/{id:[0-9]+}", ic.Action(ic.GetStatic)).Methods("GET")

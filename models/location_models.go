@@ -5,29 +5,32 @@ package models
 import (
 	"fmt"
 	"gopkg.in/guregu/null.v2"
+	"time"
 )
 
 type ReceivingLocation struct {
-	Id                 string   `db:"receiving_location_id" json:"receiving_location_id"`
-	Type               string   `db:"receiving_location_type" json:"receiving_location_type"`
-	TemperatureZone    string   `db:"temperature_zone" json:"temperature_zone"`
-	SupplierShipmentId null.Int `db:"supplier_shipment_id" json:"supplier_shipment_id"`
+	Id              string   `json:"rcl_id"`
+	Type            string   `json:"rcl_type"`
+	TemperatureZone string   `json:"rcl_temperature_zone"`
+	ShiShipmentCode null.Int `json:"rcl_shi_shipment_code"`
 }
 
 type StockingLocation struct {
-	Id                   string      `db:"stocking_location_id" json:"stocking_location_id"`
-	TemperatureZone      string      `db:"temperature_zone" json:"temperature_zone"`
-	StockingLocationType string      `db:"stocking_location_type" json:"stocking_location_type"`
-	PickSegment          int         `db:"pick_segment" json:"pick_segment"`
-	Aisle                int         `db:"aisle" json:"aisle"`
-	Bay                  int         `db:"bay" json:"bay"`
-	Shelf                int         `db:"shelf" json:"shelf"`
-	ShelfSlot            int         `db:"shelf_slot" json:"shelf_slot"`
-	Height               null.Float  `db:"height" json:"height"`
-	Width                null.Float  `db:"width" json:"width"`
-	Depth                null.Float  `db:"depth" json:"depth"`
-	AssignedSku          null.String `db:"assigned_sku" json:"assigned_sku"`
-	LocationCode         string      `json:"location_code"`
+	Id              string      `json:"stl_id"`
+	TemperatureZone string      `json:"stl_temperature_zone"`
+	Type            string      `json:"stl_type"`
+	PickSegment     int         `json:"stl_pick_segment"`
+	Aisle           int         `json:"stl_aisle"`
+	Bay             int         `json:"stl_bay"`
+	Shelf           int         `json:"stl_shelf"`
+	ShelfSlot       int         `json:"stl_shelf_slot"`
+	Height          null.Float  `json:"stl_height"`
+	Width           null.Float  `json:"stl_width"`
+	Depth           null.Float  `json:"stl_depth"`
+	AssignedSku     null.String `json:"stl_assigned_sku"`
+	NeedsQc         null.Bool   `json:"stl_needs_qc"`
+	LastQcDate      *time.Time  `json:"stl_last_qc_date"`
+	LocationCode    string      `json:"location_code"`
 }
 
 // SetLocationCode computes the location code value, which is a more human readable

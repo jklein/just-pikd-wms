@@ -31,33 +31,6 @@ func (c *InventoryController) Reset(rw http.ResponseWriter, r *http.Request) (er
 	return nil, http.StatusOK
 }
 
-/*
-//Create inbound inventory record
-//TODO parse JSON body to make this actually work
-func (c *ReceivingController) CreateInbound(rw http.ResponseWriter, r *http.Request) (error, int) {
-    now := time.Now()
-    inbound := models.InboundInventory{1,
-        null.NewInt(1, true),
-        "1",
-        &now,
-        &now,
-        2,
-        null.NewInt(0, false),
-        "Ordered",
-        null.NewString("", false),
-        null.NewString("", false)}
-    dao := daos.InventoryDAO{DB: c.DB}
-    inbound, err := dao.Create_Inbound(inbound)
-    if err != nil {
-        c.LogError(err.Error())
-        return err, http.StatusInternalServerError
-    }
-
-    c.JSON(rw, http.StatusOK, inbound)
-    return nil, http.StatusOK
-}
-*/
-
 // GetStatic retrieves a static inventory record by its id
 func (c *InventoryController) GetStatic(rw http.ResponseWriter, r *http.Request) (error, int) {
 	// parse args
