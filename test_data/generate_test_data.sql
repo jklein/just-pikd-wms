@@ -295,11 +295,11 @@ left join supplier_shipments on shi_spo_id = spo_id
 where shi_shipment_code is null and spo_status IN ('Delivered', 'Shipped', 'Partially Delivered', 'Confirmed') limit 1;
 
 --then, for good measure
-insert into supplier_shipments (shipment_id, stocking_purchase_order_id, supplier_id)
-SELECT trunc(random() * 1000000000 + 1)::varchar, stocking_purchase_order_id, 1
+insert into supplier_shipments (shi_shipment_code, shi_spo_id, shi_su_id)
+SELECT trunc(random() * 1000000000 + 1)::varchar, spo_id, 1
 FROM stocking_purchase_orders
-join supplier_shipments using (stocking_purchase_order_id)
-where status IN ('Delivered', 'Shipped', 'Partially Delivered', 'Confirmed') limit 1;
+join supplier_shipments on shi_spo_id = spo_id
+where spo_status IN ('Delivered', 'Shipped', 'Partially Delivered', 'Confirmed') limit 1;
 
 -------------------------------------------------------
 
@@ -324,11 +324,11 @@ AND NOT EXISTS (select 1 from static_inventory where stocking_purchase_order_pro
 --note however, date values cause issues. i had to regex replace (.*date.*\d+)" with \1Z" in sublime to get it to parse
 --changing the output format is also possible with an explicit column list using to_char on the date
 
-\o /opt/go/src/just-pikd-wms/test_data/receiving_locations.json
+\o /opt/go/src/just-pikd-wms/test_data/supplier_shipments.json
 \qecho [
 select row_to_json(t)
 from (
-  select * from receiving_locations
+  select * from supplier_shipments
 ) t;
 \qecho ]
 

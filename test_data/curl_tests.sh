@@ -13,29 +13,29 @@ curl -4 -i -X PATCH http://localhost:3000/locations/receiving/204-178900284-5 -d
 curl -4 -i http://localhost:3000/suppliers/shipments
 
 #should return a single id
-curl -4 -i http://localhost:3000/suppliers/shipments?shipment_code=397787316
+curl -4 -i 'http://localhost:3000/suppliers/shipments?shipment_code=777152188'
 
 #should return a single id
-curl -4 -i http://localhost:3000/suppliers/shipments?shipment_code=397787316&spo_id=2
+curl -4 -i 'http://localhost:3000/suppliers/shipments?shipment_code=777152188&spo_id=3'
 
 #should return 404
-curl -4 -i http://localhost:3000/suppliers/shipments?shipment_code=397787316&spo_id=1
+curl -4 -i 'http://localhost:3000/suppliers/shipments?shipment_code=777152188&spo_id=1'
 
 #should return 200
 curl -4 -i -X PATCH http://localhost:3000/suppliers/shipments/4 -d '{
-    "shi_shiment_code": 4,
+    "shi_id": 4,
     "shi_actual_delivery": "2015-01-14T00:00:00Z"
   }'
 
 #should return 400 bad request
 curl -4 -i -X PATCH http://localhost:3000/suppliers/shipments/5 -d '{
-    "shi_shiment_code": 4,
+    "shi_id": 4,
     "shi_actual_delivery": "2015-01-17T00:00:00Z"
 }'
 
 #should 404
 curl -4 -i -X PATCH http://localhost:3000/suppliers/shipments/10000 -d '{
-    "shi_shiment_code": 10000,
+    "shi_id": 10000,
     "shi_actual_delivery": "2015-01-17T00:00:00Z"
 }'
 

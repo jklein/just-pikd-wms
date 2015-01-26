@@ -41,16 +41,7 @@ func (dao *InventoryDAO) CreateStatic(static_model models.StaticInventory) (mode
 	if err != nil {
 		return static_model, err
 	}
-	defer rows.Close()
-	//get the inserted ID from the rowset, which will only ever be one row
-	for rows.Next() {
-		var id int
-		err := rows.Scan(&id)
-		if err != nil {
-			return static_model, err
-		}
-		static_model.Id = id
-	}
-	err = rows.Err()
+	id, err := extractLastInsertId(rows)
+	static_model.Id = id
 	return static_model, err
 }

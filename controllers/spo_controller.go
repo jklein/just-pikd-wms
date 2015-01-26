@@ -16,22 +16,32 @@ import (
 	"strconv"
 )
 
-// StockingPurchaseOrderController contains routes related to stocking purchase orders
-type StockingPurchaseOrderController struct {
-	BaseController
+// stockingPurchaseOrderController contains routes related to stocking purchase orders
+type stockingPurchaseOrderController struct {
+	baseController
 	*render.Render
 	*sqlx.DB
+	dao daos.StockingPurchaseOrderDAO
+}
+
+// NewStockingPurchaseOrderController acts as an initializer for stockingPurchaseOrderController, setting
+// its dao and returning the instance
+func NewStockingPurchaseOrderController(rend *render.Render, db *sqlx.DB) *stockingPurchaseOrderController {
+	c := new(stockingPurchaseOrderController)
+	c.Render = rend
+	c.DB = db
+	c.dao = daos.StockingPurchaseOrderDAO{DB: db}
+	return c
 }
 
 // GetSPO gets a StockingPurchaseOrder from the database based on its id
 // TODO: we'll have other ways of searching so possibly rename to GetSPOByID?
-func (c *StockingPurchaseOrderController) GetSPO(rw http.ResponseWriter, r *http.Request) (error, int) {
+func (c *stockingPurchaseOrderController) GetSPO(rw http.ResponseWriter, r *http.Request) (error, int) {
 	// parse args - no need to check error because gorilla/mux would 404 on invalid params anyway
 	spo_id, _ := strconv.Atoi(mux.Vars(r)["id"])
 
 	// initialize dao and use it to retrieve spo model
-	dao := daos.StockingPurchaseOrderDAO{DB: c.DB}
-	spo, err := dao.GetSPO(spo_id)
+	spo, err := c.dao.GetSPO(spo_id)
 
 	// handle errors - no need to log a 404 for rows not found, but do log other db errors
 	if err == sql.ErrNoRows {
@@ -48,7 +58,7 @@ func (c *StockingPurchaseOrderController) GetSPO(rw http.ResponseWriter, r *http
 
 // CreateSPO creates a new stocking purchase order along with its products
 // based on a passed in JSON object
-func (c *StockingPurchaseOrderController) CreateSPO(rw http.ResponseWriter, r *http.Request) (error, int) {
+func (c *stockingPurchaseOrderController) CreateSPO(rw http.ResponseWriter, r *http.Request) (error, int) {
 	// parse request body for a JSON receiving shipment model
 	decoder := json.NewDecoder(r.Body)
 	var spo models.StockingPurchaseOrder
@@ -59,9 +69,7 @@ func (c *StockingPurchaseOrderController) CreateSPO(rw http.ResponseWriter, r *h
 		return err, http.StatusBadRequest
 	}
 
-	// pass the decoded model to the dao to update the DB
-	dao := daos.StockingPurchaseOrderDAO{DB: c.DB}
-	spo, err = dao.CreateSPO(spo)
+	spo, err = c.dao.CreateSPO(spo)
 
 	if err != nil {
 		c.LogError(err.Error())
@@ -75,13 +83,12 @@ func (c *StockingPurchaseOrderController) CreateSPO(rw http.ResponseWriter, r *h
 
 // CreateSPOProduct adds a new product to an existing SPO
 // it returns a 404 if the SPO does not already exist
-func (c *StockingPurchaseOrderController) CreateSPOProduct(rw http.ResponseWriter, r *http.Request) (error, int) {
+func (c *stockingPurchaseOrderController) CreateSPOProduct(rw http.ResponseWriter, r *http.Request) (error, int) {
 	// parse request body for a JSON receiving shipment model
 	spo_id, _ := strconv.Atoi(mux.Vars(r)["id"])
 
 	// first make sure the spo itself exists so that we can return a 404 otherwise
-	dao := daos.StockingPurchaseOrderDAO{DB: c.DB}
-	_, err := dao.GetSPO(spo_id)
+	_, err := c.dao.GetSPO(spo_id)
 
 	if err == sql.ErrNoRows {
 		return err, http.StatusNotFound
@@ -100,7 +107,7 @@ func (c *StockingPurchaseOrderController) CreateSPOProduct(rw http.ResponseWrite
 	}
 
 	// pass the decoded model to the dao to update the DB
-	spo_product, err = dao.CreateSPOProduct(spo_product)
+	spo_product, err = c.dao.CreateSPOProduct(spo_product)
 
 	if err != nil {
 		c.LogError(err.Error())
@@ -113,7 +120,7 @@ func (c *StockingPurchaseOrderController) CreateSPOProduct(rw http.ResponseWrite
 }
 
 // UpdateSPO updates a stocking purchase order and/or its products based on passed in objects
-func (c *StockingPurchaseOrderController) UpdateSPO(rw http.ResponseWriter, r *http.Request) (error, int) {
+func (c *stockingPurchaseOrderController) UpdateSPO(rw http.ResponseWriter, r *http.Request) (error, int) {
 	spo_id, _ := strconv.Atoi(mux.Vars(r)["id"])
 	// read request body to end and store so it can be unmarshaled into separate types later
 	body, err := ioutil.ReadAll(r.Body)
@@ -141,9 +148,7 @@ func (c *StockingPurchaseOrderController) UpdateSPO(rw http.ResponseWriter, r *h
 		return err, http.StatusBadRequest
 	}
 
-	// pass the decoded model to the dao to update the DB
-	dao := daos.StockingPurchaseOrderDAO{DB: c.DB}
-	err = dao.UpdateSPO(spo, dict)
+	err = c.dao.UpdateSPO(spo, dict)
 
 	if err == sql.ErrNoRows {
 		return err, http.StatusNotFound

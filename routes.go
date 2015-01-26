@@ -21,18 +21,17 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	//TODO: think about instantiating daos here and passing them to controllers so they can be mocked (DI)
 
 	//initialize controllers and then their routes
-	sc := &controllers.StockingPurchaseOrderController{Render: rend, DB: db}
+	sc := controllers.NewStockingPurchaseOrderController(rend, db)
 	router.HandleFunc("/spos/{id:[0-9]+}", sc.Action(sc.GetSPO)).Methods("GET")
 	router.HandleFunc("/spos", sc.Action(sc.CreateSPO)).Methods("POST")
 	router.HandleFunc("/spos/{id:[0-9]+}", sc.Action(sc.UpdateSPO)).Methods("PATCH")
 	router.HandleFunc("/spos/{id:[0-9]+}/products", sc.Action(sc.CreateSPOProduct)).Methods("POST")
 	//router.HandleFunc("/spos/{id:[0-9]+}/products/{product_id:[0-9]+}", sc.Action(sc.GetSPOProduct)).Methods("GET") NYI
-	//router.HandleFunc("/spos", sc.Action(sc.GetSPOs)).Methods("GET") NYI - need something to search spos by other fields besides id
-	//additional endpoints might be needed to search
+	//router.HandleFunc("/spos", sc.Action(sc.GetSPOs)).Methods("GET") NYI - need something to search spos by other fields besides id, including supplier shipments
 
-	ic := &controllers.InventoryController{Render: rend, DB: db}
+	ic := controllers.NewInventoryController(rend, db)
 	router.HandleFunc("/inventory/static/{id:[0-9]+}", ic.Action(ic.GetStatic)).Methods("GET")
-	//router.HandleFunc("/inventory/static", ic.Action(ic.CreateStatic)).Methods("POST") - stocking
+	router.HandleFunc("/inventory/static", ic.Action(ic.CreateStatic)).Methods("POST")
 	//router.HandleFunc("/inventory/static", ic.Action(ic.UpdateStatic)).Methods("PUT") NYI - ?
 	//router.HandleFunc("/inventory/outbound", c.Action(c.GetInbound)).Methods("GET") NYI - ?
 	//router.HandleFunc("/inventory/outbound", c.Action(c.CreateInbound)).Methods("POST") NYI - ?
@@ -43,12 +42,12 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 		router.HandleFunc("/reset", ic.Action(ic.Reset)).Methods("POST")
 	}
 
-	lc := &controllers.LocationController{Render: rend, DB: db}
+	lc := controllers.NewLocationController(rend, db)
 	router.HandleFunc("/locations/stocking/{id:[0-9-]+}", lc.Action(lc.GetStockingLocation)).Methods("GET")
-	//router.HandleFunc("/locations/stocking", lc.Action(lc.CreateStockingLocation)).Methods("POST") NYI - store setup
+	router.HandleFunc("/locations/stocking", lc.Action(lc.CreateStockingLocation)).Methods("POST")
 	//router.HandleFunc("/locations/stocking/{id:[0-9-]+}", lc.Action(lc.UpdateStockingLocation)).Methods("PUT") NYI - store setup
 	router.HandleFunc("/locations/receiving", lc.Action(lc.GetReceivingLocations)).Methods("GET").Queries("temperature_zone", "{temperature_zone:[a-z]+}")
-	//router.HandleFunc("/locations/receiving", lc.Action(lc.CreateReceivingLocations)).Methods("POST") NYI - store setup
+	router.HandleFunc("/locations/receiving", lc.Action(lc.CreateReceivingLocation)).Methods("POST")
 	router.HandleFunc("/locations/receiving/{id:[0-9-]+}", lc.Action(lc.UpdateReceivingLocation)).Methods("PATCH")
 	//router.HandleFunc("/locations/containers/{id:[0-9-]+}", lc.Action(lc.GetPickContainer)).Methods("GET") NYI - also need put
 	//router.HandleFunc("/locations/containers/{id:[0-9-]+}", lc.Action(lc.UpdatePickContainer)).Methods("PATCH") NYI - set location in picking
@@ -58,10 +57,10 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	//pickup locations: GET, POST, PATCH?
 	//kiosks: GET, POST?
 
-	uc := &controllers.SupplierController{Render: rend, DB: db}
+	uc := controllers.NewSupplierController(rend, db)
 	router.HandleFunc("/suppliers/shipments", uc.Action(uc.GetShipments)).Methods("GET")
 	//router.HandleFunc("/suppliers/shipments/{id:[0-9]+}", uc.Action(uc.GetShipment)).Methods("GET") NYI - ?
-	//router.HandleFunc("/suppliers/shipments", uc.Action(uc.CreateShipment)).Methods("POST") NYI - purchasing
+	router.HandleFunc("/suppliers/shipments", uc.Action(uc.CreateShipment)).Methods("POST")
 	router.HandleFunc("/suppliers/shipments/{id:[0-9]+}", uc.Action(uc.UpdateShipment)).Methods("PATCH")
 
 	//orders controller

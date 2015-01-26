@@ -64,3 +64,27 @@ func (dao *LocationDAO) UpdateReceivingLocation(location models.ReceivingLocatio
 	}
 	return err
 }
+
+// CreateStockingLocation creates a new stocking location record based on the passed in model
+// Although there is no auto-generated id column, the passed in model is returned unchanged to keep the interface the same
+// as other Create* functions
+func (dao *LocationDAO) CreateStockingLocation(stl models.StockingLocation) (models.StockingLocation, error) {
+	_, err := dao.DB.NamedExec(
+		`INSERT INTO stocking_locations (stl_id, stl_temperature_zone, stl_type, stl_pick_segment,
+        stl_aisle, stl_bay, stl_shelf, stl_shelf_slot, stl_height, stl_width, stl_depth, stl_assigned_sku)
+        VALUES (:stl_id, :stl_temperature_zone, :stl_type, :stl_pick_segment,
+        :stl_aisle, :stl_bay, :stl_shelf, :stl_shelf_slot, :stl_height, :stl_width, :stl_depth, :stl_assigned_sku)
+        RETURNING stl_id`,
+		stl)
+	return stl, err
+}
+
+// CreateReceivingLocation creates a new receiving location record based on the passed in model
+func (dao *LocationDAO) CreateReceivingLocation(rcl models.ReceivingLocation) (models.ReceivingLocation, error) {
+	_, err := dao.DB.NamedExec(
+		`INSERT INTO receiving_locations (rcl_id, rcl_type, rcl_temperature_zone, rcl_shi_shipment_code)
+        VALUES (:rcl_id, :rcl_type, :rcl_temperature_zone, :rcl_shi_shipment_code)
+        RETURNING rcl_id`,
+		rcl)
+	return rcl, err
+}

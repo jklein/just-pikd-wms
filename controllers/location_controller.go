@@ -13,20 +13,30 @@ import (
 	"net/http"
 )
 
-// LocationController contains methods related to WMS locations
-type LocationController struct {
-	BaseController
+// locationController contains methods related to WMS locations
+type locationController struct {
+	baseController
 	*render.Render
 	*sqlx.DB
+	dao daos.LocationDAO
+}
+
+// NewLocationController acts as an initializer for locationController, setting
+// its dao and returning the instance
+func NewLocationController(rend *render.Render, db *sqlx.DB) *locationController {
+	c := new(locationController)
+	c.Render = rend
+	c.DB = db
+	c.dao = daos.LocationDAO{DB: db}
+	return c
 }
 
 // GetStockingLocation retrieves a stocking location based on its id
 // note, this is actually part of stocking not receiving
-func (c *LocationController) GetStockingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
+func (c *locationController) GetStockingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
 	stocking_location_id := mux.Vars(r)["id"]
 
-	dao := daos.LocationDAO{DB: c.DB}
-	location, err := dao.GetStockingLocation(stocking_location_id)
+	location, err := c.dao.GetStockingLocation(stocking_location_id)
 
 	if err == sql.ErrNoRows {
 		return err, http.StatusNotFound
@@ -45,7 +55,7 @@ func (c *LocationController) GetStockingLocation(rw http.ResponseWriter, r *http
 // GetReceivingLocations retrieves an array of locations for a temperature zone and can
 // filter on whether they have product in them or not if desired.
 // note, this is actually part of stocking not receiving
-func (c *LocationController) GetReceivingLocations(rw http.ResponseWriter, r *http.Request) (error, int) {
+func (c *locationController) GetReceivingLocations(rw http.ResponseWriter, r *http.Request) (error, int) {
 	hp := r.FormValue("has_product")
 	temperature_zone := r.FormValue("temperature_zone")
 	var has_product bool
@@ -56,8 +66,7 @@ func (c *LocationController) GetReceivingLocations(rw http.ResponseWriter, r *ht
 	}
 
 	// retrieve slice of locations from dao based on params
-	dao := daos.LocationDAO{DB: c.DB}
-	locations, err := dao.GetReceivingLocations(temperature_zone, has_product)
+	locations, err := c.dao.GetReceivingLocations(temperature_zone, has_product)
 
 	//no need to throw error if no rows are found as that is a normal case here
 	if err != nil && err != sql.ErrNoRows {
@@ -72,7 +81,7 @@ func (c *LocationController) GetReceivingLocations(rw http.ResponseWriter, r *ht
 // UpdateReceivingLocation updates a receiving location based on a passed in model
 // and is used to set or unset the supplier_shipment_id field to mark it as full or empty with product
 // update receiving location to mark it as empty or filled with a specific supplier_shipment_id
-func (c *LocationController) UpdateReceivingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
+func (c *locationController) UpdateReceivingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
 	// extract identifier from url - while we don't use this, it helps follow REST principles to have it in the URI
 	// and could later be used for something like varnish cache invalidation
 	receiving_location_id := mux.Vars(r)["id"]
@@ -87,8 +96,7 @@ func (c *LocationController) UpdateReceivingLocation(rw http.ResponseWriter, r *
 	}
 
 	// pass the decoded model to the dao to update the DB
-	dao := daos.LocationDAO{DB: c.DB}
-	err = dao.UpdateReceivingLocation(location)
+	err = c.dao.UpdateReceivingLocation(location)
 
 	if err == sql.ErrNoRows {
 		// return 404 if the row was not found
@@ -99,5 +107,53 @@ func (c *LocationController) UpdateReceivingLocation(rw http.ResponseWriter, r *
 	}
 
 	// no response body needed for succesful update, just return 200
+	return nil, http.StatusOK
+}
+
+// CreateReceivingLocation creates a new receiving location based on a passed in JSON object
+func (c *locationController) CreateReceivingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
+	// parse request body for a JSON receiving location model
+	decoder := json.NewDecoder(r.Body)
+	var rcl models.ReceivingLocation
+	err := decoder.Decode(&rcl)
+
+	if err != nil {
+		// return a 400 if the request body doesn't decode to a ReceivingLocation
+		return err, http.StatusBadRequest
+	}
+
+	// pass the decoded model to the dao to update the DB
+	rcl, err = c.dao.CreateReceivingLocation(rcl)
+
+	if err != nil {
+		c.LogError(err.Error())
+		return err, http.StatusInternalServerError
+	}
+
+	// no response needed since there are no auto-generated IDs
+	return nil, http.StatusOK
+}
+
+// CreateStockingLocation creates a new stocking location based on a passed in JSON object
+func (c *locationController) CreateStockingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
+	// parse request body for a JSON stocking location model
+	decoder := json.NewDecoder(r.Body)
+	var stl models.StockingLocation
+	err := decoder.Decode(&stl)
+
+	if err != nil {
+		// return a 400 if the request body doesn't decode to a StockingLocation
+		return err, http.StatusBadRequest
+	}
+
+	// pass the decoded model to the dao to update the DB
+	stl, err = c.dao.CreateStockingLocation(stl)
+
+	if err != nil {
+		c.LogError(err.Error())
+		return err, http.StatusInternalServerError
+	}
+
+	// no response needed since there are no auto-generated IDs
 	return nil, http.StatusOK
 }
