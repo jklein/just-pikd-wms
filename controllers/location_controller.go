@@ -4,7 +4,6 @@ package controllers
 
 import (
 	"database/sql"
-	"encoding/json"
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 	"gopkg.in/unrolled/render.v1"
@@ -38,11 +37,8 @@ func (c *locationController) GetStockingLocation(rw http.ResponseWriter, r *http
 
 	location, err := c.dao.GetStockingLocation(stocking_location_id)
 
-	if err == sql.ErrNoRows {
-		return err, http.StatusNotFound
-	} else if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	// set computed field for Location Code on the location model
@@ -85,10 +81,9 @@ func (c *locationController) UpdateReceivingLocation(rw http.ResponseWriter, r *
 	// extract identifier from url - while we don't use this, it helps follow REST principles to have it in the URI
 	// and could later be used for something like varnish cache invalidation
 	receiving_location_id := mux.Vars(r)["id"]
-	// parse request body for a JSON receiving location model
-	decoder := json.NewDecoder(r.Body)
+
 	var location models.ReceivingLocation
-	err := decoder.Decode(&location)
+	err := jsonDecode(r.Body, &location)
 	if err != nil || receiving_location_id != location.Id {
 		// return a 400 if the request body doesn't decode to a ReceivingLocation
 		// or if the identifier doesn't match the request body's ID
@@ -98,12 +93,8 @@ func (c *locationController) UpdateReceivingLocation(rw http.ResponseWriter, r *
 	// pass the decoded model to the dao to update the DB
 	err = c.dao.UpdateReceivingLocation(location)
 
-	if err == sql.ErrNoRows {
-		// return 404 if the row was not found
-		return err, http.StatusNotFound
-	} else if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	// no response body needed for succesful update, just return 200
@@ -112,10 +103,8 @@ func (c *locationController) UpdateReceivingLocation(rw http.ResponseWriter, r *
 
 // CreateReceivingLocation creates a new receiving location based on a passed in JSON object
 func (c *locationController) CreateReceivingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
-	// parse request body for a JSON receiving location model
-	decoder := json.NewDecoder(r.Body)
 	var rcl models.ReceivingLocation
-	err := decoder.Decode(&rcl)
+	err := jsonDecode(r.Body, &rcl)
 
 	if err != nil {
 		// return a 400 if the request body doesn't decode to a ReceivingLocation
@@ -126,8 +115,7 @@ func (c *locationController) CreateReceivingLocation(rw http.ResponseWriter, r *
 	rcl, err = c.dao.CreateReceivingLocation(rcl)
 
 	if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	// no response needed since there are no auto-generated IDs
@@ -136,10 +124,8 @@ func (c *locationController) CreateReceivingLocation(rw http.ResponseWriter, r *
 
 // CreateStockingLocation creates a new stocking location based on a passed in JSON object
 func (c *locationController) CreateStockingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
-	// parse request body for a JSON stocking location model
-	decoder := json.NewDecoder(r.Body)
 	var stl models.StockingLocation
-	err := decoder.Decode(&stl)
+	err := jsonDecode(r.Body, &stl)
 
 	if err != nil {
 		// return a 400 if the request body doesn't decode to a StockingLocation
@@ -150,8 +136,7 @@ func (c *locationController) CreateStockingLocation(rw http.ResponseWriter, r *h
 	stl, err = c.dao.CreateStockingLocation(stl)
 
 	if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	// no response needed since there are no auto-generated IDs

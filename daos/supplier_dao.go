@@ -16,40 +16,6 @@ type SupplierDAO struct {
 }
 
 // GetReceivingLocations retrieves supplier shipments based on passed in filters, or all shipments
-/*
-func (dao *SupplierDAO) GetShipments(shipment_code string, spo_id int) ([]models.SupplierShipment, error) {
-	var shipments []models.SupplierShipment
-	var err error
-
-	//TODO: there should be a more efficient way to do this, possibly by using a struct for the query args and NamedQuery instead of Select
-	sql_base := `SELECT shi_id, shi_shipment_code, shi_spo_id
-        shi_su_id, shi_promised_delivery, shi_actual_delivery
-        FROM supplier_shipments`
-
-	//assemble dynamic where clause based on parameters. since the actual function call is different
-	//depending on the params (and lib/pq complains if unused parameters are passed) that's in the switch too
-	switch {
-	case len(shipment_code) > 0 && spo_id > 0:
-		sql_string := sql_base + " WHERE shi_shipment_code = $1 AND shi_spo_id = $2"
-		err = dao.DB.Select(&shipments, sql_string, shipment_code, spo_id)
-	case len(shipment_code) > 0:
-		sql_string := sql_base + " WHERE shi_shipment_code = $1"
-		err = dao.DB.Select(&shipments, sql_string, shipment_code)
-	case spo_id > 0:
-		sql_string := sql_base + " WHERE shi_spo_id = $1"
-		err = dao.DB.Select(&shipments, sql_string, spo_id)
-	default:
-		err = dao.DB.Select(&shipments, sql_base)
-	}
-
-	if err == nil && len(shipments) == 0 {
-		return shipments, sql.ErrNoRows
-	}
-	return shipments, err
-}
-*/
-
-// GetReceivingLocations retrieves supplier shipments based on passed in filters, or all shipments
 func (dao *SupplierDAO) GetShipments(shipment_code string, spo_id int) ([]models.SupplierShipment, error) {
 	var shipments []models.SupplierShipment
 

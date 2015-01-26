@@ -3,8 +3,6 @@
 package controllers
 
 import (
-	"database/sql"
-	"encoding/json"
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 	"gopkg.in/unrolled/render.v1"
@@ -49,12 +47,8 @@ func (c *inventoryController) GetStatic(rw http.ResponseWriter, r *http.Request)
 	// retrieve static inventory model from dao by id
 	static, err := c.dao.GetStatic(static_id)
 
-	// handle errors
-	if err == sql.ErrNoRows {
-		return err, http.StatusNotFound
-	} else if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	// set computed field on static inventory model for thumbnail image URL
@@ -67,10 +61,8 @@ func (c *inventoryController) GetStatic(rw http.ResponseWriter, r *http.Request)
 
 // CreateStatic creates a new static inventory record based on a passed in JSON object
 func (c *inventoryController) CreateStatic(rw http.ResponseWriter, r *http.Request) (error, int) {
-	// parse request body for a JSON receiving shipment model
-	decoder := json.NewDecoder(r.Body)
 	var static models.StaticInventory
-	err := decoder.Decode(&static)
+	err := jsonDecode(r.Body, &static)
 
 	if err != nil {
 		// return a 400 if the request body doesn't decode to a StaticInventory
@@ -81,8 +73,7 @@ func (c *inventoryController) CreateStatic(rw http.ResponseWriter, r *http.Reque
 	static, err = c.dao.CreateStatic(static)
 
 	if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	// set computed field on static inventory model for thumbnail image URL

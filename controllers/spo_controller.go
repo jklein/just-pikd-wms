@@ -3,7 +3,6 @@
 package controllers
 
 import (
-	"database/sql"
 	"encoding/json"
 	"errors"
 	"github.com/gorilla/mux"
@@ -43,12 +42,8 @@ func (c *stockingPurchaseOrderController) GetSPO(rw http.ResponseWriter, r *http
 	// initialize dao and use it to retrieve spo model
 	spo, err := c.dao.GetSPO(spo_id)
 
-	// handle errors - no need to log a 404 for rows not found, but do log other db errors
-	if err == sql.ErrNoRows {
-		return err, http.StatusNotFound
-	} else if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	// render the model as JSON as response
@@ -59,10 +54,8 @@ func (c *stockingPurchaseOrderController) GetSPO(rw http.ResponseWriter, r *http
 // CreateSPO creates a new stocking purchase order along with its products
 // based on a passed in JSON object
 func (c *stockingPurchaseOrderController) CreateSPO(rw http.ResponseWriter, r *http.Request) (error, int) {
-	// parse request body for a JSON receiving shipment model
-	decoder := json.NewDecoder(r.Body)
 	var spo models.StockingPurchaseOrder
-	err := decoder.Decode(&spo)
+	err := jsonDecode(r.Body, &spo)
 
 	if err != nil {
 		// return a 400 if the request body doesn't decode to a StockingPurchaseOrder
@@ -72,8 +65,7 @@ func (c *stockingPurchaseOrderController) CreateSPO(rw http.ResponseWriter, r *h
 	spo, err = c.dao.CreateSPO(spo)
 
 	if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	// return the created spo so that client can find out the auto generated ids
@@ -90,16 +82,12 @@ func (c *stockingPurchaseOrderController) CreateSPOProduct(rw http.ResponseWrite
 	// first make sure the spo itself exists so that we can return a 404 otherwise
 	_, err := c.dao.GetSPO(spo_id)
 
-	if err == sql.ErrNoRows {
-		return err, http.StatusNotFound
-	} else if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
-	decoder := json.NewDecoder(r.Body)
 	var spo_product models.StockingPurchaseOrderProduct
-	err = decoder.Decode(&spo_product)
+	err = jsonDecode(r.Body, &spo_product)
 
 	// 400 if bad object, or id doesn't matched the identifier
 	if err != nil || spo_product.SpoId != spo_id {
@@ -150,11 +138,8 @@ func (c *stockingPurchaseOrderController) UpdateSPO(rw http.ResponseWriter, r *h
 
 	err = c.dao.UpdateSPO(spo, dict)
 
-	if err == sql.ErrNoRows {
-		return err, http.StatusNotFound
-	} else if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	// no response body needed for succesful update, just return 200

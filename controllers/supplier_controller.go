@@ -3,7 +3,6 @@
 package controllers
 
 import (
-	"database/sql"
 	"errors"
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
@@ -50,11 +49,8 @@ func (c *supplierController) GetShipments(rw http.ResponseWriter, r *http.Reques
 
 	shipments, err := c.dao.GetShipments(shipment_code, spo_id)
 
-	if err == sql.ErrNoRows {
-		return err, http.StatusNotFound
-	} else if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	c.JSON(rw, http.StatusOK, shipments)
@@ -98,8 +94,7 @@ func (c *supplierController) CreateShipment(rw http.ResponseWriter, r *http.Requ
 	shipment, err = c.dao.CreateShipment(shipment)
 
 	if err != nil {
-		c.LogError(err.Error())
-		return err, http.StatusInternalServerError
+		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	// return the created shipment so that client can find out the auto generated ids
