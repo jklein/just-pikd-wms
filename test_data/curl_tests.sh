@@ -116,3 +116,12 @@ curl -4 -i -X PATCH http://localhost:3000/spos/1 -d '{
       }
     ]
 }'
+
+#should get a whole lot of results
+curl -4 -i -X GET 'http://localhost:3000/spos?supplier_id=1'
+
+#should get a 404
+curl -4 -i -X GET 'http://localhost:3000/spos?supplier_id=2'
+
+#should get one spo
+curl -4 -i -X GET 'http://localhost:3000/spos?supplier_id=1&shipment_code=803207203'

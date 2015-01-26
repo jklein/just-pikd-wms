@@ -34,7 +34,6 @@ func NewStockingPurchaseOrderController(rend *render.Render, db *sqlx.DB) *stock
 }
 
 // GetSPO gets a StockingPurchaseOrder from the database based on its id
-// TODO: we'll have other ways of searching so possibly rename to GetSPOByID?
 func (c *stockingPurchaseOrderController) GetSPO(rw http.ResponseWriter, r *http.Request) (error, int) {
 	// parse args - no need to check error because gorilla/mux would 404 on invalid params anyway
 	spo_id, _ := strconv.Atoi(mux.Vars(r)["id"])
@@ -48,6 +47,33 @@ func (c *stockingPurchaseOrderController) GetSPO(rw http.ResponseWriter, r *http
 
 	// render the model as JSON as response
 	c.JSON(rw, http.StatusOK, spo)
+	return nil, http.StatusOK
+}
+
+// GetSPO searches for an array of spos based on passed in filters
+func (c *stockingPurchaseOrderController) GetSPOs(rw http.ResponseWriter, r *http.Request) (error, int) {
+	shipment_code := r.FormValue("shipment_code")
+	su_id := r.FormValue("supplier_id")
+	//TODO add shi_id as well or instead?
+	//also consider adding the ability to filter by date
+	var supplier_id int
+	if len(su_id) > 0 {
+		var err error
+		supplier_id, err = strconv.Atoi(su_id)
+		if err != nil {
+			return err, http.StatusBadRequest
+		}
+	}
+
+	// retrieve slice of locations from dao based on params
+	spos, err := c.dao.GetSPOs(supplier_id, shipment_code)
+
+	//no need to throw error if no rows are found as that is a normal case here
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
+	}
+
+	c.JSON(rw, http.StatusOK, spos)
 	return nil, http.StatusOK
 }
 

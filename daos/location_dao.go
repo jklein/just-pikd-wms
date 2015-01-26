@@ -40,7 +40,7 @@ func (dao *LocationDAO) GetReceivingLocations(temperature_zone string, has_produ
 	sql := `SELECT rcl_id, rcl_type,
         rcl_temperature_zone, rcl_shi_shipment_code
         FROM receiving_locations
-        WHERE rcl_temperature_zone = $1` + where_suffix
+        WHERE rcl_temperature_zone = $1` + where_suffix + " ORDER BY rcl_id"
 
 	err := dao.DB.Select(&locations, sql, temperature_zone)
 	return locations, err

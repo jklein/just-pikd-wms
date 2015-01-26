@@ -15,7 +15,7 @@ type SupplierDAO struct {
 	*sqlx.DB
 }
 
-// GetReceivingLocations retrieves supplier shipments based on passed in filters, or all shipments
+// GetShipments retrieves supplier shipments based on passed in filters, or all shipments
 func (dao *SupplierDAO) GetShipments(shipment_code string, spo_id int) ([]models.SupplierShipment, error) {
 	var shipments []models.SupplierShipment
 
@@ -42,7 +42,7 @@ func (dao *SupplierDAO) GetShipments(shipment_code string, spo_id int) ([]models
 		conditions = append(conditions, "shi_spo_id = :spo_id")
 	}
 
-	sql_string += buildWhereFromConditions(conditions)
+	sql_string += buildWhereFromConditions(conditions) + " ORDER BY shi_id"
 
 	rows, err := dao.DB.NamedQuery(sql_string, args)
 	if err != nil {

@@ -50,7 +50,6 @@ func (c *locationController) GetStockingLocation(rw http.ResponseWriter, r *http
 
 // GetReceivingLocations retrieves an array of locations for a temperature zone and can
 // filter on whether they have product in them or not if desired.
-// note, this is actually part of stocking not receiving
 func (c *locationController) GetReceivingLocations(rw http.ResponseWriter, r *http.Request) (error, int) {
 	hp := r.FormValue("has_product")
 	temperature_zone := r.FormValue("temperature_zone")

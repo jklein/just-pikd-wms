@@ -13,19 +13,19 @@ type StockingPurchaseOrderDAO struct {
 	*sqlx.DB
 }
 
+// JoinedSpo represents the join of the two tables, stocking_purchase_orders and stocking_purchase_order_products
+// sqlx will automatically map the columns to the right embedded struct as long as names aren't ambiguous
+// column names that are ambiguous have to be aliased both in the query and in the struct tags
+type JoinedSpo struct {
+	models.StockingPurchaseOrder
+	models.StockingPurchaseOrderProduct
+}
+
 // GetSPO retrieves an SPO object from the database based on its id, assembling models
 // for the SPO and embedding models for each of its products as well
 func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchaseOrder, error) {
 	var spo models.StockingPurchaseOrder
-
-	// create an inline type to represent the join of the two tables
-	// sqlx will automatically map the columns to the right embedded struct as long as names aren't ambiguous
-	// column names that are ambiguous have to be aliased both in the query and in the struct tags
-	type JoinedSpo struct {
-		models.StockingPurchaseOrder
-		models.StockingPurchaseOrderProduct
-	}
-	rows := []JoinedSpo{}
+	var rows []JoinedSpo
 
 	//single query to get the spo and all of its products
 	err := dao.DB.Select(&rows,
@@ -60,6 +60,73 @@ func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchase
 	}
 
 	return spo, nil
+}
+
+// GetSPOs retrieves stocking purchase orders based on passed in filters, or all SPOs
+func (dao *StockingPurchaseOrderDAO) GetSPOs(supplier_id int, shipment_code string) ([]models.StockingPurchaseOrder, error) {
+	var spos []models.StockingPurchaseOrder
+
+	sql_string := `select spo_id, spo_status, spo_su_id,
+        spo_date_ordered, spo_date_confirmed, spo_date_shipped, spo_date_arrived,
+        spop_id, spop_spo_id, spop_pr_sku, spop_status, spop_requested_qty,
+        spop_confirmed_qty, spop_received_qty, spop_case_upc, spop_units_per_case,
+        spop_requested_case_qty, spop_confirmed_case_qty, spop_received_case_qty, spop_case_length,
+        spop_case_width, spop_case_height, spop_case_weight, spop_expected_arrival, spop_actual_arrival,
+        spop_wholesale_cost, spop_expiration_class, spop_rcl_id
+        from stocking_purchase_orders
+        join stocking_purchase_order_products on spop_spo_id = spo_id
+        `
+
+	// use an anonymous struct for args since it's much easier to pass to a dynamically generated query and only use the required params
+	args := struct {
+		SupplierId   int    `json:"supplier_id"`
+		ShipmentCode string `json:"shipment_code"`
+	}{supplier_id, shipment_code}
+
+	// slice of where clause conditions based on whether params are set to their 0-value or not
+	var conditions []string
+
+	if supplier_id > 0 {
+		conditions = append(conditions, "spo_su_id = :supplier_id")
+	}
+
+	if len(shipment_code) > 0 {
+		sql_string += "join supplier_shipments on shi_spo_id = spo_id "
+		conditions = append(conditions, "shi_shipment_code = :shipment_code")
+	}
+
+	sql_string += buildWhereFromConditions(conditions) + " ORDER BY spo_id"
+
+	rows, err := dao.DB.NamedQuery(sql_string, args)
+	if err != nil {
+		return spos, err
+	}
+	defer rows.Close()
+
+	//maps spo ids to slice indexes in the results
+	spo_indexes := map[int]int{}
+	index := -1
+	for rows.Next() {
+		var j JoinedSpo
+		err = rows.StructScan(&j)
+		if err != nil {
+			return spos, err
+		}
+
+		if _, exists := spo_indexes[j.StockingPurchaseOrder.Id]; !exists {
+			spos = append(spos, j.StockingPurchaseOrder)
+			index += 1
+			spo_indexes[j.StockingPurchaseOrder.Id] = index
+		}
+		spos[index].Products = append(spos[index].Products, j.StockingPurchaseOrderProduct)
+	}
+	err = rows.Err()
+
+	if err == nil && len(spos) == 0 {
+		return spos, sql.ErrNoRows
+	}
+
+	return spos, err
 }
 
 // CreateSPO creates a stocking purchase order object based on the pased in model, looping over the embedded

@@ -26,8 +26,8 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	router.HandleFunc("/spos", sc.Action(sc.CreateSPO)).Methods("POST")
 	router.HandleFunc("/spos/{id:[0-9]+}", sc.Action(sc.UpdateSPO)).Methods("PATCH")
 	router.HandleFunc("/spos/{id:[0-9]+}/products", sc.Action(sc.CreateSPOProduct)).Methods("POST")
-	//router.HandleFunc("/spos/{id:[0-9]+}/products/{product_id:[0-9]+}", sc.Action(sc.GetSPOProduct)).Methods("GET") NYI
-	//router.HandleFunc("/spos", sc.Action(sc.GetSPOs)).Methods("GET") NYI - need something to search spos by other fields besides id, including supplier shipments
+	//router.HandleFunc("/spos/{id:[0-9]+}/products/{product_id:[0-9]+}", sc.Action(sc.GetSPOProduct)).Methods("GET") NYI - not sure if we need
+	router.HandleFunc("/spos", sc.Action(sc.GetSPOs)).Methods("GET")
 
 	ic := controllers.NewInventoryController(rend, db)
 	router.HandleFunc("/inventory/static/{id:[0-9]+}", ic.Action(ic.GetStatic)).Methods("GET")
