@@ -45,22 +45,6 @@ func (s *StaticInventory) SetThumbnailURL() {
 	return
 }
 
-/*
-TODO: this becomes pick_task_products
-
-type OutboundInventory struct {
-	Id                     int    `db:"outbound_inventory_id" json:"outbound_inventory_id"`
-	CustomerOrderProductId int    `db:"customer_order_product_id" json:"customer_order_product_id"`
-	Sku                    string `db:"sku" json:"sku"`
-	PickContainerId        string `db:"pick_container_id" json:"pick_container_id"`
-	StockingLocationId     string `db:"stocking_location_id" json:"stocking_location_id"`
-	StaticInventoryId      int    `db:"static_inventory_id" json:"static_inventory_id"`
-	Qty                    int    `db:"qty" json:"qty"`
-	OutboundInventoryType  string `db:"outbound_inventory_type" json:"outbound_inventory_type"`
-	Status                 string `db:"status" json:"status"`
-}
-*/
-
 type InventoryHold struct {
 	Id    int `json:"ihd_id"`
 	SiId  int `json:"ihd_si_id"`

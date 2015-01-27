@@ -35,6 +35,7 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	router.HandleFunc("/inventory/static", ic.Action(ic.CreateStatic)).Methods("POST")
 	router.HandleFunc("/inventory/static/{id:[0-9]+}", ic.Action(ic.UpdateStatic)).Methods("PATCH")
 	// /inventory/errors
+	// /inventory/holds
 	if config.IsDev {
 		//register dangerous route to reset data in dev only
 		router.HandleFunc("/reset", ic.Action(ic.Reset)).Methods("POST")
@@ -53,8 +54,8 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	//router.HandleFunc("/locations/containers", lc.Action(lc.CreatePickContainer)).Methods("POST") NYI - store setup
 	//router.HandleFunc("/locations/container_locations", lc.Action(lc.CreatePickContainerLocation)).Methods("POST") NYI - store setup
 	//router.HandleFunc("/locations/container_locations/{id:[0-9-]+}", lc.Action(lc.GetPickContainerLocation)).Methods("GET") NYI - picking
-	//pickup locations: GET, POST, PATCH?
-	//kiosks: GET, POST?
+	// /locations/pickup: GET, POST, PATCH?
+	// /kiosks: GET, POST?
 
 	uc := controllers.NewSupplierController(rend, db)
 	router.HandleFunc("/suppliers/shipments", uc.Action(uc.GetShipments)).Methods("GET")
@@ -64,15 +65,15 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	// /suppliers/{id}
 
 	//orders controller
-	//orders - GET, POST, PUT. updates the order and its products.
+	//orders (embedded object)
 	//TODO do we need /orders/{id}/products and /orders/{id}/products/{id} endpoints?
 
 	//tasks controller
-	// /tasks/pick
-	// /tasks/pickup
+	// /tasks/pick (embedded object)
+	// /tasks/pickup (embedded object)
 
 	//associates controller
 	// /associates
-	// /associates/stations
+	// /associate_stations
 	return router
 }

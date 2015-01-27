@@ -224,7 +224,7 @@ func (dao *StockingPurchaseOrderDAO) UpdateSPO(spo_model models.StockingPurchase
 	}
 
 	// update the base SPO object if any of its fields were passed in
-	stmt := buildPatchUpdate("stocking_purchase_orders", "stocking_purchase_order_id", dict)
+	stmt := buildPatchUpdate("stocking_purchase_orders", "spo_id", dict)
 	err = execCheckRows(tx, stmt, spo_model)
 	if err != nil {
 		tx.Rollback()
@@ -247,7 +247,7 @@ func (dao *StockingPurchaseOrderDAO) UpdateSPO(spo_model models.StockingPurchase
 				tx.Rollback()
 				return errors.New("Mismatch decoding embedded document")
 			}
-			stmt := buildPatchUpdate("stocking_purchase_order_products", "stocking_purchase_order_product_id", product_dict)
+			stmt := buildPatchUpdate("stocking_purchase_order_products", "spop_id", product_dict)
 			err = execCheckRows(tx, stmt, product)
 			if err != nil {
 				tx.Rollback()
