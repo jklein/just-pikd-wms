@@ -4,9 +4,12 @@ package controllers
 
 import (
 	"database/sql"
+	"encoding/json"
+	"errors"
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 	"gopkg.in/unrolled/render.v1"
+	"io/ioutil"
 	"just-pikd-wms/daos"
 	"just-pikd-wms/models"
 	"net/http"
@@ -48,6 +51,21 @@ func (c *locationController) GetStockingLocation(rw http.ResponseWriter, r *http
 	return nil, http.StatusOK
 }
 
+// GetReceivingLocation retrieves a stocking location based on its id
+// note, this is actually part of stocking not receiving
+func (c *locationController) GetReceivingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
+	rcl_id := mux.Vars(r)["id"]
+
+	location, err := c.dao.GetReceivingLocation(rcl_id)
+
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
+	}
+
+	c.JSON(rw, http.StatusOK, location)
+	return nil, http.StatusOK
+}
+
 // GetReceivingLocations retrieves an array of locations for a temperature zone and can
 // filter on whether they have product in them or not if desired.
 func (c *locationController) GetReceivingLocations(rw http.ResponseWriter, r *http.Request) (error, int) {
@@ -73,30 +91,40 @@ func (c *locationController) GetReceivingLocations(rw http.ResponseWriter, r *ht
 	return nil, http.StatusOK
 }
 
-// UpdateReceivingLocation updates a receiving location based on a passed in model
-// and is used to set or unset the supplier_shipment_id field to mark it as full or empty with product
-// update receiving location to mark it as empty or filled with a specific supplier_shipment_id
+// UpdateReceivingLocation updates a receiving location based on a passed in json
+// and is used to set or unset the rcl_shi_id field to mark it as full or empty with product
+// update receiving location to mark it as empty or filled with a specific supplier shipment
 func (c *locationController) UpdateReceivingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
 	// extract identifier from url - while we don't use this, it helps follow REST principles to have it in the URI
 	// and could later be used for something like varnish cache invalidation
 	receiving_location_id := mux.Vars(r)["id"]
+	body, err := ioutil.ReadAll(r.Body)
+
+	if err != nil {
+		return err, http.StatusBadRequest
+	}
 
 	var location models.ReceivingLocation
-	err := jsonDecode(r.Body, &location)
-	if err != nil || receiving_location_id != location.Id {
-		// return a 400 if the request body doesn't decode to a ReceivingLocation
-		// or if the identifier doesn't match the request body's ID
+	err = json.Unmarshal(body, &location)
+	if err != nil {
+		return err, http.StatusBadRequest
+	} else if receiving_location_id != location.Id {
+		return errors.New("Identifier does not match request body for rcl_id"), http.StatusBadRequest
+	}
+
+	// also decode to a dict so that update statements can be handled
+	dict, err := jsonToDict(body)
+	if err != nil {
 		return err, http.StatusBadRequest
 	}
 
 	// pass the decoded model to the dao to update the DB
-	err = c.dao.UpdateReceivingLocation(location)
+	err = c.dao.UpdateReceivingLocation(location, dict)
 
 	if err != nil {
 		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
-	// no response body needed for succesful update, just return 200
 	return nil, http.StatusOK
 }
 
@@ -139,5 +167,40 @@ func (c *locationController) CreateStockingLocation(rw http.ResponseWriter, r *h
 	}
 
 	// no response needed since there are no auto-generated IDs
+	return nil, http.StatusOK
+}
+
+// UpdateStockingLocation updates a stocking location based on a passed in json
+func (c *locationController) UpdateStockingLocation(rw http.ResponseWriter, r *http.Request) (error, int) {
+	// extract identifier from url - while we don't use this, it helps follow REST principles to have it in the URI
+	// and could later be used for something like varnish cache invalidation
+	receiving_location_id := mux.Vars(r)["id"]
+	body, err := ioutil.ReadAll(r.Body)
+
+	if err != nil {
+		return err, http.StatusBadRequest
+	}
+
+	var location models.StockingLocation
+	err = json.Unmarshal(body, &location)
+	if err != nil {
+		return err, http.StatusBadRequest
+	} else if receiving_location_id != location.Id {
+		return errors.New("Identifier does not match request body for stl_id"), http.StatusBadRequest
+	}
+
+	// also decode to a dict so that update statements can be handled
+	dict, err := jsonToDict(body)
+	if err != nil {
+		return err, http.StatusBadRequest
+	}
+
+	// pass the decoded model to the dao to update the DB
+	err = c.dao.UpdateStockingLocation(location, dict)
+
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
+	}
+
 	return nil, http.StatusOK
 }

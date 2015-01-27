@@ -75,17 +75,11 @@ func buildWhereFromConditions(conditions []string) string {
 	return ""
 }
 
-// UpdateShipment updates a supplier shipment and returns any errors it received
-// The passed in model should be a shipment that already exists
-// Only the mutable field - actual_delivery, is updated
-// Other fields are considered immutable and are not updated.
-func (dao *SupplierDAO) UpdateShipment(shipment models.SupplierShipment) error {
-	stmt := `UPDATE supplier_shipments
-        set shi_actual_delivery = :shi_actual_delivery,
-        last_updated = now()
-        WHERE shi_id = :shi_id`
-
-	return execCheckRows(dao.DB, stmt, shipment)
+// UpdateShipment updates a supplier shipment, updating only the passed in fields
+func (dao *SupplierDAO) UpdateShipment(shipment models.SupplierShipment, dict map[string]interface{}) error {
+	stmt := buildPatchUpdate("supplier_shipments", "shi_id", dict)
+	err := execCheckRows(dao.DB, stmt, shipment)
+	return err
 }
 
 // CreateShipment creates a new supplier shipment record, adds the auto generated id to the passed in model

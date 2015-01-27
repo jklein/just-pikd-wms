@@ -3,9 +3,12 @@
 package controllers
 
 import (
+	"encoding/json"
+	"errors"
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 	"gopkg.in/unrolled/render.v1"
+	"io/ioutil"
 	"just-pikd-wms/daos"
 	"just-pikd-wms/helpers"
 	"just-pikd-wms/models"
@@ -81,5 +84,38 @@ func (c *inventoryController) CreateStatic(rw http.ResponseWriter, r *http.Reque
 
 	// return the created static so that client can find out the auto generated ids
 	c.JSON(rw, http.StatusOK, static)
+	return nil, http.StatusOK
+}
+
+// UpdateStatic updates an existing static inventory record based on a passed in JSON object
+func (c *inventoryController) UpdateStatic(rw http.ResponseWriter, r *http.Request) (error, int) {
+	static_id, _ := strconv.Atoi(mux.Vars(r)["id"])
+	body, err := ioutil.ReadAll(r.Body)
+
+	if err != nil {
+		return err, http.StatusBadRequest
+	}
+
+	var static models.StaticInventory
+	err = json.Unmarshal(body, &static)
+	if err != nil {
+		return err, http.StatusBadRequest
+	} else if static_id != static.Id {
+		return errors.New("Identifier does not match request body for si_id"), http.StatusBadRequest
+	}
+
+	// also decode to a dict so that update statements can be handled
+	dict, err := jsonToDict(body)
+	if err != nil {
+		return err, http.StatusBadRequest
+	}
+
+	// pass the decoded model to the dao to update the DB
+	err = c.dao.UpdateStatic(static, dict)
+
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
+	}
+
 	return nil, http.StatusOK
 }

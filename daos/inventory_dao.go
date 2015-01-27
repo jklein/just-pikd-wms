@@ -7,10 +7,12 @@ import (
 	"just-pikd-wms/models"
 )
 
+// InventoryDAO contains data access methods related to inventory data
 type InventoryDAO struct {
 	*sqlx.DB
 }
 
+// GetStatic retrieves a static inventory record by its primary key, si_id
 func (dao *InventoryDAO) GetStatic(si_id int) (models.StaticInventory, error) {
 	var static models.StaticInventory
 
@@ -24,6 +26,7 @@ func (dao *InventoryDAO) GetStatic(si_id int) (models.StaticInventory, error) {
 	return static, err
 }
 
+// CreateStatic creates a new static inventory record and returns the model with the auto generated id set
 func (dao *InventoryDAO) CreateStatic(static_model models.StaticInventory) (models.StaticInventory, error) {
 	//insert using NamedQuery instead of NamedExec due to the need of getting the last inserted ID back
 	//see https://github.com/lib/pq/issues/24
@@ -44,4 +47,16 @@ func (dao *InventoryDAO) CreateStatic(static_model models.StaticInventory) (mode
 	id, err := extractLastInsertId(rows)
 	static_model.Id = id
 	return static_model, err
+}
+
+// UpdateStatic updates a static inventory record, updating only the passed-in fields
+// Both the model and the raw json dictionary are required as inputs
+// The model is used for properly typed and annotated fields to bind to a NamedExec sql statement
+// The dict is used to generate the sql update statement based only on the fields that are actually passed in, so that we don't overwrite
+// other fields with Go's 0 value for that type
+func (dao *InventoryDAO) UpdateStatic(static_model models.StaticInventory, dict map[string]interface{}) error {
+	// update the base SPO object if any of its fields were passed in
+	stmt := buildPatchUpdate("static_inventory", "si_id", dict)
+	err := execCheckRows(dao.DB, stmt, static_model)
+	return err
 }

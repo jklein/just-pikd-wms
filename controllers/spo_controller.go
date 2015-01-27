@@ -50,7 +50,7 @@ func (c *stockingPurchaseOrderController) GetSPO(rw http.ResponseWriter, r *http
 	return nil, http.StatusOK
 }
 
-// GetSPO searches for an array of spos based on passed in filters
+// GetSPOs searches for an array of spos based on passed in filters
 func (c *stockingPurchaseOrderController) GetSPOs(rw http.ResponseWriter, r *http.Request) (error, int) {
 	shipment_code := r.FormValue("shipment_code")
 	su_id := r.FormValue("supplier_id")
@@ -148,16 +148,12 @@ func (c *stockingPurchaseOrderController) UpdateSPO(rw http.ResponseWriter, r *h
 
 	if err != nil {
 		return err, http.StatusBadRequest
-	}
-
-	if spo_id != spo.Id {
-		return errors.New("Identifier does not match request body for stocking_purchase_order_id"), http.StatusBadRequest
+	} else if spo_id != spo.Id {
+		return errors.New("Identifier does not match request body for spo_id"), http.StatusBadRequest
 	}
 
 	// also decode to a dict so that update statements can be handled
-	var dict map[string]interface{}
-	err = json.Unmarshal(body, &dict)
-
+	dict, err := jsonToDict(body)
 	if err != nil {
 		return err, http.StatusBadRequest
 	}

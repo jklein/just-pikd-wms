@@ -3,10 +3,12 @@
 package controllers
 
 import (
+	"encoding/json"
 	"errors"
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 	"gopkg.in/unrolled/render.v1"
+	"io/ioutil"
 	"just-pikd-wms/daos"
 	"just-pikd-wms/models"
 	"net/http"
@@ -57,31 +59,6 @@ func (c *supplierController) GetShipments(rw http.ResponseWriter, r *http.Reques
 	return nil, http.StatusOK
 }
 
-// UpdateShipment updates a supplier shipment based on a passed in model
-// and is used to set the arrival date field when scanning in a received shipment
-// based on supplier_shipment_id
-func (c *supplierController) UpdateShipment(rw http.ResponseWriter, r *http.Request) (error, int) {
-	shipment_id, _ := strconv.Atoi(mux.Vars(r)["id"])
-	var shipment models.SupplierShipment
-	err := jsonDecode(r.Body, &shipment)
-
-	if err != nil {
-		return err, http.StatusBadRequest
-	}
-
-	if shipment_id != shipment.Id {
-		return errors.New("Identifier does not match request body for shi_id"), http.StatusBadRequest
-	}
-
-	err = c.dao.UpdateShipment(shipment)
-
-	if err != nil {
-		return err, c.sqlErrorToStatusCodeAndLog(err)
-	}
-
-	return nil, http.StatusOK
-}
-
 // CreateShipment creates a new supplier shipment record based on a passed in JSON object
 func (c *supplierController) CreateShipment(rw http.ResponseWriter, r *http.Request) (error, int) {
 	var shipment models.SupplierShipment
@@ -99,5 +76,42 @@ func (c *supplierController) CreateShipment(rw http.ResponseWriter, r *http.Requ
 
 	// return the created shipment so that client can find out the auto generated ids
 	c.JSON(rw, http.StatusOK, shipment)
+	return nil, http.StatusOK
+}
+
+// UpdateShipment updates a supplier shipment based on a passed in model
+// and is used to set the arrival date field when scanning in a received shipment
+// based on supplier_shipment_id
+func (c *supplierController) UpdateShipment(rw http.ResponseWriter, r *http.Request) (error, int) {
+	shipment_id, _ := strconv.Atoi(mux.Vars(r)["id"])
+	// read request body to end and store so it can be unmarshaled into separate types later
+	body, err := ioutil.ReadAll(r.Body)
+
+	if err != nil {
+		return err, http.StatusBadRequest
+	}
+
+	var shipment models.SupplierShipment
+	err = json.Unmarshal(body, &shipment)
+
+	if err != nil {
+		return err, http.StatusBadRequest
+	} else if shipment_id != shipment.Id {
+		return errors.New("Identifier does not match request body for shi_id"), http.StatusBadRequest
+	}
+
+	// also decode to a dict so that update statements can be handled
+	dict, err := jsonToDict(body)
+	if err != nil {
+		return err, http.StatusBadRequest
+	}
+
+	err = c.dao.UpdateShipment(shipment, dict)
+
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
+	}
+
+	// no response body needed for succesful update, just return 200
 	return nil, http.StatusOK
 }

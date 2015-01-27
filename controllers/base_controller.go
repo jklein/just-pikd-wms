@@ -83,3 +83,10 @@ func jsonDecode(reader io.ReadCloser, v interface{}) error {
 	err := decoder.Decode(v)
 	return err
 }
+
+// jsonToDict is a helper function for converting a json doc into a dictionary
+func jsonToDict(input []byte) (map[string]interface{}, error) {
+	var dict map[string]interface{}
+	err := json.Unmarshal(input, &dict)
+	return dict, err
+}
