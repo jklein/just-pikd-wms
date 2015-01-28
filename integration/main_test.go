@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"os"
 	"testing"
+	"time"
 )
 
 // This file runs integration tests, which use the entire service end-to-end including
@@ -25,6 +26,10 @@ func TestMain(m *testing.M) {
 
 	//run the app in a background goroutine while testing continues
 	go n.Run("localhost:3002")
+
+	//sleep one second so that the server will be ready to listen for connections - without this the
+	//below client intermittently fails with a connection refused error
+	time.Sleep(time.Second)
 
 	//start by invoking the handler to reset data, and make sure that succeeds
 	client := &http.Client{}

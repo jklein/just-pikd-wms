@@ -4,7 +4,7 @@ package daos
 
 import (
 	"database/sql"
-	"errors"
+	"fmt"
 	"github.com/jmoiron/sqlx"
 	"just-pikd-wms/models"
 )
@@ -61,6 +61,21 @@ func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchase
 	}
 
 	return spo, nil
+}
+
+// GetSPOProduct retrieves a stocking_purchase_order_product object from the database based on its id
+func (dao *StockingPurchaseOrderDAO) GetSPOProduct(spo_id int, spop_id int) (models.StockingPurchaseOrderProduct, error) {
+	var product models.StockingPurchaseOrderProduct
+
+	err := dao.DB.Get(&product,
+		`select spop_id, spop_spo_id, spop_pr_sku, spop_status, spop_requested_qty,
+        spop_confirmed_qty, spop_received_qty, spop_case_upc, spop_units_per_case,
+        spop_requested_case_qty, spop_confirmed_case_qty, spop_received_case_qty, spop_case_length,
+        spop_case_width, spop_case_height, spop_case_weight, spop_expected_arrival, spop_actual_arrival,
+        spop_wholesale_cost, spop_expiration_class, spop_rcl_id
+        from stocking_purchase_order_products
+        where spop_spo_id = $1 AND spop_id = $2;`, spo_id, spop_id)
+	return product, err
 }
 
 // GetSPOs retrieves stocking purchase orders based on passed in filters, or all SPOs
@@ -237,7 +252,7 @@ func (dao *StockingPurchaseOrderDAO) UpdateSPO(spo_model models.StockingPurchase
 		products_dict, ok := dict["products"].([]interface{})
 		if !ok || len(products_dict) != count {
 			tx.Rollback()
-			return errors.New("Mismatch decoding input - dict['products'] is not a slice")
+			return NewInputErr("Mismatch decoding input - dict['products'] is not a slice")
 		}
 
 		// update individual products
@@ -246,13 +261,26 @@ func (dao *StockingPurchaseOrderDAO) UpdateSPO(spo_model models.StockingPurchase
 			product_dict, ok := products_dict[i].(map[string]interface{})
 			if !ok {
 				tx.Rollback()
-				return errors.New("Mismatch decoding embedded document")
+				return NewInputErr("Mismatch decoding embedded document")
+			}
+			if product.SpoId > 0 && product.SpoId != spo_model.Id {
+				tx.Rollback()
+				return NewInputErr(fmt.Sprintf("spop_spo_id does not match spo_id for product spop_id=%v", product.Id))
 			}
 			stmt := buildPatchUpdate("stocking_purchase_order_products", "spop_id", product_dict)
-			err = execCheckRows(tx, stmt, product)
-			if err != nil {
-				tx.Rollback()
-				return err
+
+			if len(stmt) > 0 {
+				if product.SpoId == 0 {
+					product.SpoId = spo_model.Id
+				}
+				//extra check to make sure we're updating a product that is part of the correct spo_id
+				stmt += " AND spop_spo_id = :spop_spo_id"
+
+				err = execCheckRows(tx, stmt, product)
+				if err != nil {
+					tx.Rollback()
+					return err
+				}
 			}
 		}
 	}

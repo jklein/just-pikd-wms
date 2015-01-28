@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"just-pikd-wms/daos"
 	"net/http"
 	"runtime"
 )
@@ -43,6 +44,10 @@ func (c *baseController) sqlErrorToStatusCodeAndLog(err error) int {
 	if err == sql.ErrNoRows {
 		// return 404 if the row was not found
 		return http.StatusNotFound
+	} else if _, ok := err.(*daos.ErrBadInput); ok {
+		// return 400 if it matches our custom type for bad input, since
+		// sometimes input data issues are more efficient to identify in the dao
+		return http.StatusBadRequest
 	} else if err != nil {
 		//TODO: skip 1 or 2 stack frames when logging this error
 		c.LogError(err.Error())

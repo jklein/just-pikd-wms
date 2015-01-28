@@ -27,7 +27,7 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	router.HandleFunc("/spos", sc.Action(sc.CreateSPO)).Methods("POST")
 	router.HandleFunc("/spos/{id:[0-9]+}", sc.Action(sc.UpdateSPO)).Methods("PATCH")
 	router.HandleFunc("/spos/{id:[0-9]+}/products", sc.Action(sc.CreateSPOProduct)).Methods("POST")
-	//router.HandleFunc("/spos/{id:[0-9]+}/products/{product_id:[0-9]+}", sc.Action(sc.GetSPOProduct)).Methods("GET") NYI - not sure if we need
+	router.HandleFunc("/spos/{id:[0-9]+}/products/{product_id:[0-9]+}", sc.Action(sc.GetSPOProduct)).Methods("GET")
 
 	ic := controllers.NewInventoryController(rend, db)
 	//TODO: remove /static/ from the route because there is only one kind of inventory now?

@@ -99,6 +99,24 @@ func (c *stockingPurchaseOrderController) CreateSPO(rw http.ResponseWriter, r *h
 	return nil, http.StatusOK
 }
 
+// GetSPO gets a StockingPurchaseOrder from the database based on its id
+func (c *stockingPurchaseOrderController) GetSPOProduct(rw http.ResponseWriter, r *http.Request) (error, int) {
+	// parse args - no need to check error because gorilla/mux would 404 on invalid params anyway
+	spo_id, _ := strconv.Atoi(mux.Vars(r)["id"])
+	spop_id, _ := strconv.Atoi(mux.Vars(r)["product_id"])
+
+	// initialize dao and use it to retrieve spo model
+	product, err := c.dao.GetSPOProduct(spo_id, spop_id)
+
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
+	}
+
+	// render the model as JSON as response
+	c.JSON(rw, http.StatusOK, product)
+	return nil, http.StatusOK
+}
+
 // CreateSPOProduct adds a new product to an existing SPO
 // it returns a 404 if the SPO does not already exist
 func (c *stockingPurchaseOrderController) CreateSPOProduct(rw http.ResponseWriter, r *http.Request) (error, int) {
