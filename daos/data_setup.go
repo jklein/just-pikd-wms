@@ -1,7 +1,6 @@
 // Copyright G2G Market Inc, 2015
 
-// Package helpers contains helpers for testing
-package helpers
+package daos
 
 import (
 	"encoding/json"
@@ -16,7 +15,7 @@ import (
 //DEV ONLY
 //reset all test data
 //panics if anything goes wrong
-func Reset(DB *sqlx.DB) {
+func ResetTestData(DB *sqlx.DB) {
 	DB.MustExec("TRUNCATE TABLE stocking_purchase_orders")
 	DB.MustExec("ALTER SEQUENCE stocking_purchase_orders_spo_id_seq RESTART")
 	DB.MustExec("TRUNCATE TABLE stocking_purchase_order_products")

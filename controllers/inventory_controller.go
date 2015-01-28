@@ -10,7 +10,6 @@ import (
 	"gopkg.in/unrolled/render.v1"
 	"io/ioutil"
 	"just-pikd-wms/daos"
-	"just-pikd-wms/helpers"
 	"just-pikd-wms/models"
 	"net/http"
 	"strconv"
@@ -37,7 +36,7 @@ func NewInventoryController(rend *render.Render, db *sqlx.DB) *inventoryControll
 // Reset is a helper function for resetting test data in dev only
 // It calls the helper to reload data from json files
 func (c *inventoryController) Reset(rw http.ResponseWriter, r *http.Request) (error, int) {
-	helpers.Reset(c.DB)
+	daos.ResetTestData(c.DB)
 	rw.Write([]byte("Data reset complete"))
 	return nil, http.StatusOK
 }
