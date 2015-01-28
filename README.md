@@ -34,3 +34,17 @@ Test Data Generation:
 -------------
 In the test_data folder, generate_sql.xlsx was used to generate some static records.
 generate_test_data.sql contains statements based off of that to generate additional data, as well as examples of how to dump it to json files
+
+Navigating the Repository:
+-------------
+Code is broken up into subfolders and subpackages for organization.
+1. config/ contains configuration loading
+2. controllers/ contains handler functions for each route which parse input, invoke daos and write a response or error
+3. daos/ contains methods for data access
+4. Godeps/ doesn't contain go code and is used to vendor dependencies with godep
+5. helpers/ contains helper functions
+6. integration/ contains integration tests
+7. models/ contains data models, structs which map to business objects
+8. public/ contains directly accessible static files, served by the webserver under the /public/ path
+9. server/ contains the code to set up the webserver including middleware handler, DB connection pool, and the list of routes
+10. test_data/ contains static files of test data and example scripts to generate test data
