@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"github.com/jmoiron/sqlx"
 	"io/ioutil"
-	"just-pikd-wms/daos"
 	"just-pikd-wms/models"
 	"reflect"
 )
@@ -37,7 +36,7 @@ func ResetTestData(DB *sqlx.DB) {
 
 func loadTestStatic(DB *sqlx.DB) {
 	data := loadFromFile("./test_data/static.json")
-	dao := daos.InventoryDAO{DB: DB}
+	dao := InventoryDAO{DB: DB}
 	var sc []models.StaticInventory
 	if err := json.Unmarshal(data, &sc); err != nil {
 		panic(err)
@@ -47,7 +46,7 @@ func loadTestStatic(DB *sqlx.DB) {
 
 func loadTestSPOs(DB *sqlx.DB) {
 	data := loadFromFile("./test_data/spos.json")
-	dao := daos.StockingPurchaseOrderDAO{DB: DB}
+	dao := StockingPurchaseOrderDAO{DB: DB}
 	var sc []models.StockingPurchaseOrder
 	if err := json.Unmarshal(data, &sc); err != nil {
 		panic(err)
@@ -57,7 +56,7 @@ func loadTestSPOs(DB *sqlx.DB) {
 
 func loadTestShipments(DB *sqlx.DB) {
 	data := loadFromFile("./test_data/supplier_shipments.json")
-	dao := daos.SupplierDAO{DB: DB}
+	dao := SupplierDAO{DB: DB}
 	var sc []models.SupplierShipment
 	if err := json.Unmarshal(data, &sc); err != nil {
 		panic(err)
@@ -67,7 +66,7 @@ func loadTestShipments(DB *sqlx.DB) {
 
 func loadTestStockingLocations(DB *sqlx.DB) {
 	data := loadFromFile("./test_data/stocking_locations.json")
-	dao := daos.LocationDAO{DB: DB}
+	dao := LocationDAO{DB: DB}
 	var sc []models.StockingLocation
 	if err := json.Unmarshal(data, &sc); err != nil {
 		panic(err)
@@ -77,7 +76,7 @@ func loadTestStockingLocations(DB *sqlx.DB) {
 
 func loadTestReceivingLocations(DB *sqlx.DB) {
 	data := loadFromFile("./test_data/receiving_locations.json")
-	dao := daos.LocationDAO{DB: DB}
+	dao := LocationDAO{DB: DB}
 	var sc []models.ReceivingLocation
 	if err := json.Unmarshal(data, &sc); err != nil {
 		panic(err)

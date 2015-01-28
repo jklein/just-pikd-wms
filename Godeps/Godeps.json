@@ -1,6 +1,9 @@
 {
 	"ImportPath": "just-pikd-wms",
 	"GoVersion": "go1.4",
+	"Packages": [
+		"./..."
+	],
 	"Deps": [
 		{
 			"ImportPath": "github.com/codegangsta/negroni",
@@ -27,6 +30,10 @@
 		{
 			"ImportPath": "github.com/phyber/negroni-gzip/gzip",
 			"Rev": "48f82605778a579cb8172122897f589e4023b537"
+		},
+		{
+			"ImportPath": "github.com/stretchr/testify/assert",
+			"Rev": "33a31e5dbed8302d5ab7e6d12b416e95c2c4ebc0"
 		},
 		{
 			"ImportPath": "gopkg.in/guregu/null.v2",
