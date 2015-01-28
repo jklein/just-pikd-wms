@@ -37,7 +37,8 @@ generate_test_data.sql contains statements based off of that to generate additio
 
 Navigating the Repository:
 -------------
-Code is broken up into subfolders and subpackages for organization.
+Code is broken up into subfolders and subpackages for organization:
+
 1. config/ contains configuration loading
 2. controllers/ contains handler functions for each route which parse input, invoke daos and write a response or error
 3. daos/ contains methods for data access
