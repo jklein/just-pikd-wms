@@ -1,11 +1,11 @@
 // Copyright G2G Market Inc, 2015
 
-package main
+package integration
 
 import (
 	"fmt"
 	"just-pikd-wms/config"
-	. "just-pikd-wms/helpers"
+	"just-pikd-wms/server"
 	"net/http"
 	"os"
 	"testing"
@@ -16,19 +16,13 @@ import (
 
 // TestMain handles test setup and then runs tests
 func TestMain(m *testing.M) {
-	//setup -- TODO DRY this with main.go
-	// initialize and load config
-	config := &config.Config{}
-	config.Load()
+	//setup tasks - load config and create negroni instance
+	c := config.New()
+	n := server.New(c)
 
-	// create DB connection pool
-	db := SetupDB(config.DbUser, config.DbPass, config.DbName)
+	//hack so that test data loads via relative path - start server in the main directory
+	os.Chdir("../")
 
-	// set up routes
-	router := MakeRouter(db, config)
-
-	// create negroni middleware handler
-	n := MakeNegroni(router, config)
 	//run the app in a background goroutine while testing continues
 	go n.Run("localhost:3002")
 
@@ -54,27 +48,6 @@ func TestMain(m *testing.M) {
 //can also check coverage for other packages...
 //could potentially make a package containing the server/routing logic, so that tests inside the controllers package can access that and get
 //at the handler. however that still does not solve the data setup problem.
-
-func TestGetSPO(t *testing.T) {
-	H(t).Test("GET", "/spos/1", "").Check().HasStatus(200).BodyContains(`"spo_id": 1`).BodyContains(`"spo_date_arrived": null`)
-}
-
-func TestGetSPONotFound(t *testing.T) {
-	H(t).Test("GET", "/spos/1000000", "").Check().HasStatus(404)
-}
-
-func TestPatchSPO(t *testing.T) {
-	H(t).Test("PATCH", "/spos/1", `{"spo_id": 1, "spo_date_arrived": "2015-01-14T00:00:00Z"}`).Check().HasStatus(200)
-	H(t).Test("GET", "/spos/1", "").Check().HasStatus(200).BodyContains(`"spo_id": 1`).BodyContains(`"spo_date_arrived": "2015-01-14T00:00:00Z"`)
-}
-
-func TestPatchSPOBadRequest(t *testing.T) {
-	H(t).Test("PATCH", "/spos/2", `{"spo_id": 1, "spo_date_arrived": "2015-01-14T00:00:00Z"}`).Check().HasStatus(400)
-}
-
-func TestPatchSPONotFound(t *testing.T) {
-	H(t).Test("PATCH", "/spos/1000000", `{"spo_id": 1000000, "spo_date_arrived": "2015-01-14T00:00:00Z"}`).Check().HasStatus(404)
-}
 
 //func TestPatchSPOProduct(t *testing.T)
 

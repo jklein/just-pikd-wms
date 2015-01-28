@@ -1,6 +1,6 @@
 // Copyright G2G Market Inc, 2015
 
-package main
+package server
 
 import (
 	"github.com/codegangsta/negroni"

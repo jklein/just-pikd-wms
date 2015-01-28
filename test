@@ -1,0 +1,2 @@
+#!/bin/bash
+go test -v just-pikd-wms/integration -coverpkg just-pikd-wms/server,just-pikd-wms/models,just-pikd-wms/daos,just-pikd-wms/config,just-pikd-wms/controllers

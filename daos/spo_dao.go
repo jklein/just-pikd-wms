@@ -38,7 +38,8 @@ func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchase
         spop_wholesale_cost, spop_expiration_class, spop_rcl_id
         from stocking_purchase_orders
         join stocking_purchase_order_products on spop_spo_id = spo_id
-        where spo_id = $1;`, spo_id)
+        where spo_id = $1
+        order by spop_id;`, spo_id)
 
 	if err != nil {
 		return spo, err
@@ -95,7 +96,7 @@ func (dao *StockingPurchaseOrderDAO) GetSPOs(supplier_id int, shipment_code stri
 		conditions = append(conditions, "shi_shipment_code = :shipment_code")
 	}
 
-	sql_string += buildWhereFromConditions(conditions) + " ORDER BY spo_id"
+	sql_string += buildWhereFromConditions(conditions) + " ORDER BY spo_id, spop_id"
 
 	rows, err := dao.DB.NamedQuery(sql_string, args)
 	if err != nil {

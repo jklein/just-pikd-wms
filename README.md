@@ -26,6 +26,10 @@ I'm also using GoSublime. I had to set GOPATH and install some packages on my ma
 }
 ```
 
+Running Tests:
+-------------
+Use `./test` to run all tests, or the `go test` command to get finer grained control over running individual tests
+
 Test Data Generation:
 -------------
 In the test_data folder, generate_sql.xlsx was used to generate some static records.
