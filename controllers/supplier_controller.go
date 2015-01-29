@@ -56,7 +56,7 @@ func (c *supplierController) GetShipments(rw http.ResponseWriter, r *http.Reques
 	}
 
 	c.JSON(rw, http.StatusOK, shipments)
-	return nil, http.StatusOK
+	return nil, 0
 }
 
 // CreateShipment creates a new supplier shipment record based on a passed in JSON object
@@ -75,8 +75,8 @@ func (c *supplierController) CreateShipment(rw http.ResponseWriter, r *http.Requ
 	}
 
 	// return the created shipment so that client can find out the auto generated ids
-	c.JSON(rw, http.StatusOK, shipment)
-	return nil, http.StatusOK
+	c.JSON(rw, http.StatusCreated, shipment)
+	return nil, 0
 }
 
 // UpdateShipment updates a supplier shipment based on a passed in model
@@ -113,5 +113,5 @@ func (c *supplierController) UpdateShipment(rw http.ResponseWriter, r *http.Requ
 	}
 
 	// no response body needed for succesful update, just return 200
-	return nil, http.StatusOK
+	return nil, http.StatusNoContent
 }

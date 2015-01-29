@@ -28,7 +28,7 @@ type StockingLocation struct {
 	Width           null.Float  `json:"stl_width"`
 	Depth           null.Float  `json:"stl_depth"`
 	AssignedSku     null.String `json:"stl_assigned_sku"`
-	NeedsQc         null.Bool   `json:"stl_needs_qc"`
+	NeedsQc         bool        `json:"stl_needs_qc"`
 	LastQcDate      *time.Time  `json:"stl_last_qc_date"`
 	LocationCode    string      `json:"location_code"`
 }

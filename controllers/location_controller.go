@@ -48,7 +48,7 @@ func (c *locationController) GetStockingLocation(rw http.ResponseWriter, r *http
 	location.SetLocationCode()
 
 	c.JSON(rw, http.StatusOK, location)
-	return nil, http.StatusOK
+	return nil, 0
 }
 
 // GetReceivingLocation retrieves a stocking location based on its id
@@ -63,7 +63,7 @@ func (c *locationController) GetReceivingLocation(rw http.ResponseWriter, r *htt
 	}
 
 	c.JSON(rw, http.StatusOK, location)
-	return nil, http.StatusOK
+	return nil, 0
 }
 
 // GetReceivingLocations retrieves an array of locations for a temperature zone and can
@@ -88,7 +88,7 @@ func (c *locationController) GetReceivingLocations(rw http.ResponseWriter, r *ht
 	}
 
 	c.JSON(rw, http.StatusOK, locations)
-	return nil, http.StatusOK
+	return nil, 0
 }
 
 // UpdateReceivingLocation updates a receiving location based on a passed in json
@@ -125,7 +125,7 @@ func (c *locationController) UpdateReceivingLocation(rw http.ResponseWriter, r *
 		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
-	return nil, http.StatusOK
+	return nil, http.StatusNoContent
 }
 
 // CreateReceivingLocation creates a new receiving location based on a passed in JSON object
@@ -146,7 +146,7 @@ func (c *locationController) CreateReceivingLocation(rw http.ResponseWriter, r *
 	}
 
 	// no response needed since there are no auto-generated IDs
-	return nil, http.StatusOK
+	return nil, http.StatusCreated
 }
 
 // CreateStockingLocation creates a new stocking location based on a passed in JSON object
@@ -167,7 +167,7 @@ func (c *locationController) CreateStockingLocation(rw http.ResponseWriter, r *h
 	}
 
 	// no response needed since there are no auto-generated IDs
-	return nil, http.StatusOK
+	return nil, http.StatusCreated
 }
 
 // UpdateStockingLocation updates a stocking location based on a passed in json
@@ -202,5 +202,5 @@ func (c *locationController) UpdateStockingLocation(rw http.ResponseWriter, r *h
 		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
-	return nil, http.StatusOK
+	return nil, http.StatusNoContent
 }

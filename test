@@ -2,9 +2,9 @@
 tmpfile=`mktemp`
 #only show output on failure
 go test -v just-pikd-wms/integration -coverpkg just-pikd-wms/server,just-pikd-wms/models,just-pikd-wms/daos,just-pikd-wms/config,just-pikd-wms/controllers > $tmpfile 2>&1
-if [ $? -eq 1 ]; then
+if [ $? -eq 0 ]; then
+    echo "PASS"
+else
     cat $tmpfile
     exit 1
-else
-    echo "PASS"
 fi

@@ -18,8 +18,8 @@ func (dao *LocationDAO) GetStockingLocation(stl_id string) (models.StockingLocat
 	var location models.StockingLocation
 
 	err := dao.DB.Get(&location,
-		`SELECT stl_id, stl_temperature_zone, stl_type, stl_pick_segment,
-        stl_aisle, stl_bay, stl_shelf, stl_shelf_slot, stl_height, stl_width, stl_depth, stl_assigned_sku
+		`SELECT stl_id, stl_temperature_zone, stl_type, stl_pick_segment, stl_aisle, stl_bay, stl_shelf,
+        stl_shelf_slot, stl_height, stl_width, stl_depth, stl_assigned_sku, stl_needs_qc, stl_last_qc_date
         FROM stocking_locations
         WHERE stl_id = $1;`, stl_id)
 	return location, err
@@ -30,10 +30,10 @@ func (dao *LocationDAO) GetStockingLocation(stl_id string) (models.StockingLocat
 // as other Create* functions
 func (dao *LocationDAO) CreateStockingLocation(stl models.StockingLocation) (models.StockingLocation, error) {
 	_, err := dao.DB.NamedExec(
-		`INSERT INTO stocking_locations (stl_id, stl_temperature_zone, stl_type, stl_pick_segment,
-        stl_aisle, stl_bay, stl_shelf, stl_shelf_slot, stl_height, stl_width, stl_depth, stl_assigned_sku)
-        VALUES (:stl_id, :stl_temperature_zone, :stl_type, :stl_pick_segment,
-        :stl_aisle, :stl_bay, :stl_shelf, :stl_shelf_slot, :stl_height, :stl_width, :stl_depth, :stl_assigned_sku)
+		`INSERT INTO stocking_locations (stl_id, stl_temperature_zone, stl_type, stl_pick_segment, stl_aisle, stl_bay,
+        stl_shelf, stl_shelf_slot, stl_height, stl_width, stl_depth, stl_assigned_sku, stl_needs_qc, stl_last_qc_date)
+        VALUES (:stl_id, :stl_temperature_zone, :stl_type, :stl_pick_segment, :stl_aisle, :stl_bay, :stl_shelf,
+        :stl_shelf_slot, :stl_height, :stl_width, :stl_depth, :stl_assigned_sku, :stl_needs_qc, :stl_last_qc_date)
         RETURNING stl_id`,
 		stl)
 	return stl, err

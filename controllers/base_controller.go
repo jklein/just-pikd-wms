@@ -77,7 +77,9 @@ func (c *baseController) Action(a Action) http.HandlerFunc {
 
 			//return error message and code
 			http.Error(rw, error_message, status_code)
-		}
+		} else if status_code > 0 {
+			rw.WriteHeader(status_code)
+		} // else - assume the controller has written a status code already when rendering output, so do nothing to avoid multiple write header calls
 	})
 }
 

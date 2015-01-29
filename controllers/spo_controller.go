@@ -47,7 +47,7 @@ func (c *stockingPurchaseOrderController) GetSPO(rw http.ResponseWriter, r *http
 
 	// render the model as JSON as response
 	c.JSON(rw, http.StatusOK, spo)
-	return nil, http.StatusOK
+	return nil, 0
 }
 
 // GetSPOs searches for an array of spos based on passed in filters
@@ -74,7 +74,7 @@ func (c *stockingPurchaseOrderController) GetSPOs(rw http.ResponseWriter, r *htt
 	}
 
 	c.JSON(rw, http.StatusOK, spos)
-	return nil, http.StatusOK
+	return nil, 0
 }
 
 // CreateSPO creates a new stocking purchase order along with its products
@@ -95,8 +95,8 @@ func (c *stockingPurchaseOrderController) CreateSPO(rw http.ResponseWriter, r *h
 	}
 
 	// return the created spo so that client can find out the auto generated ids
-	c.JSON(rw, http.StatusOK, spo)
-	return nil, http.StatusOK
+	c.JSON(rw, http.StatusCreated, spo)
+	return nil, 0
 }
 
 // GetSPO gets a StockingPurchaseOrder from the database based on its id
@@ -114,7 +114,7 @@ func (c *stockingPurchaseOrderController) GetSPOProduct(rw http.ResponseWriter, 
 
 	// render the model as JSON as response
 	c.JSON(rw, http.StatusOK, product)
-	return nil, http.StatusOK
+	return nil, 0
 }
 
 // CreateSPOProduct adds a new product to an existing SPO
@@ -125,30 +125,28 @@ func (c *stockingPurchaseOrderController) CreateSPOProduct(rw http.ResponseWrite
 
 	// first make sure the spo itself exists so that we can return a 404 otherwise
 	_, err := c.dao.GetSPO(spo_id)
-
 	if err != nil {
 		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
 	var spo_product models.StockingPurchaseOrderProduct
 	err = jsonDecode(r.Body, &spo_product)
-
-	// 400 if bad object, or id doesn't matched the identifier
-	if err != nil || spo_product.SpoId != spo_id {
+	if err != nil {
 		return err, http.StatusBadRequest
+	} else if spo_product.SpoId != spo_id {
+		return errors.New("Identifier does not match request body for spop_spo_id"), http.StatusBadRequest
 	}
 
 	// pass the decoded model to the dao to update the DB
 	spo_product, err = c.dao.CreateSPOProduct(spo_product)
-
 	if err != nil {
 		c.LogError(err.Error())
 		return err, http.StatusInternalServerError
 	}
 
 	// return the created object so client can extract id
-	c.JSON(rw, http.StatusOK, spo_product)
-	return nil, http.StatusOK
+	c.JSON(rw, http.StatusCreated, spo_product)
+	return nil, 0
 }
 
 // UpdateSPO updates a stocking purchase order and/or its products based on passed in objects
@@ -183,5 +181,5 @@ func (c *stockingPurchaseOrderController) UpdateSPO(rw http.ResponseWriter, r *h
 	}
 
 	// no response body needed for succesful update, just return 200
-	return nil, http.StatusOK
+	return nil, http.StatusNoContent
 }

@@ -38,7 +38,7 @@ func NewInventoryController(rend *render.Render, db *sqlx.DB) *inventoryControll
 func (c *inventoryController) Reset(rw http.ResponseWriter, r *http.Request) (error, int) {
 	daos.ResetTestData(c.DB)
 	rw.Write([]byte("Data reset complete"))
-	return nil, http.StatusOK
+	return nil, 0
 }
 
 // GetStatic retrieves a static inventory record by its id
@@ -58,7 +58,7 @@ func (c *inventoryController) GetStatic(rw http.ResponseWriter, r *http.Request)
 
 	// render and return response
 	c.JSON(rw, http.StatusOK, static)
-	return nil, http.StatusOK
+	return nil, 0
 }
 
 // CreateStatic creates a new static inventory record based on a passed in JSON object
@@ -82,8 +82,8 @@ func (c *inventoryController) CreateStatic(rw http.ResponseWriter, r *http.Reque
 	static.SetThumbnailURL()
 
 	// return the created static so that client can find out the auto generated ids
-	c.JSON(rw, http.StatusOK, static)
-	return nil, http.StatusOK
+	c.JSON(rw, http.StatusCreated, static)
+	return nil, 0
 }
 
 // UpdateStatic updates an existing static inventory record based on a passed in JSON object
@@ -116,5 +116,5 @@ func (c *inventoryController) UpdateStatic(rw http.ResponseWriter, r *http.Reque
 		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
-	return nil, http.StatusOK
+	return nil, http.StatusNoContent
 }
