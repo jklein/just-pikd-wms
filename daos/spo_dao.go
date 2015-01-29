@@ -252,7 +252,7 @@ func (dao *StockingPurchaseOrderDAO) UpdateSPO(spo_model models.StockingPurchase
 		products_dict, ok := dict["products"].([]interface{})
 		if !ok || len(products_dict) != count {
 			tx.Rollback()
-			return NewInputErr("Mismatch decoding input - dict['products'] is not a slice")
+			return newInputErr("Mismatch decoding input - dict['products'] is not a slice")
 		}
 
 		// update individual products
@@ -261,11 +261,11 @@ func (dao *StockingPurchaseOrderDAO) UpdateSPO(spo_model models.StockingPurchase
 			product_dict, ok := products_dict[i].(map[string]interface{})
 			if !ok {
 				tx.Rollback()
-				return NewInputErr("Mismatch decoding embedded document")
+				return newInputErr("Mismatch decoding embedded document")
 			}
 			if product.SpoId > 0 && product.SpoId != spo_model.Id {
 				tx.Rollback()
-				return NewInputErr(fmt.Sprintf("spop_spo_id does not match spo_id for product spop_id=%v", product.Id))
+				return newInputErr(fmt.Sprintf("spop_spo_id does not match spo_id for product spop_id=%v", product.Id))
 			}
 			stmt := buildPatchUpdate("stocking_purchase_order_products", "spop_id", product_dict)
 

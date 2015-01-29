@@ -6,7 +6,6 @@ import (
 	"database/sql"
 	"github.com/jmoiron/sqlx"
 	"just-pikd-wms/models"
-	"strings"
 )
 
 // SupplierDAO is used for data access related to
@@ -67,12 +66,16 @@ func (dao *SupplierDAO) GetShipments(shipment_code string, spo_id int) ([]models
 	return shipments, err
 }
 
-// buildWhere builds a where clause from a slice of condition expressions, joining the conditions with AND
-func buildWhereFromConditions(conditions []string) string {
-	if len(conditions) > 0 {
-		return "WHERE " + strings.Join(conditions, " AND ")
-	}
-	return ""
+// GetShipment retrieves a supplier shipment based on passed in its id
+func (dao *SupplierDAO) GetShipment(shi_id int) (models.SupplierShipment, error) {
+	var shipment models.SupplierShipment
+
+	err := dao.DB.Get(&shipment,
+		`SELECT shi_id, shi_shipment_code, shi_spo_id,
+	    shi_su_id, shi_promised_delivery, shi_actual_delivery
+	    FROM supplier_shipments
+	    WHERE shi_id = $1;`, shi_id)
+	return shipment, err
 }
 
 // UpdateShipment updates a supplier shipment, updating only the passed in fields

@@ -59,7 +59,7 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 
 	uc := controllers.NewSupplierController(rend, db)
 	router.HandleFunc("/suppliers/shipments", uc.Action(uc.GetShipments)).Methods("GET")
-	//router.HandleFunc("/suppliers/shipments/{id:[0-9]+}", uc.Action(uc.GetShipment)).Methods("GET") NYI - ?
+	router.HandleFunc("/suppliers/shipments/{id:[0-9]+}", uc.Action(uc.GetShipment)).Methods("GET")
 	router.HandleFunc("/suppliers/shipments", uc.Action(uc.CreateShipment)).Methods("POST")
 	router.HandleFunc("/suppliers/shipments/{id:[0-9]+}", uc.Action(uc.UpdateShipment)).Methods("PATCH")
 	// /suppliers/{id}

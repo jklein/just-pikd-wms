@@ -69,7 +69,7 @@ func execCheckRows(e NamedExecer, stmt string, model interface{}) error {
 			// to do this and return 500 instead of 404 without needing signficant extra processing/reflection to check for the case
 			// where one of the input json fields doesn't actually exist in the data model
 			if strings.HasPrefix(err.Error(), "could not find name") {
-				return NewInputErr("Error binding input to SQL: " + err.Error())
+				return newInputErr("Error binding input to SQL: " + err.Error())
 			}
 			return err
 		} else if rows, _ := result.RowsAffected(); rows == 0 {
@@ -80,6 +80,14 @@ func execCheckRows(e NamedExecer, stmt string, model interface{}) error {
 	return nil
 }
 
+// buildWhere builds a where clause from a slice of condition expressions, joining the conditions with AND
+func buildWhereFromConditions(conditions []string) string {
+	if len(conditions) > 0 {
+		return "WHERE " + strings.Join(conditions, " AND ")
+	}
+	return ""
+}
+
 // ErrBadInput is a custom error type used when invalid input data is encountered in a dao
 // As some checks make more sense to do when actually using the data in the dao
 // Controllers can type assert on the returned error from a dao to know if they should return 400 vs. 500
@@ -87,10 +95,12 @@ type ErrBadInput struct {
 	s string
 }
 
+// Error makes sure ErrBadInput satisfies the built-in error interface
 func (e ErrBadInput) Error() string {
 	return e.s
 }
 
-func NewInputErr(text string) error {
+// newInputErr creates a new instance of ErrBadInput from a string
+func newInputErr(text string) error {
 	return &ErrBadInput{text}
 }

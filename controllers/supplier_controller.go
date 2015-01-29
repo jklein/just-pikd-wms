@@ -59,6 +59,19 @@ func (c *supplierController) GetShipments(rw http.ResponseWriter, r *http.Reques
 	return nil, 0
 }
 
+// GetShipment retrieves a single shipment record by its id
+func (c *supplierController) GetShipment(rw http.ResponseWriter, r *http.Request) (error, int) {
+	shi_id, _ := strconv.Atoi(mux.Vars(r)["id"])
+
+	shipment, err := c.dao.GetShipment(shi_id)
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
+	}
+
+	c.JSON(rw, http.StatusOK, shipment)
+	return nil, 0
+}
+
 // CreateShipment creates a new supplier shipment record based on a passed in JSON object
 func (c *supplierController) CreateShipment(rw http.ResponseWriter, r *http.Request) (error, int) {
 	var shipment models.SupplierShipment
