@@ -23,6 +23,7 @@ func (dao *InventoryDAO) GetStatic(si_id int) (models.StaticInventory, error) {
         si_product_width, si_product_height, si_product_weight
         FROM static_inventory
         WHERE si_id = $1;`, si_id)
+	static.SetThumbnailURL()
 	return static, err
 }
 
@@ -46,6 +47,7 @@ func (dao *InventoryDAO) CreateStatic(static_model models.StaticInventory) (mode
 	}
 	id, err := extractLastInsertId(rows)
 	static_model.Id = id
+	static_model.SetThumbnailURL()
 	return static_model, err
 }
 

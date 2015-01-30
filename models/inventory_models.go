@@ -3,13 +3,9 @@
 package models
 
 import (
-	"fmt"
 	"gopkg.in/guregu/null.v2"
-	"strings"
 	"time"
 )
-
-const IMAGE_URL_PREFIX string = "https://s3.amazonaws.com/g2gcdn"
 
 type StaticInventory struct {
 	Id              int         `json:"si_id"`
@@ -35,14 +31,7 @@ type StaticInventory struct {
 // SetThumbnailURL computes the thumbnail URL to display to the user for
 // assistance visually identifying the product.
 func (s *StaticInventory) SetThumbnailURL() {
-	//replace - with "" in sku, add leading 0
-	sku := strings.Replace(s.PrSku, "-", "", -1)
-
-	//result will look like https://s3.amazonaws.com/g2gcdn/68/00046000820118_200x200.jpg
-	//add leading zero because they're all prefixed with that on S3 at the moment
-	s.ThumbnailURL = fmt.Sprintf("%s/%d/0%s_200x200.jpg",
-		IMAGE_URL_PREFIX, s.MaId.Int64, sku)
-	return
+	s.ThumbnailURL = ThumbnailURL(s.PrSku, int(s.MaId.Int64))
 }
 
 type InventoryHold struct {

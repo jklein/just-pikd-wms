@@ -51,13 +51,14 @@ func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchase
 	}
 
 	//assemble the spo to return from the results
-	for i, c := range rows {
+	for i, j := range rows {
 		if i == 0 {
 			//only need to keep first spo object since all will be the same as we're selecting by primary key
-			spo = c.StockingPurchaseOrder
+			spo = j.StockingPurchaseOrder
 		}
+		j.StockingPurchaseOrderProduct.SetThumbnailURL()
 		//append each product object to the spo object
-		spo.Products = append(spo.Products, c.StockingPurchaseOrderProduct)
+		spo.Products = append(spo.Products, j.StockingPurchaseOrderProduct)
 	}
 
 	return spo, nil
@@ -75,6 +76,7 @@ func (dao *StockingPurchaseOrderDAO) GetSPOProduct(spo_id int, spop_id int) (mod
         spop_wholesale_cost, spop_expiration_class, spop_rcl_id, spop_ma_id
         from stocking_purchase_order_products
         where spop_spo_id = $1 AND spop_id = $2;`, spo_id, spop_id)
+	product.SetThumbnailURL()
 	return product, err
 }
 
@@ -134,6 +136,7 @@ func (dao *StockingPurchaseOrderDAO) GetSPOs(supplier_id int, shipment_code stri
 			index += 1
 			spo_indexes[j.StockingPurchaseOrder.Id] = index
 		}
+		j.StockingPurchaseOrderProduct.SetThumbnailURL()
 		spos[index].Products = append(spos[index].Products, j.StockingPurchaseOrderProduct)
 	}
 	err = rows.Err()

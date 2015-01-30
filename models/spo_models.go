@@ -41,4 +41,11 @@ type StockingPurchaseOrderProduct struct {
 	WholesaleCost    null.Int    `json:"spop_wholesale_cost"`
 	ExpirationClass  null.String `json:"spop_expiration_class"`
 	MaId             int         `json:"spop_ma_id"`
+	ThumbnailURL     string      `json:"thumbnail_url"`
+}
+
+// SetThumbnailURL computes the thumbnail URL to display to the user for
+// assistance visually identifying the product.
+func (s *StockingPurchaseOrderProduct) SetThumbnailURL() {
+	s.ThumbnailURL = ThumbnailURL(s.PrSku, s.MaId)
 }

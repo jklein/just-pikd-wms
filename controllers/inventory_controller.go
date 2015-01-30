@@ -53,9 +53,6 @@ func (c *inventoryController) GetStatic(rw http.ResponseWriter, r *http.Request)
 		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
-	// set computed field on static inventory model for thumbnail image URL
-	static.SetThumbnailURL()
-
 	// render and return response
 	c.JSON(rw, http.StatusOK, static)
 	return nil, 0
@@ -77,9 +74,6 @@ func (c *inventoryController) CreateStatic(rw http.ResponseWriter, r *http.Reque
 	if err != nil {
 		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
-
-	// set computed field on static inventory model for thumbnail image URL
-	static.SetThumbnailURL()
 
 	// return the created static so that client can find out the auto generated ids
 	c.JSON(rw, http.StatusCreated, static)
