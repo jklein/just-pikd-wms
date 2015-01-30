@@ -71,7 +71,8 @@ func (c *locationController) GetReceivingLocation(rw http.ResponseWriter, r *htt
 func (c *locationController) GetReceivingLocations(rw http.ResponseWriter, r *http.Request) (error, int) {
 	hp := r.FormValue("has_product")
 	temperature_zone := r.FormValue("temperature_zone")
-	//TODO add a location_type field here
+	location_type := r.FormValue("type")
+
 	var has_product bool
 
 	// accept string values 1 or true for has_product as true, other values considered false
@@ -80,7 +81,7 @@ func (c *locationController) GetReceivingLocations(rw http.ResponseWriter, r *ht
 	}
 
 	// retrieve slice of locations from dao based on params
-	locations, err := c.dao.GetReceivingLocations(temperature_zone, has_product)
+	locations, err := c.dao.GetReceivingLocations(temperature_zone, has_product, location_type)
 
 	//no need to throw error if no rows are found as that is a normal case here
 	if err != nil && err != sql.ErrNoRows {

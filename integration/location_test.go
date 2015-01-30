@@ -47,6 +47,10 @@ func TestSearchReceiving(t *testing.T) {
 	H(t).Test("GET", "/locations/receiving?temperature_zone=dry", "").Check().HasStatus(200).BodyContains(`"rcl_id": "204-178900281-4"`)
 }
 
+func TestSearchReceivingByZoneAndType(t *testing.T) {
+	H(t).Test("GET", "/locations/receiving?temperature_zone=dry&type=DSD+Receiving+Bay", "").Check().HasStatus(200).BodyContains(`"rcl_id": "204-178900331-6"`)
+}
+
 func TestPatchAndSearchReceiving(t *testing.T) {
 	body := `{"rcl_id": "204-178900284-5", "rcl_shi_shipment_code": 14}`
 	H(t).Test("PATCH", "/locations/receiving/204-178900284-5", body).Check().HasStatus(204)

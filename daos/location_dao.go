@@ -3,6 +3,7 @@
 package daos
 
 import (
+	"database/sql"
 	"github.com/jmoiron/sqlx"
 	"just-pikd-wms/models"
 )
@@ -59,24 +60,55 @@ func (dao *LocationDAO) GetReceivingLocation(rcl_id string) (models.ReceivingLoc
 	return location, err
 }
 
-// GetReceivingLocations retrieves locations from a temperature zone
-// It returns a slice of ReceivingLocation models for the temperature zone
-// and can be filtered to retrieve only those locations that have product in them awaiting stocking
-func (dao *LocationDAO) GetReceivingLocations(temperature_zone string, has_product bool) ([]models.ReceivingLocation, error) {
+// GetReceivingLocations retrieves a slice of ReceivingLocation models
+// and can be filtered by temperature zone, location type or which locations have product in them
+func (dao *LocationDAO) GetReceivingLocations(temperature_zone string, has_product bool, location_type string) ([]models.ReceivingLocation, error) {
 	var locations []models.ReceivingLocation
 
-	//if has_product is true, add a where clause suffix looking for non-null shipment ids
-	var where_suffix string
-	if has_product {
-		where_suffix = " AND rcl_shi_shipment_code IS NOT NULL"
-	}
+	args := struct {
+		TemperatureZone string `json:"temperature_zone"`
+		LocationType    string `json:"location_type"`
+	}{temperature_zone, location_type}
 
-	sql := `SELECT rcl_id, rcl_type,
+	sql_string := `SELECT rcl_id, rcl_type,
         rcl_temperature_zone, rcl_shi_shipment_code
         FROM receiving_locations
-        WHERE rcl_temperature_zone = $1` + where_suffix + " ORDER BY rcl_id"
+        `
 
-	err := dao.DB.Select(&locations, sql, temperature_zone)
+	// slice of where clause conditions based on whether params are set to their 0-value or not
+	var conditions []string
+	if has_product {
+		conditions = append(conditions, "rcl_shi_shipment_code IS NOT NULL")
+	}
+	if len(temperature_zone) > 0 {
+		conditions = append(conditions, "rcl_temperature_zone = :temperature_zone")
+	}
+	if len(location_type) > 0 {
+		conditions = append(conditions, "rcl_type = :location_type")
+	}
+
+	sql_string += buildWhereFromConditions(conditions) + " ORDER BY rcl_id"
+
+	rows, err := dao.DB.NamedQuery(sql_string, args)
+	if err != nil {
+		return locations, err
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		var l models.ReceivingLocation
+		err = rows.StructScan(&l)
+		if err != nil {
+			return locations, err
+		}
+		locations = append(locations, l)
+	}
+	err = rows.Err()
+
+	if err == nil && len(locations) == 0 {
+		return locations, sql.ErrNoRows
+	}
+
 	return locations, err
 }
 
