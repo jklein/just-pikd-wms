@@ -12,7 +12,7 @@ type StaticInventory struct {
 	StlId           string      `json:"si_stl_id"`
 	PrSku           string      `json:"si_pr_sku"`
 	SpopId          int         `json:"si_spop_id"`
-	MaId            null.Int    `json:"si_ma_id"`
+	MaId            int         `json:"si_ma_id"`
 	ExpirationClass null.String `json:"si_expiration_class"`
 	ExpirationDate  *time.Time  `json:"si_expiration_date"`
 	TotalQty        int         `json:"si_total_qty"`
@@ -31,7 +31,7 @@ type StaticInventory struct {
 // SetThumbnailURL computes the thumbnail URL to display to the user for
 // assistance visually identifying the product.
 func (s *StaticInventory) SetThumbnailURL() {
-	s.ThumbnailURL = ThumbnailURL(s.PrSku, int(s.MaId.Int64))
+	s.ThumbnailURL = ThumbnailURL(s.PrSku, s.MaId)
 }
 
 type InventoryHold struct {
