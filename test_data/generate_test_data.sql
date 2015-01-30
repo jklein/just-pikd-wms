@@ -343,12 +343,12 @@ from (
       from (
         select *
         from stocking_purchase_order_products
-        where stocking_purchase_order_id=spo.stocking_purchase_order_id
-        order by stocking_purchase_order_product_id asc
+        where spop_spo_id=spo.spo_id
+        order by spop_id asc
       ) d
     ) as products
   from stocking_purchase_orders spo
-  order by stocking_purchase_order_id asc
+  order by spo_id asc
 ) as t;
 \qecho ]
 

@@ -96,7 +96,6 @@ func TestPatchProductMissingSpopId(t *testing.T) {
 }
 
 func TestPostSPOProduct(t *testing.T) {
-	//should get a unique_spo_sku violation with this one
 	body := `{"spop_spo_id": 1, "spop_pr_sku": "001-895914001-2", "spop_status": "Requested", "spop_requested_qty": 24}`
 	H(t).Test("POST", "/spos/1/products", body).Check().HasStatus(201).BodyContains(`"spop_pr_sku": "001-895914001-2"`)
 }
@@ -108,21 +107,18 @@ func TestPostSPOProductDuplicateSku(t *testing.T) {
 }
 
 func TestPostSPOProductIdentifierMismatch(t *testing.T) {
-	//should get a unique_spo_sku violation with this one
 	body := `{"spop_spo_id": 2, "spop_pr_sku": "004-480000102-7", "spop_status": "Requested", "spop_requested_qty": 24}`
 	H(t).Test("POST", "/spos/1/products", body).Check().HasStatus(400).BodyContains("Identifier does not match request body for spop_spo_id")
 }
 
 func TestPostSPO(t *testing.T) {
-	//should get a unique_spo_sku violation with this one
-	body := `{"spo_id": 1, "spo_status": "Requested", "spo_date_ordered": "2015-01-14T00:00:00Z",
+	body := `{"spo_status": "Requested", "spo_date_ordered": "2015-01-14T00:00:00Z",
         "products": [{"spop_pr_sku": "004-480000102-7", "spop_status": "Requested", "spop_requested_qty": 24}
         ]}`
 	H(t).Test("POST", "/spos", body).Check().HasStatus(201).BodyContains(`"spo_status": "Requested"`).BodyContains(`spop_pr_sku": "004-480000102-7"`)
 }
 
 func TestPostSPOBadSchema(t *testing.T) {
-	//should get a unique_spo_sku violation with this one
 	body := `{"spo_id": 1, "spo_status": "Requested", "spo_date_ordered": "2015-01-14T00:00:00Z", "products": 3}`
 	H(t).Test("POST", "/spos", body).Check().HasStatus(400)
 }

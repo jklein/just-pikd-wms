@@ -7,16 +7,17 @@
     "spo_date_confirmed": "2014-12-14T00:00:00Z",
     "spo_date_shipped": null,
     "spo_date_arrived": null,
-    "last_updated": "2014-12-23T15:25:15.682153Z",
+    "last_updated": "2015-01-29T21:35:58.716877Z",
     "products": [
       {
-        "spop_id": 109,
+        "spop_id": 1,
         "spop_spo_id": 1,
         "spop_pr_sku": "004-480000102-7",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 24,
-        "spop_confirmed_qty": 0,
-        "spop_received_qty": null,
+        "spop_confirmed_qty": 3,
+        "spop_received_qty": 3,
         "spop_case_upc": "000-448005011-1",
         "spop_units_per_case": 12,
         "spop_requested_case_qty": 2,
@@ -29,18 +30,19 @@
         "spop_expected_arrival": "2014-12-17T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1890,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:39.015716Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 99,
+        "last_updated": "2015-01-29T21:35:58.716877Z+00:00"
       },
       {
-        "spop_id": 111,
+        "spop_id": 2,
         "spop_spo_id": 1,
         "spop_pr_sku": "004-470007075-8",
+        "spop_rcl_id": null,
         "spop_status": "Confirmed",
         "spop_requested_qty": 10,
-        "spop_confirmed_qty": 10,
-        "spop_received_qty": null,
+        "spop_confirmed_qty": 5,
+        "spop_received_qty": 5,
         "spop_case_upc": "000-447000707-1",
         "spop_units_per_case": 10,
         "spop_requested_case_qty": 1,
@@ -53,14 +55,15 @@
         "spop_expected_arrival": "2014-12-17T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1100,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:40.369289Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 28,
+        "last_updated": "2015-01-29T21:35:58.716877Z+00:00"
       },
       {
-        "spop_id": 112,
+        "spop_id": 3,
         "spop_spo_id": 1,
         "spop_pr_sku": "001-600043054-9",
+        "spop_rcl_id": null,
         "spop_status": "Confirmed",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -77,14 +80,15 @@
         "spop_expected_arrival": "2014-12-17T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1908,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:40.60377Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.597108Z+00:00"
       },
       {
-        "spop_id": 115,
+        "spop_id": 4,
         "spop_spo_id": 1,
         "spop_pr_sku": "002-570024705-0",
+        "spop_rcl_id": null,
         "spop_status": "Confirmed",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -101,14 +105,15 @@
         "spop_expected_arrival": "2014-12-17T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 3065,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:41.329435Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 10,
+        "last_updated": "2015-01-29T21:35:56.597108Z+00:00"
       },
       {
-        "spop_id": 120,
+        "spop_id": 5,
         "spop_spo_id": 1,
         "spop_pr_sku": "002-700041901-4",
+        "spop_rcl_id": null,
         "spop_status": "Confirmed",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -125,14 +130,15 @@
         "spop_expected_arrival": "2014-12-17T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1344,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:42.385423Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 1,
+        "last_updated": "2015-01-29T21:35:56.597108Z+00:00"
       },
       {
-        "spop_id": 123,
+        "spop_id": 6,
         "spop_spo_id": 1,
         "spop_pr_sku": "007-294075701-6",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 0,
@@ -149,14 +155,15 @@
         "spop_expected_arrival": "2014-12-17T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1788,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:43.008261Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 19,
+        "last_updated": "2015-01-29T21:35:56.597108Z+00:00"
       },
       {
-        "spop_id": 126,
+        "spop_id": 7,
         "spop_spo_id": 1,
         "spop_pr_sku": "003-663202730-6",
+        "spop_rcl_id": null,
         "spop_status": "Confirmed",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -173,14 +180,15 @@
         "spop_expected_arrival": "2014-12-17T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1091,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:43.662004Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 48,
+        "last_updated": "2015-01-29T21:35:56.597108Z+00:00"
       },
       {
-        "spop_id": 134,
+        "spop_id": 8,
         "spop_spo_id": 1,
         "spop_pr_sku": "002-265572398-1",
+        "spop_rcl_id": null,
         "spop_status": "Confirmed",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": 18,
@@ -197,26 +205,27 @@
         "spop_expected_arrival": "2014-12-17T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 0,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:46.321651Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 126,
+        "last_updated": "2015-01-29T21:35:56.597108Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 2,
+    "spo_id": 2,
     "spo_status": "Shipped",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-15T00:00:00Z",
     "spo_date_confirmed": "2014-12-15T00:00:00Z",
     "spo_date_shipped": "2014-12-20T00:00:00Z",
     "spo_date_arrived": null,
-    "last_updated": "2014-12-23T15:25:15.708745Z",
+    "last_updated": "2015-01-29T21:35:56.646222Z",
     "products": [
       {
-        "spop_id": 113,
+        "spop_id": 9,
         "spop_spo_id": 2,
         "spop_pr_sku": "004-178900281-6",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 48,
         "spop_confirmed_qty": 0,
@@ -233,14 +242,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 505,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:40.855317Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 168,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       },
       {
-        "spop_id": 117,
+        "spop_id": 10,
         "spop_spo_id": 2,
         "spop_pr_sku": "001-254661531-0",
+        "spop_rcl_id": null,
         "spop_status": "Shipped",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -257,14 +267,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 819,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:41.748161Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 169,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       },
       {
-        "spop_id": 118,
+        "spop_id": 11,
         "spop_spo_id": 2,
         "spop_pr_sku": "004-600082161-0",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 0,
@@ -281,14 +292,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1344,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:41.964825Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       },
       {
-        "spop_id": 119,
+        "spop_id": 12,
         "spop_spo_id": 2,
         "spop_pr_sku": "007-680850108-7",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 0,
@@ -305,14 +317,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1344,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:42.183831Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 107,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       },
       {
-        "spop_id": 121,
+        "spop_id": 13,
         "spop_spo_id": 2,
         "spop_pr_sku": "005-210000438-9",
+        "spop_rcl_id": null,
         "spop_status": "Shipped",
         "spop_requested_qty": 6,
         "spop_confirmed_qty": 6,
@@ -329,14 +342,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 858,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:42.60404Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 145,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       },
       {
-        "spop_id": 124,
+        "spop_id": 14,
         "spop_spo_id": 2,
         "spop_pr_sku": "003-800032120-7",
+        "spop_rcl_id": null,
         "spop_status": "Shipped",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -353,14 +367,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 3120,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:43.24245Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 64,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       },
       {
-        "spop_id": 125,
+        "spop_id": 15,
         "spop_spo_id": 2,
         "spop_pr_sku": "002-100000625-0",
+        "spop_rcl_id": null,
         "spop_status": "Shipped",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -377,14 +392,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 3840,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:43.444011Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 128,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       },
       {
-        "spop_id": 128,
+        "spop_id": 16,
         "spop_spo_id": 2,
         "spop_pr_sku": "007-910090207-1",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 0,
@@ -401,14 +417,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 2592,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:44.103304Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 143,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       },
       {
-        "spop_id": 130,
+        "spop_id": 17,
         "spop_spo_id": 2,
         "spop_pr_sku": "007-047027756-1",
+        "spop_rcl_id": null,
         "spop_status": "Shipped",
         "spop_requested_qty": 16,
         "spop_confirmed_qty": 16,
@@ -425,14 +442,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1640,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:44.519581Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       },
       {
-        "spop_id": 132,
+        "spop_id": 18,
         "spop_spo_id": 2,
         "spop_pr_sku": "007-490420180-1",
+        "spop_rcl_id": null,
         "spop_status": "Shipped",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -449,14 +467,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 0,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:45.918528Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 51,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       },
       {
-        "spop_id": 133,
+        "spop_id": 19,
         "spop_spo_id": 2,
         "spop_pr_sku": "007-447101108-7",
+        "spop_rcl_id": null,
         "spop_status": "Shipped",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -473,26 +492,27 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 5025,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:46.115786Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 171,
+        "last_updated": "2015-01-29T21:35:56.646222Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 3,
+    "spo_id": 3,
     "spo_status": "Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-18T00:00:00Z",
     "spo_date_confirmed": "2014-12-18T00:00:00Z",
     "spo_date_shipped": "2014-12-19T00:00:00Z",
     "spo_date_arrived": "2014-12-22T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:15.753409Z",
+    "last_updated": "2015-01-29T21:35:56.685119Z",
     "products": [
       {
-        "spop_id": 1,
+        "spop_id": 20,
         "spop_spo_id": 3,
         "spop_pr_sku": "001-600014772-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -509,14 +529,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3948,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:08:56.770663Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 2,
+        "spop_id": 21,
         "spop_spo_id": 3,
         "spop_pr_sku": "064-420941110-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -533,14 +554,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1992,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:08:58.250014Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 133,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 7,
+        "spop_id": 22,
         "spop_spo_id": 3,
         "spop_pr_sku": "004-610000226-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -557,14 +579,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3390,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:00.250684Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 70,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 9,
+        "spop_id": 23,
         "spop_spo_id": 3,
         "spop_pr_sku": "007-047074315-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -581,14 +604,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1030,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:01.126166Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 13,
+        "spop_id": 24,
         "spop_spo_id": 3,
         "spop_pr_sku": "002-100000903-9",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -605,14 +629,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3840,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:02.588134Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 128,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 16,
+        "spop_id": 25,
         "spop_spo_id": 3,
         "spop_pr_sku": "004-600082011-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -629,14 +654,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1344,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:04.102563Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 35,
+        "spop_id": 26,
         "spop_spo_id": 3,
         "spop_pr_sku": "004-114305160-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 72,
         "spop_confirmed_qty": 72,
@@ -653,14 +679,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 5568,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:11.766783Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 108,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 38,
+        "spop_id": 27,
         "spop_spo_id": 3,
         "spop_pr_sku": "004-173601013-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -677,14 +704,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 8570,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:26.890624Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 144,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 50,
+        "spop_id": 28,
         "spop_spo_id": 3,
         "spop_pr_sku": "004-157000383-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -701,14 +729,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2964,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:35.094255Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 150,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 52,
+        "spop_id": 29,
         "spop_spo_id": 3,
         "spop_pr_sku": "002-400032230-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -725,14 +754,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2040,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:35.552053Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 95,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 58,
+        "spop_id": 30,
         "spop_spo_id": 3,
         "spop_pr_sku": "007-756725438-2",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -749,14 +779,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2414,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:36.807359Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 141,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 67,
+        "spop_id": 31,
         "spop_spo_id": 3,
         "spop_pr_sku": "005-000062231-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -773,14 +804,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3023,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:38.703294Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 167,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 69,
+        "spop_id": 32,
         "spop_spo_id": 3,
         "spop_pr_sku": "007-064050002-4",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 16,
         "spop_confirmed_qty": 16,
@@ -797,14 +829,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3243,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:39.144934Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 18,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 76,
+        "spop_id": 33,
         "spop_spo_id": 3,
         "spop_pr_sku": "002-100064425-4",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 6,
         "spop_confirmed_qty": 6,
@@ -821,14 +854,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1656,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:40.616247Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 9,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       },
       {
-        "spop_id": 85,
+        "spop_id": 34,
         "spop_spo_id": 3,
         "spop_pr_sku": "003-663203218-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -845,26 +879,27 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1091,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:42.511375Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 48,
+        "last_updated": "2015-01-29T21:35:56.685119Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 4,
+    "spo_id": 4,
     "spo_status": "Partially Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-18T00:00:00Z",
     "spo_date_confirmed": "2014-12-18T00:00:00Z",
     "spo_date_shipped": "2014-12-19T00:00:00Z",
     "spo_date_arrived": "2014-12-22T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:15.797216Z",
+    "last_updated": "2015-01-29T21:35:56.733099Z",
     "products": [
       {
-        "spop_id": 97,
+        "spop_id": 35,
         "spop_spo_id": 4,
         "spop_pr_sku": "007-235002050-2",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Unfulfilled",
         "spop_requested_qty": 48,
         "spop_confirmed_qty": 48,
@@ -881,14 +916,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1240,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:30.126716Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 125,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 98,
+        "spop_id": 36,
         "spop_spo_id": 4,
         "spop_pr_sku": "006-414404306-4",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Unfulfilled",
         "spop_requested_qty": 48,
         "spop_confirmed_qty": 48,
@@ -905,14 +941,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 2736,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:31.206717Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 55,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 99,
+        "spop_id": 37,
         "spop_spo_id": 4,
         "spop_pr_sku": "007-064000288-7",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Unfulfilled",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -929,14 +966,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 3243,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:31.505279Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 18,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 100,
+        "spop_id": 38,
         "spop_spo_id": 4,
         "spop_pr_sku": "005-360000008-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Unfulfilled",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -953,14 +991,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 514,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:31.766126Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 82,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 101,
+        "spop_id": 39,
         "spop_spo_id": 4,
         "spop_pr_sku": "007-510121065-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": 18,
@@ -977,14 +1016,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3650,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:32.025625Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 171,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 102,
+        "spop_id": 40,
         "spop_spo_id": 4,
         "spop_pr_sku": "003-000001200-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Unfulfilled",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -1001,14 +1041,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 4536,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:32.241916Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 174,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 103,
+        "spop_id": 41,
         "spop_spo_id": 4,
         "spop_pr_sku": "002-700041903-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -1025,14 +1066,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1344,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:32.477214Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 1,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 104,
+        "spop_id": 42,
         "spop_spo_id": 4,
         "spop_pr_sku": "005-000057400-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -1049,14 +1091,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1161,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:32.663525Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 12,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 105,
+        "spop_id": 43,
         "spop_spo_id": 4,
         "spop_pr_sku": "004-610001013-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -1073,14 +1116,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3488,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:32.914076Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 70,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 106,
+        "spop_id": 44,
         "spop_spo_id": 4,
         "spop_pr_sku": "001-800052190-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -1097,14 +1141,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1061,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:33.149313Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 107,
+        "spop_id": 45,
         "spop_spo_id": 4,
         "spop_pr_sku": "007-027783152-2",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Unfulfilled",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -1121,14 +1166,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 3000,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:33.368304Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 128,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       },
       {
-        "spop_id": 108,
+        "spop_id": 46,
         "spop_spo_id": 4,
         "spop_pr_sku": "007-299944103-4",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -1145,26 +1191,27 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3060,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:19:33.595134Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 36,
+        "last_updated": "2015-01-29T21:35:56.733099Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 5,
+    "spo_id": 5,
     "spo_status": "Requested",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-20T00:00:00Z",
     "spo_date_confirmed": null,
     "spo_date_shipped": null,
     "spo_date_arrived": null,
-    "last_updated": "2014-12-23T15:25:15.820902Z",
+    "last_updated": "2015-01-29T21:35:56.775974Z",
     "products": [
       {
-        "spop_id": 136,
+        "spop_id": 47,
         "spop_spo_id": 5,
         "spop_pr_sku": "004-470006647-8",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": null,
@@ -1181,14 +1228,15 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 3480,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:19.630881Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 28,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       },
       {
-        "spop_id": 137,
+        "spop_id": 48,
         "spop_spo_id": 5,
         "spop_pr_sku": "002-400050791-8",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": null,
@@ -1205,14 +1253,15 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1021,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:20.653422Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 95,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       },
       {
-        "spop_id": 138,
+        "spop_id": 49,
         "spop_spo_id": 5,
         "spop_pr_sku": "003-450048107-6",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": null,
@@ -1229,14 +1278,15 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 10170,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:20.911068Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 80,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       },
       {
-        "spop_id": 139,
+        "spop_id": 50,
         "spop_spo_id": 5,
         "spop_pr_sku": "002-100060465-4",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": null,
@@ -1253,14 +1303,15 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 3780,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:21.160147Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 128,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       },
       {
-        "spop_id": 140,
+        "spop_id": 51,
         "spop_spo_id": 5,
         "spop_pr_sku": "001-500002631-8",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": null,
@@ -1277,14 +1328,15 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 900,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:21.415645Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 111,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       },
       {
-        "spop_id": 141,
+        "spop_id": 52,
         "spop_spo_id": 5,
         "spop_pr_sku": "003-800084499-7",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 28,
         "spop_confirmed_qty": null,
@@ -1301,14 +1353,15 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1862,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:21.632802Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 64,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       },
       {
-        "spop_id": 142,
+        "spop_id": 53,
         "spop_spo_id": 5,
         "spop_pr_sku": "007-127926102-7",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": null,
@@ -1325,14 +1378,15 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1082,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:21.866608Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 84,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       },
       {
-        "spop_id": 143,
+        "spop_id": 54,
         "spop_spo_id": 5,
         "spop_pr_sku": "001-895914001-2",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": null,
@@ -1349,14 +1403,15 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1620,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:22.235583Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 100,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       },
       {
-        "spop_id": 144,
+        "spop_id": 55,
         "spop_spo_id": 5,
         "spop_pr_sku": "004-119601121-0",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": null,
@@ -1373,14 +1428,15 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 2340,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:22.673095Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       },
       {
-        "spop_id": 145,
+        "spop_id": 56,
         "spop_spo_id": 5,
         "spop_pr_sku": "002-100000900-8",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": null,
@@ -1397,14 +1453,15 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 3840,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:22.976605Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 128,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       },
       {
-        "spop_id": 146,
+        "spop_id": 57,
         "spop_spo_id": 5,
         "spop_pr_sku": "001-113200681-5",
+        "spop_rcl_id": null,
         "spop_status": "Requested",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": null,
@@ -1421,26 +1478,27 @@
         "spop_expected_arrival": "2014-12-23T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1850,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:31:23.176006Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 12,
+        "last_updated": "2015-01-29T21:35:56.775974Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 6,
+    "spo_id": 6,
     "spo_status": "Shipped",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-15T00:00:00Z",
     "spo_date_confirmed": "2014-12-15T00:00:00Z",
     "spo_date_shipped": "2014-12-20T00:00:00Z",
     "spo_date_arrived": null,
-    "last_updated": "2014-12-23T15:25:15.847037Z",
+    "last_updated": "2015-01-29T21:35:56.8094Z",
     "products": [
       {
-        "spop_id": 110,
+        "spop_id": 58,
         "spop_spo_id": 6,
         "spop_pr_sku": "001-500002634-9",
+        "spop_rcl_id": null,
         "spop_status": "Shipped",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -1457,14 +1515,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 900,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:40.111819Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 111,
+        "last_updated": "2015-01-29T21:35:56.8094Z+00:00"
       },
       {
-        "spop_id": 114,
+        "spop_id": 59,
         "spop_spo_id": 6,
         "spop_pr_sku": "007-047000651-2",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 0,
@@ -1481,14 +1540,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 642,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:41.109225Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.8094Z+00:00"
       },
       {
-        "spop_id": 116,
+        "spop_id": 60,
         "spop_spo_id": 6,
         "spop_pr_sku": "005-000042954-7",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 0,
@@ -1505,14 +1565,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1301,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:41.549669Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 12,
+        "last_updated": "2015-01-29T21:35:56.8094Z+00:00"
       },
       {
-        "spop_id": 122,
+        "spop_id": 61,
         "spop_spo_id": 6,
         "spop_pr_sku": "001-530043028-0",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 0,
@@ -1529,14 +1590,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1404,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:42.806555Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 174,
+        "last_updated": "2015-01-29T21:35:56.8094Z+00:00"
       },
       {
-        "spop_id": 127,
+        "spop_id": 62,
         "spop_spo_id": 6,
         "spop_pr_sku": "002-580002360-8",
+        "spop_rcl_id": null,
         "spop_status": "Shipped",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -1553,14 +1615,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 2100,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:43.88422Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 173,
+        "last_updated": "2015-01-29T21:35:56.8094Z+00:00"
       },
       {
-        "spop_id": 129,
+        "spop_id": 63,
         "spop_spo_id": 6,
         "spop_pr_sku": "007-910090212-5",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 30,
         "spop_confirmed_qty": 0,
@@ -1577,14 +1640,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 2310,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:44.303473Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 143,
+        "last_updated": "2015-01-29T21:35:56.8094Z+00:00"
       },
       {
-        "spop_id": 131,
+        "spop_id": 64,
         "spop_spo_id": 6,
         "spop_pr_sku": "001-360002022-4",
+        "spop_rcl_id": null,
         "spop_status": "Shipped",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -1601,14 +1665,15 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 516,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:45.679392Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 102,
+        "last_updated": "2015-01-29T21:35:56.8094Z+00:00"
       },
       {
-        "spop_id": 135,
+        "spop_id": 65,
         "spop_spo_id": 6,
         "spop_pr_sku": "002-700037837-3",
+        "spop_rcl_id": null,
         "spop_status": "Unavailable",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 0,
@@ -1625,26 +1690,27 @@
         "spop_expected_arrival": "2014-12-18T00:00:00Z",
         "spop_actual_arrival": null,
         "spop_wholesale_cost": 1980,
-        "expiration_class": null,
-        "spop_rcl_id": null,
-        "last_updated": "2014-12-23T16:28:46.50542Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 55,
+        "last_updated": "2015-01-29T21:35:56.8094Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 7,
+    "spo_id": 7,
     "spo_status": "Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-18T00:00:00Z",
     "spo_date_confirmed": "2014-12-18T00:00:00Z",
     "spo_date_shipped": "2014-12-19T00:00:00Z",
     "spo_date_arrived": "2014-12-22T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:15.897245Z",
+    "last_updated": "2015-01-29T21:35:56.834248Z",
     "products": [
       {
-        "spop_id": 3,
+        "spop_id": 66,
         "spop_spo_id": 7,
         "spop_pr_sku": "007-047045915-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -1661,14 +1727,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1030,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:08:58.704692Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 10,
+        "spop_id": 67,
         "spop_spo_id": 7,
         "spop_pr_sku": "004-600027918-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -1685,14 +1752,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1776,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:01.344273Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 14,
+        "spop_id": 68,
         "spop_spo_id": 7,
         "spop_pr_sku": "004-667501350-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -1709,14 +1777,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1353,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:03.234696Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 114,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 15,
+        "spop_id": 69,
         "spop_spo_id": 7,
         "spop_pr_sku": "005-000057017-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -1733,14 +1802,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1637,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:03.882886Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 12,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 18,
+        "spop_id": 70,
         "spop_spo_id": 7,
         "spop_pr_sku": "007-002200740-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": 18,
@@ -1757,14 +1827,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1848,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:04.75698Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 5,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 26,
+        "spop_id": 71,
         "spop_spo_id": 7,
         "spop_pr_sku": "005-100006032-7",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 48,
         "spop_confirmed_qty": 48,
@@ -1781,14 +1852,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1680,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:08.270701Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 133,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 34,
+        "spop_id": 72,
         "spop_spo_id": 7,
         "spop_pr_sku": "005-000042904-2",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 72,
         "spop_confirmed_qty": 72,
@@ -1805,14 +1877,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1301,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:11.53231Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 12,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 39,
+        "spop_id": 73,
         "spop_spo_id": 7,
         "spop_pr_sku": "004-100000271-7",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -1829,14 +1902,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3248,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:27.140397Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 141,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 40,
+        "spop_id": 74,
         "spop_spo_id": 7,
         "spop_pr_sku": "003-663200622-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -1853,14 +1927,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 715,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:27.393762Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 48,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 44,
+        "spop_id": 75,
         "spop_spo_id": 7,
         "spop_pr_sku": "002-580002360-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -1877,14 +1952,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2100,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:33.555833Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 173,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 75,
+        "spop_id": 76,
         "spop_spo_id": 7,
         "spop_pr_sku": "005-410000050-7",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -1901,14 +1977,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2580,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:40.441912Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 133,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 78,
+        "spop_id": 77,
         "spop_spo_id": 7,
         "spop_pr_sku": "007-187154668-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -1925,14 +2002,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1860,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:41.04017Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 28,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 79,
+        "spop_id": 78,
         "spop_spo_id": 7,
         "spop_pr_sku": "001-312000800-9",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -1949,14 +2027,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2988,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:41.25625Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 173,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 86,
+        "spop_id": 79,
         "spop_spo_id": 7,
         "spop_pr_sku": "003-000001040-2",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -1973,14 +2052,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 4536,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:42.71953Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 174,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 88,
+        "spop_id": 80,
         "spop_spo_id": 7,
         "spop_pr_sku": "005-360011002-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 16,
         "spop_confirmed_qty": 16,
@@ -1997,14 +2077,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1599,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:43.143031Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 82,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 91,
+        "spop_id": 81,
         "spop_spo_id": 7,
         "spop_pr_sku": "003-000001240-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -2021,14 +2102,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3648,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:43.798833Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 174,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       },
       {
-        "spop_id": 93,
+        "spop_id": 82,
         "spop_spo_id": 7,
         "spop_pr_sku": "002-620046372-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2045,26 +2127,27 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1008,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:44.256791Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 1,
+        "last_updated": "2015-01-29T21:35:56.834248Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 8,
+    "spo_id": 8,
     "spo_status": "Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-18T00:00:00Z",
     "spo_date_confirmed": "2014-12-18T00:00:00Z",
     "spo_date_shipped": "2014-12-19T00:00:00Z",
     "spo_date_arrived": "2014-12-22T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:15.917263Z",
+    "last_updated": "2015-01-29T21:35:56.884575Z",
     "products": [
       {
-        "spop_id": 21,
+        "spop_id": 83,
         "spop_spo_id": 8,
         "spop_pr_sku": "002-370002188-5",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -2081,14 +2164,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 0,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:05.395759Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 127,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 23,
+        "spop_id": 84,
         "spop_spo_id": 8,
         "spop_pr_sku": "001-380010018-4",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2105,14 +2189,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2556,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:05.860191Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 87,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 24,
+        "spop_id": 85,
         "spop_spo_id": 8,
         "spop_pr_sku": "003-800031834-4",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 14,
         "spop_confirmed_qty": 14,
@@ -2129,14 +2214,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 5236,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:06.707955Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 64,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 28,
+        "spop_id": 86,
         "spop_spo_id": 8,
         "spop_pr_sku": "005-000042714-7",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2153,14 +2239,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 990,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:09.615491Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 12,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 30,
+        "spop_id": 87,
         "spop_spo_id": 8,
         "spop_pr_sku": "003-620000300-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -2177,14 +2264,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2448,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:10.340007Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 141,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 32,
+        "spop_id": 88,
         "spop_spo_id": 8,
         "spop_pr_sku": "004-950800140-9",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 248,
         "spop_confirmed_qty": 248,
@@ -2201,14 +2289,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 49600,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:11.020658Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 129,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 36,
+        "spop_id": 89,
         "spop_spo_id": 8,
         "spop_pr_sku": "003-889753111-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -2225,14 +2314,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1536,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:24.852535Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 133,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 42,
+        "spop_id": 90,
         "spop_spo_id": 8,
         "spop_pr_sku": "007-756725450-4",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -2249,14 +2339,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2414,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:31.943226Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 141,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 46,
+        "spop_id": 91,
         "spop_spo_id": 8,
         "spop_pr_sku": "001-500007344-2",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -2273,14 +2364,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 904,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:34.159542Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 111,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 54,
+        "spop_id": 92,
         "spop_spo_id": 8,
         "spop_pr_sku": "002-770054875-5",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -2297,14 +2389,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1944,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:35.99083Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 113,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 60,
+        "spop_id": 93,
         "spop_spo_id": 8,
         "spop_pr_sku": "001-119313102-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -2321,14 +2414,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 3360,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:37.247687Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 159,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 63,
+        "spop_id": 94,
         "spop_spo_id": 8,
         "spop_pr_sku": "001-090000291-2",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 48,
         "spop_confirmed_qty": 48,
@@ -2345,14 +2439,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1616,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:37.85552Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 120,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 64,
+        "spop_id": 95,
         "spop_spo_id": 8,
         "spop_pr_sku": "004-116400041-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2369,14 +2464,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2172,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:38.10381Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 105,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 65,
+        "spop_id": 96,
         "spop_spo_id": 8,
         "spop_pr_sku": "003-889749111-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -2393,14 +2489,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 1536,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:38.287185Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 133,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 72,
+        "spop_id": 97,
         "spop_spo_id": 8,
         "spop_pr_sku": "007-271407221-5",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -2417,14 +2514,15 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 2736,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:39.802135Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 166,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       },
       {
-        "spop_id": 81,
+        "spop_id": 98,
         "spop_spo_id": 8,
         "spop_pr_sku": "001-500007131-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 8,
         "spop_confirmed_qty": 8,
@@ -2441,26 +2539,27 @@
         "spop_expected_arrival": "2014-12-22T00:00:00Z",
         "spop_actual_arrival": "2014-12-22T00:00:00Z",
         "spop_wholesale_cost": 808,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:41.679399Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 111,
+        "last_updated": "2015-01-29T21:35:56.884575Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 9,
+    "spo_id": 9,
     "spo_status": "Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-15T00:00:00Z",
     "spo_date_confirmed": "2014-12-15T00:00:00Z",
     "spo_date_shipped": "2014-12-18T00:00:00Z",
     "spo_date_arrived": "2014-12-20T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:15.956859Z",
+    "last_updated": "2015-01-29T21:35:56.930471Z",
     "products": [
       {
-        "spop_id": 4,
+        "spop_id": 99,
         "spop_spo_id": 9,
         "spop_pr_sku": "002-100001342-5",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 72,
         "spop_confirmed_qty": 72,
@@ -2477,14 +2576,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 3000,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:08:59.175157Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 20,
+        "last_updated": "2015-01-29T21:35:56.930471Z+00:00"
       },
       {
-        "spop_id": 5,
+        "spop_id": 100,
         "spop_spo_id": 9,
         "spop_pr_sku": "005-000057395-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 48,
         "spop_confirmed_qty": 48,
@@ -2501,14 +2601,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1161,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:08:59.579866Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 12,
+        "last_updated": "2015-01-29T21:35:56.930471Z+00:00"
       },
       {
-        "spop_id": 11,
+        "spop_id": 101,
         "spop_spo_id": 9,
         "spop_pr_sku": "002-548400005-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": 18,
@@ -2525,14 +2626,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 942,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:01.73113Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 58,
+        "last_updated": "2015-01-29T21:35:56.930471Z+00:00"
       },
       {
-        "spop_id": 12,
+        "spop_id": 102,
         "spop_spo_id": 9,
         "spop_pr_sku": "002-740026499-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -2549,14 +2651,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 4169,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:01.940041Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 141,
+        "last_updated": "2015-01-29T21:35:56.930471Z+00:00"
       },
       {
-        "spop_id": 31,
+        "spop_id": 103,
         "spop_spo_id": 9,
         "spop_pr_sku": "009-955508003-2",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": 18,
@@ -2573,14 +2676,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 3825,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:10.827756Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 164,
+        "last_updated": "2015-01-29T21:35:56.930471Z+00:00"
       },
       {
-        "spop_id": 33,
+        "spop_id": 104,
         "spop_spo_id": 9,
         "spop_pr_sku": "002-700041902-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2597,14 +2701,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1344,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:11.282847Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 1,
+        "last_updated": "2015-01-29T21:35:56.930471Z+00:00"
       },
       {
-        "spop_id": 41,
+        "spop_id": 105,
         "spop_spo_id": 9,
         "spop_pr_sku": "001-800000509-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2621,14 +2726,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2194,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:28.117827Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.930471Z+00:00"
       },
       {
-        "spop_id": 48,
+        "spop_id": 106,
         "spop_spo_id": 9,
         "spop_pr_sku": "007-680000691-7",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2645,14 +2751,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1968,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:34.641894Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 133,
+        "last_updated": "2015-01-29T21:35:56.930471Z+00:00"
       },
       {
-        "spop_id": 51,
+        "spop_id": 107,
         "spop_spo_id": 9,
         "spop_pr_sku": "004-610000717-4",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2669,14 +2776,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 4431,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:35.329611Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 70,
+        "last_updated": "2015-01-29T21:35:56.930471Z+00:00"
       },
       {
-        "spop_id": 59,
+        "spop_id": 108,
         "spop_spo_id": 9,
         "spop_pr_sku": "003-000004090-4",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2693,26 +2801,27 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1872,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:37.044914Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 174,
+        "last_updated": "2015-01-29T21:35:56.930471Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 10,
+    "spo_id": 10,
     "spo_status": "Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-15T00:00:00Z",
     "spo_date_confirmed": "2014-12-15T00:00:00Z",
     "spo_date_shipped": "2014-12-18T00:00:00Z",
     "spo_date_arrived": "2014-12-20T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:15.996549Z",
+    "last_updated": "2015-01-29T21:35:56.960039Z",
     "products": [
       {
-        "spop_id": 6,
+        "spop_id": 109,
         "spop_spo_id": 10,
         "spop_pr_sku": "004-138309043-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 6,
         "spop_confirmed_qty": 6,
@@ -2729,14 +2838,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1769,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:00.02063Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 96,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 8,
+        "spop_id": 110,
         "spop_spo_id": 10,
         "spop_pr_sku": "002-100064603-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -2753,14 +2863,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1656,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:00.86828Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 9,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 17,
+        "spop_id": 111,
         "spop_spo_id": 10,
         "spop_pr_sku": "004-112901003-7",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 60,
         "spop_confirmed_qty": 60,
@@ -2777,14 +2888,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2500,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:04.319645Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 163,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 19,
+        "spop_id": 112,
         "spop_spo_id": 10,
         "spop_pr_sku": "001-600026470-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2801,14 +2913,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 3144,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:04.964049Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 20,
+        "spop_id": 113,
         "spop_spo_id": 10,
         "spop_pr_sku": "002-100000670-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -2825,14 +2938,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 972,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:05.180223Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 128,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 22,
+        "spop_id": 114,
         "spop_spo_id": 10,
         "spop_pr_sku": "003-800000127-7",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 42,
         "spop_confirmed_qty": 42,
@@ -2849,14 +2963,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 4984,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:05.650763Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 64,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 25,
+        "spop_id": 115,
         "spop_spo_id": 10,
         "spop_pr_sku": "003-800031844-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 32,
         "spop_confirmed_qty": 32,
@@ -2873,14 +2988,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 4688,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:07.404296Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 64,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 27,
+        "spop_id": 116,
         "spop_spo_id": 10,
         "spop_pr_sku": "001-600027518-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2897,14 +3013,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 3948,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:09.379804Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 29,
+        "spop_id": 117,
         "spop_spo_id": 10,
         "spop_pr_sku": "005-000042704-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -2921,14 +3038,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 990,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:09:10.104491Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 12,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 37,
+        "spop_id": 118,
         "spop_spo_id": 10,
         "spop_pr_sku": "002-970000147-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2945,14 +3063,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1164,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:11:26.183337Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 97,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 47,
+        "spop_id": 119,
         "spop_spo_id": 10,
         "spop_pr_sku": "007-057500450-5",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -2969,14 +3088,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 0,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:34.412341Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 165,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 53,
+        "spop_id": 120,
         "spop_spo_id": 10,
         "spop_pr_sku": "004-300004208-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 6,
         "spop_confirmed_qty": 6,
@@ -2993,14 +3113,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1086,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:35.719175Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 20,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 57,
+        "spop_id": 121,
         "spop_spo_id": 10,
         "spop_pr_sku": "007-047000303-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -3017,14 +3138,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 642,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:36.623832Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 68,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 73,
+        "spop_id": 122,
         "spop_spo_id": 10,
         "spop_pr_sku": "001-113210840-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -3041,14 +3163,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 870,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:39.975711Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 12,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 84,
+        "spop_id": 123,
         "spop_spo_id": 10,
         "spop_pr_sku": "002-550000365-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -3065,14 +3188,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 3830,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:42.303982Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 171,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       },
       {
-        "spop_id": 95,
+        "spop_id": 124,
         "spop_spo_id": 10,
         "spop_pr_sku": "007-130000086-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 45,
         "spop_confirmed_qty": 45,
@@ -3089,26 +3213,27 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1875,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:44.727747Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 163,
+        "last_updated": "2015-01-29T21:35:56.960039Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 11,
+    "spo_id": 11,
     "spo_status": "Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-15T00:00:00Z",
     "spo_date_confirmed": "2014-12-15T00:00:00Z",
     "spo_date_shipped": "2014-12-18T00:00:00Z",
     "spo_date_arrived": "2014-12-20T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:16.036188Z",
+    "last_updated": "2015-01-29T21:35:57.014568Z",
     "products": [
       {
-        "spop_id": 62,
+        "spop_id": 125,
         "spop_spo_id": 11,
         "spop_pr_sku": "002-100064469-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": 18,
@@ -3125,14 +3250,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1656,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:37.655147Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 9,
+        "last_updated": "2015-01-29T21:35:57.014568Z+00:00"
       },
       {
-        "spop_id": 66,
+        "spop_id": 126,
         "spop_spo_id": 11,
         "spop_pr_sku": "004-470001903-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 27,
         "spop_confirmed_qty": 27,
@@ -3149,14 +3275,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2952,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:38.525281Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 28,
+        "last_updated": "2015-01-29T21:35:57.014568Z+00:00"
       },
       {
-        "spop_id": 68,
+        "spop_id": 127,
         "spop_spo_id": 11,
         "spop_pr_sku": "004-112901002-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 20,
         "spop_confirmed_qty": 20,
@@ -3173,14 +3300,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2500,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:38.926906Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 163,
+        "last_updated": "2015-01-29T21:35:57.014568Z+00:00"
       },
       {
-        "spop_id": 70,
+        "spop_id": 128,
         "spop_spo_id": 11,
         "spop_pr_sku": "001-380015182-7",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 30,
         "spop_confirmed_qty": 30,
@@ -3197,14 +3325,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2130,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:39.364172Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 139,
+        "last_updated": "2015-01-29T21:35:57.014568Z+00:00"
       },
       {
-        "spop_id": 74,
+        "spop_id": 129,
         "spop_spo_id": 11,
         "spop_pr_sku": "005-000033952-5",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -3221,14 +3350,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2558,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:40.239416Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 42,
+        "last_updated": "2015-01-29T21:35:57.014568Z+00:00"
       },
       {
-        "spop_id": 80,
+        "spop_id": 130,
         "spop_spo_id": 11,
         "spop_pr_sku": "005-100002512-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -3245,14 +3375,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 960,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:41.500358Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 27,
+        "last_updated": "2015-01-29T21:35:57.014568Z+00:00"
       },
       {
-        "spop_id": 82,
+        "spop_id": 131,
         "spop_spo_id": 11,
         "spop_pr_sku": "001-380044790-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -3269,14 +3400,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2556,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:41.92053Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 87,
+        "last_updated": "2015-01-29T21:35:57.014568Z+00:00"
       },
       {
-        "spop_id": 83,
+        "spop_id": 132,
         "spop_spo_id": 11,
         "spop_pr_sku": "002-400050793-2",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -3293,14 +3425,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1022,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:42.095381Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 95,
+        "last_updated": "2015-01-29T21:35:57.014568Z+00:00"
       },
       {
-        "spop_id": 96,
+        "spop_id": 133,
         "spop_spo_id": 11,
         "spop_pr_sku": "007-184004253-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": 18,
@@ -3317,26 +3450,27 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1355,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:44.94309Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 15,
+        "last_updated": "2015-01-29T21:35:57.014568Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 12,
+    "spo_id": 12,
     "spo_status": "Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-15T00:00:00Z",
     "spo_date_confirmed": "2014-12-15T00:00:00Z",
     "spo_date_shipped": "2014-12-18T00:00:00Z",
     "spo_date_arrived": "2014-12-20T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:16.072866Z",
+    "last_updated": "2015-01-29T21:35:57.056978Z",
     "products": [
       {
-        "spop_id": 45,
+        "spop_id": 134,
         "spop_spo_id": 12,
         "spop_pr_sku": "004-850030954-4",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": 18,
@@ -3353,14 +3487,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2094,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:33.855341Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 69,
+        "last_updated": "2015-01-29T21:35:57.056978Z+00:00"
       },
       {
-        "spop_id": 71,
+        "spop_id": 135,
         "spop_spo_id": 12,
         "spop_pr_sku": "004-920005100-9",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 72,
         "spop_confirmed_qty": 72,
@@ -3377,14 +3512,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1862,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:39.543198Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 3,
+        "last_updated": "2015-01-29T21:35:57.056978Z+00:00"
       },
       {
-        "spop_id": 77,
+        "spop_id": 136,
         "spop_spo_id": 12,
         "spop_pr_sku": "005-000048024-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 72,
         "spop_confirmed_qty": 72,
@@ -3401,14 +3537,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1161,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:40.84062Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 12,
+        "last_updated": "2015-01-29T21:35:57.056978Z+00:00"
       },
       {
-        "spop_id": 92,
+        "spop_id": 137,
         "spop_spo_id": 12,
         "spop_pr_sku": "009-955508208-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": 18,
@@ -3425,26 +3562,27 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2907,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:44.01555Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 164,
+        "last_updated": "2015-01-29T21:35:57.056978Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 13,
+    "spo_id": 13,
     "spo_status": "Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-15T00:00:00Z",
     "spo_date_confirmed": "2014-12-15T00:00:00Z",
     "spo_date_shipped": "2014-12-18T00:00:00Z",
     "spo_date_arrived": "2014-12-20T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:16.119332Z",
+    "last_updated": "2015-01-29T21:35:57.076282Z",
     "products": [
       {
-        "spop_id": 55,
+        "spop_id": 138,
         "spop_spo_id": 13,
         "spop_pr_sku": "003-000006119-0",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 14,
         "spop_confirmed_qty": 14,
@@ -3461,14 +3599,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 5404,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:36.20703Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 174,
+        "last_updated": "2015-01-29T21:35:57.076282Z+00:00"
       },
       {
-        "spop_id": 56,
+        "spop_id": 139,
         "spop_spo_id": 13,
         "spop_pr_sku": "005-100012910-9",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -3485,14 +3624,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2424,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:36.407006Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 27,
+        "last_updated": "2015-01-29T21:35:57.076282Z+00:00"
       },
       {
-        "spop_id": 90,
+        "spop_id": 140,
         "spop_spo_id": 13,
         "spop_pr_sku": "002-700039023-8",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -3509,26 +3649,27 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1884,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:43.584919Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 55,
+        "last_updated": "2015-01-29T21:35:57.076282Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 14,
+    "spo_id": 14,
     "spo_status": "Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-15T00:00:00Z",
     "spo_date_confirmed": "2014-12-15T00:00:00Z",
     "spo_date_shipped": "2014-12-18T00:00:00Z",
     "spo_date_arrived": "2014-12-20T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:16.162717Z",
+    "last_updated": "2015-01-29T21:35:57.08731Z",
     "products": [
       {
-        "spop_id": 43,
+        "spop_id": 141,
         "spop_spo_id": 14,
         "spop_pr_sku": "002-500005542-3",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 18,
         "spop_confirmed_qty": 18,
@@ -3545,14 +3686,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2094,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:33.047807Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 138,
+        "last_updated": "2015-01-29T21:35:57.08731Z+00:00"
       },
       {
-        "spop_id": 61,
+        "spop_id": 142,
         "spop_spo_id": 14,
         "spop_pr_sku": "004-950800610-7",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 24,
         "spop_confirmed_qty": 24,
@@ -3569,14 +3711,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1944,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:37.481691Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 129,
+        "last_updated": "2015-01-29T21:35:57.08731Z+00:00"
       },
       {
-        "spop_id": 89,
+        "spop_id": 143,
         "spop_spo_id": 14,
         "spop_pr_sku": "007-130000086-1",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 15,
         "spop_confirmed_qty": 15,
@@ -3593,26 +3736,27 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 1875,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:43.417258Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 163,
+        "last_updated": "2015-01-29T21:35:57.08731Z+00:00"
       }
     ]
   },
   {
-    "stocking_purchase_order_id": 15,
+    "spo_id": 15,
     "spo_status": "Delivered",
     "spo_su_id": 1,
     "spo_date_ordered": "2014-12-15T00:00:00Z",
     "spo_date_confirmed": "2014-12-15T00:00:00Z",
     "spo_date_shipped": "2014-12-18T00:00:00Z",
     "spo_date_arrived": "2014-12-20T00:00:00Z",
-    "last_updated": "2014-12-23T15:25:16.723036Z",
+    "last_updated": "2015-01-29T21:35:57.102377Z",
     "products": [
       {
-        "spop_id": 49,
+        "spop_id": 144,
         "spop_spo_id": 15,
         "spop_pr_sku": "002-100060151-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 12,
         "spop_confirmed_qty": 12,
@@ -3629,14 +3773,15 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 6492,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:34.877741Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 128,
+        "last_updated": "2015-01-29T21:35:57.102377Z+00:00"
       },
       {
-        "spop_id": 87,
+        "spop_id": 145,
         "spop_spo_id": 15,
         "spop_pr_sku": "064-420941060-6",
+        "spop_rcl_id": "204-178900281-4",
         "spop_status": "Stocked",
         "spop_requested_qty": 36,
         "spop_confirmed_qty": 36,
@@ -3653,9 +3798,9 @@
         "spop_expected_arrival": "2014-12-20T00:00:00Z",
         "spop_actual_arrival": "2014-12-20T00:00:00Z",
         "spop_wholesale_cost": 2244,
-        "expiration_class": null,
-        "spop_rcl_id": "204-178900281-4",
-        "last_updated": "2014-12-23T16:12:42.927746Z"
+        "spop_expiration_class": null,
+        "spop_ma_id": 133,
+        "last_updated": "2015-01-29T21:35:57.102377Z+00:00"
       }
     ]
   }

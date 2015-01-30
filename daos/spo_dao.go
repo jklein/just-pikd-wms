@@ -35,7 +35,7 @@ func (dao *StockingPurchaseOrderDAO) GetSPO(spo_id int) (models.StockingPurchase
         spop_confirmed_qty, spop_received_qty, spop_case_upc, spop_units_per_case,
         spop_requested_case_qty, spop_confirmed_case_qty, spop_received_case_qty, spop_case_length,
         spop_case_width, spop_case_height, spop_case_weight, spop_expected_arrival, spop_actual_arrival,
-        spop_wholesale_cost, spop_expiration_class, spop_rcl_id
+        spop_wholesale_cost, spop_expiration_class, spop_rcl_id, spop_ma_id
         from stocking_purchase_orders
         join stocking_purchase_order_products on spop_spo_id = spo_id
         where spo_id = $1
@@ -72,7 +72,7 @@ func (dao *StockingPurchaseOrderDAO) GetSPOProduct(spo_id int, spop_id int) (mod
         spop_confirmed_qty, spop_received_qty, spop_case_upc, spop_units_per_case,
         spop_requested_case_qty, spop_confirmed_case_qty, spop_received_case_qty, spop_case_length,
         spop_case_width, spop_case_height, spop_case_weight, spop_expected_arrival, spop_actual_arrival,
-        spop_wholesale_cost, spop_expiration_class, spop_rcl_id
+        spop_wholesale_cost, spop_expiration_class, spop_rcl_id, spop_ma_id
         from stocking_purchase_order_products
         where spop_spo_id = $1 AND spop_id = $2;`, spo_id, spop_id)
 	return product, err
@@ -88,7 +88,7 @@ func (dao *StockingPurchaseOrderDAO) GetSPOs(supplier_id int, shipment_code stri
         spop_confirmed_qty, spop_received_qty, spop_case_upc, spop_units_per_case,
         spop_requested_case_qty, spop_confirmed_case_qty, spop_received_case_qty, spop_case_length,
         spop_case_width, spop_case_height, spop_case_weight, spop_expected_arrival, spop_actual_arrival,
-        spop_wholesale_cost, spop_expiration_class, spop_rcl_id
+        spop_wholesale_cost, spop_expiration_class, spop_rcl_id, spop_ma_id
         from stocking_purchase_orders
         join stocking_purchase_order_products on spop_spo_id = spo_id
         `
@@ -210,12 +210,12 @@ func (dao *StockingPurchaseOrderDAO) insertSPOProduct(e NamedExecer, spo_product
 			spop_requested_qty, spop_confirmed_qty, spop_received_qty, spop_case_upc,
 			spop_units_per_case, spop_requested_case_qty, spop_confirmed_case_qty,
 			spop_received_case_qty, spop_case_length, spop_case_width, spop_case_height, spop_case_weight,
-			spop_expected_arrival, spop_actual_arrival, spop_wholesale_cost, spop_expiration_class, spop_rcl_id)
+			spop_expected_arrival, spop_actual_arrival, spop_wholesale_cost, spop_expiration_class, spop_rcl_id, spop_ma_id)
         VALUES (:spop_spo_id, :spop_pr_sku, :spop_status,
         	:spop_requested_qty, :spop_confirmed_qty, :spop_received_qty, :spop_case_upc,
 			:spop_units_per_case, :spop_requested_case_qty, :spop_confirmed_case_qty,
 			:spop_received_case_qty, :spop_case_length, :spop_case_width, :spop_case_height, :spop_case_weight,
-			:spop_expected_arrival, :spop_actual_arrival, :spop_wholesale_cost, :spop_expiration_class, :spop_rcl_id)
+			:spop_expected_arrival, :spop_actual_arrival, :spop_wholesale_cost, :spop_expiration_class, :spop_rcl_id, :spop_ma_id)
         RETURNING spop_id`,
 		spo_product_model)
 

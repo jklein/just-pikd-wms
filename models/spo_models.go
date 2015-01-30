@@ -40,4 +40,5 @@ type StockingPurchaseOrderProduct struct {
 	ActualArrival    *time.Time  `json:"spop_actual_arrival"`
 	WholesaleCost    null.Int    `json:"spop_wholesale_cost"`
 	ExpirationClass  null.String `json:"spop_expiration_class"`
+	MaId             int         `json:"spop_ma_id"`
 }

@@ -71,6 +71,7 @@ func (c *locationController) GetReceivingLocation(rw http.ResponseWriter, r *htt
 func (c *locationController) GetReceivingLocations(rw http.ResponseWriter, r *http.Request) (error, int) {
 	hp := r.FormValue("has_product")
 	temperature_zone := r.FormValue("temperature_zone")
+	//TODO add a location_type field here
 	var has_product bool
 
 	// accept string values 1 or true for has_product as true, other values considered false
