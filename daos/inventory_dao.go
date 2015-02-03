@@ -57,7 +57,6 @@ func (dao *InventoryDAO) CreateStatic(static_model models.StaticInventory) (mode
 // The dict is used to generate the sql update statement based only on the fields that are actually passed in, so that we don't overwrite
 // other fields with Go's 0 value for that type
 func (dao *InventoryDAO) UpdateStatic(static_model models.StaticInventory, dict map[string]interface{}) error {
-	// update the base SPO object if any of its fields were passed in
 	stmt := buildPatchUpdate("static_inventory", "si_id", dict)
 	err := execCheckRows(dao.DB, stmt, static_model)
 	return err

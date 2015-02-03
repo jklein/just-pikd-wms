@@ -18,8 +18,6 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	//create a render instance used to render JSON
 	rend := render.New(render.Options{IndentJSON: true})
 
-	//TODO: think about instantiating daos here and passing them to controllers so they can be mocked (DI)
-
 	//initialize controllers and then their routes
 	sc := controllers.NewStockingPurchaseOrderController(rend, db)
 	router.HandleFunc("/spos/{id:[0-9]+}", sc.Action(sc.GetSPO)).Methods("GET")
@@ -49,13 +47,18 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	router.HandleFunc("/locations/receiving/{id:[0-9-]+}", lc.Action(lc.GetReceivingLocation)).Methods("GET")
 	router.HandleFunc("/locations/receiving", lc.Action(lc.CreateReceivingLocation)).Methods("POST")
 	router.HandleFunc("/locations/receiving/{id:[0-9-]+}", lc.Action(lc.UpdateReceivingLocation)).Methods("PATCH")
-	//router.HandleFunc("/locations/containers/{id:[0-9-]+}", lc.Action(lc.GetPickContainer)).Methods("GET") NYI - also need put
-	//router.HandleFunc("/locations/containers/{id:[0-9-]+}", lc.Action(lc.UpdatePickContainer)).Methods("PATCH") NYI - set location in picking
-	//router.HandleFunc("/locations/containers", lc.Action(lc.CreatePickContainer)).Methods("POST") NYI - store setup
-	//router.HandleFunc("/locations/container_locations", lc.Action(lc.CreatePickContainerLocation)).Methods("POST") NYI - store setup
-	//router.HandleFunc("/locations/container_locations/{id:[0-9-]+}", lc.Action(lc.GetPickContainerLocation)).Methods("GET") NYI - picking
-	// /locations/pickup: GET, POST, PATCH?
-	// /kiosks: GET, POST?
+	router.HandleFunc("/locations/containers/{id:[0-9-]+}", lc.Action(lc.GetPickContainer)).Methods("GET")
+	router.HandleFunc("/locations/containers/{id:[0-9-]+}", lc.Action(lc.UpdatePickContainer)).Methods("PATCH")
+	router.HandleFunc("/locations/containers", lc.Action(lc.CreatePickContainer)).Methods("POST")
+	router.HandleFunc("/locations/container_locations", lc.Action(lc.CreatePickContainerLocation)).Methods("POST")
+	router.HandleFunc("/locations/container_locations/{id:[0-9-]+}", lc.Action(lc.GetPickContainerLocation)).Methods("GET")
+	router.HandleFunc("/locations/container_locations/{id:[0-9-]+}", lc.Action(lc.UpdatePickContainerLocation)).Methods("PATCH")
+	router.HandleFunc("/locations/pickup", lc.Action(lc.CreatePickupLocation)).Methods("POST")
+	router.HandleFunc("/locations/pickup/{id:[0-9]+}", lc.Action(lc.GetPickupLocation)).Methods("GET")
+	router.HandleFunc("/locations/pickup/{id:[0-9]+}", lc.Action(lc.UpdatePickupLocation)).Methods("PATCH")
+	//router.HandleFunc("/locations/kiosks", lc.Action(lc.CreateKiosk)).Methods("POST")
+	//router.HandleFunc("/locations/kiosks/{id:[0-9]+}", lc.Action(lc.GetKiosk)).Methods("GET")
+	//router.HandleFunc("/locations/kiosks/{id:[0-9]+}", lc.Action(lc.UpdateKiosk)).Methods("PATCH")
 
 	uc := controllers.NewSupplierController(rend, db)
 	router.HandleFunc("/suppliers/shipments", uc.Action(uc.GetShipments)).Methods("GET")

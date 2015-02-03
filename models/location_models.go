@@ -58,3 +58,26 @@ func (loc *StockingLocation) SetLocationCode() {
 
 	return
 }
+
+type PickContainer struct {
+	Id              string     `json:"pc_id"`
+	PclId           null.Int   `json:"pc_pcl_id"`
+	TemperatureZone string     `json:"pc_temperature_zone"`
+	Type            string     `json:"pc_type"`
+	Height          null.Float `json:"pc_height"`
+	Width           float64    `json:"pc_width"`
+	Depth           float64    `json:"pc_depth"`
+}
+
+type PickContainerLocation struct {
+	Id              string      `json:"pcl_id"`
+	Type            string      `json:"pcl_type"`
+	TemperatureZone null.String `json:"pcl_temperature_zone"`
+}
+
+type PickupLocation struct {
+	Id          int    `json:"pul_id"`
+	Type        string `json:"pul_type"`
+	DisplayName string `json:"pul_display_name"`
+	CurrentCars int    `json:"pul_current_cars"`
+}
