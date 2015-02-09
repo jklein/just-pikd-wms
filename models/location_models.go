@@ -73,6 +73,10 @@ type PickContainerLocation struct {
 	Id              string      `json:"pcl_id"`
 	Type            string      `json:"pcl_type"`
 	TemperatureZone null.String `json:"pcl_temperature_zone"`
+	Aisle           int         `json:"pcl_aisle"`
+	Bay             int         `json:"pcl_bay"`
+	Shelf           int         `json:"pcl_shelf"`
+	ShelfSlot       int         `json:"pcl_shelf_slot"`
 }
 
 type PickupLocation struct {

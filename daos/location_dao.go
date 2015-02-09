@@ -158,7 +158,7 @@ func (dao *LocationDAO) GetPickContainerLocation(pcl_id string) (models.PickCont
 	var c models.PickContainerLocation
 
 	err := dao.DB.Get(&c,
-		`SELECT pcl_id, pcl_type, pcl_temperature_zone
+		`SELECT pcl_id, pcl_type, pcl_temperature_zone, pcl_aisle, pcl_bay, pcl_shelf, pcl_shelf_slot
         FROM pick_container_locations
         WHERE pcl_id = $1;`, pcl_id)
 	return c, err
@@ -174,8 +174,8 @@ func (dao *LocationDAO) UpdatePickContainerLocation(c models.PickContainerLocati
 // CreatePickContainerLocation creates a new pick container record based on the passed in model
 func (dao *LocationDAO) CreatePickContainerLocation(c models.PickContainerLocation) (models.PickContainerLocation, error) {
 	_, err := dao.DB.NamedExec(
-		`INSERT INTO pick_container_locations (pcl_id, pcl_type, pcl_temperature_zone)
-        VALUES (:pcl_id, :pcl_type, pcl_temperature_zone)`,
+		`INSERT INTO pick_container_locations (pcl_id, pcl_type, pcl_temperature_zone, pcl_aisle, pcl_bay, pcl_shelf, pcl_shelf_slot)
+        VALUES (:pcl_id, :pcl_type, :pcl_temperature_zone, :pcl_aisle, :pcl_bay, :pcl_shelf, :pcl_shelf_slot)`,
 		c)
 	return c, err
 }
