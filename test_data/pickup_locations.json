@@ -1,0 +1,79 @@
+[
+  {
+    "pul_id": 1,
+    "pul_type": "Parking Spot",
+    "pul_display_name": "Lane 1",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:48.005079+00:00"
+  },
+  {
+    "pul_id": 2,
+    "pul_type": "Parking Spot",
+    "pul_display_name": "Lane 2",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:48.026988+00:00"
+  },
+  {
+    "pul_id": 3,
+    "pul_type": "Parking Spot",
+    "pul_display_name": "Lane 3",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:48.037225+00:00"
+  },
+  {
+    "pul_id": 4,
+    "pul_type": "Parking Spot",
+    "pul_display_name": "Lane 4",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:48.044432+00:00"
+  },
+  {
+    "pul_id": 5,
+    "pul_type": "Parking Spot",
+    "pul_display_name": "Lane 5",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:48.054158+00:00"
+  },
+  {
+    "pul_id": 6,
+    "pul_type": "Parking Spot",
+    "pul_display_name": "Lane 6",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:48.063738+00:00"
+  },
+  {
+    "pul_id": 7,
+    "pul_type": "Parking Spot",
+    "pul_display_name": "Lane 7",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:48.073419+00:00"
+  },
+  {
+    "pul_id": 8,
+    "pul_type": "Parking Spot",
+    "pul_display_name": "Lane 8",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:48.082735+00:00"
+  },
+  {
+    "pul_id": 9,
+    "pul_type": "Parking Spot",
+    "pul_display_name": "Lane 9",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:48.104759+00:00"
+  },
+  {
+    "pul_id": 10,
+    "pul_type": "Parking Spot",
+    "pul_display_name": "Lane 10",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:48.11238+00:00"
+  },
+  {
+    "pul_id": 11,
+    "pul_type": "Indoor Pickup Location",
+    "pul_display_name": "Indoor 1",
+    "pul_current_cars": 0,
+    "last_updated": "2015-02-12T21:31:50.204944+00:00"
+  }
+]

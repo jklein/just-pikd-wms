@@ -25,12 +25,19 @@ func ResetTestData(DB *sqlx.DB) {
 	DB.MustExec("TRUNCATE TABLE receiving_locations")
 	DB.MustExec("TRUNCATE TABLE supplier_shipments")
 	DB.MustExec("ALTER SEQUENCE supplier_shipments_shi_id_seq RESTART")
+	DB.MustExec("ALTER SEQUENCE pickup_locations_pul_id_seq RESTART")
+	DB.MustExec("TRUNCATE TABLE pickup_locations")
+	DB.MustExec("TRUNCATE TABLE pick_container_locations")
+	DB.MustExec("TRUNCATE TABLE pick_containers")
 
 	loadTestSPOs(DB)
 	loadTestStatic(DB)
 	loadTestShipments(DB)
 	loadTestStockingLocations(DB)
 	loadTestReceivingLocations(DB)
+	loadTestPickContainers(DB)
+	loadTestPickContainerLocations(DB)
+	loadTestPickupLocations(DB)
 	return
 }
 
@@ -82,6 +89,36 @@ func loadTestReceivingLocations(DB *sqlx.DB) {
 		panic(err)
 	}
 	loadFromSlice(interfaceSlice(sc), dao.CreateReceivingLocation)
+}
+
+func loadTestPickContainers(DB *sqlx.DB) {
+	data := loadFromFile("./test_data/pick_containers.json")
+	dao := LocationDAO{DB: DB}
+	var sc []models.PickContainer
+	if err := json.Unmarshal(data, &sc); err != nil {
+		panic(err)
+	}
+	loadFromSlice(interfaceSlice(sc), dao.CreatePickContainer)
+}
+
+func loadTestPickContainerLocations(DB *sqlx.DB) {
+	data := loadFromFile("./test_data/pick_container_locations.json")
+	dao := LocationDAO{DB: DB}
+	var sc []models.PickContainerLocation
+	if err := json.Unmarshal(data, &sc); err != nil {
+		panic(err)
+	}
+	loadFromSlice(interfaceSlice(sc), dao.CreatePickContainerLocation)
+}
+
+func loadTestPickupLocations(DB *sqlx.DB) {
+	data := loadFromFile("./test_data/pickup_locations.json")
+	dao := LocationDAO{DB: DB}
+	var sc []models.PickupLocation
+	if err := json.Unmarshal(data, &sc); err != nil {
+		panic(err)
+	}
+	loadFromSlice(interfaceSlice(sc), dao.CreatePickupLocation)
 }
 
 // loadFromFile loads data from a file and panics if there are any errors

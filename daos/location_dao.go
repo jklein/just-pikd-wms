@@ -186,6 +186,7 @@ func (dao *LocationDAO) GetPickupLocation(pul_id string) (models.PickupLocation,
 
 	err := dao.DB.Get(&c,
 		`SELECT pul_id, pul_type, pul_display_name, pul_current_cars
+		FROM pickup_locations
         WHERE pul_id = $1;`, pul_id)
 	return c, err
 }

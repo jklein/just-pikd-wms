@@ -324,11 +324,11 @@ AND NOT EXISTS (select 1 from static_inventory where stocking_purchase_order_pro
 --note however, date values cause issues. i had to regex replace (.*date.*\d+)" with \1Z" in sublime to get it to parse
 --changing the output format is also possible with an explicit column list using to_char on the date
 
-\o /opt/go/src/just-pikd-wms/test_data/supplier_shipments.json
+\o /opt/go/src/just-pikd-wms/test_data/pickup_locations.json
 \qecho [
 select row_to_json(t)
 from (
-  select * from supplier_shipments
+  select * from pickup_locations
 ) t;
 \qecho ]
 
@@ -352,4 +352,6 @@ from (
 ) as t;
 \qecho ]
 
+
+pg_dump -h localhost -U postgres -d wms_1 -W -Fc > /mnt/database/wms_1.dump
 
