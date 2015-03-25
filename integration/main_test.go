@@ -34,6 +34,7 @@ func TestMain(m *testing.M) {
 	//start by invoking the handler to reset data, and make sure that succeeds
 	client := &http.Client{}
 	req, _ := http.NewRequest("POST", "http://localhost:3002/reset", nil)
+	req.Header.Set("X-Auth-Token", server.STATIC_TOKEN)
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Printf("Error resetting data: %s", err.Error())

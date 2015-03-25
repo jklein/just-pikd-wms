@@ -19,25 +19,37 @@ func ResetTestData(DB *sqlx.DB) {
 	DB.MustExec("ALTER SEQUENCE stocking_purchase_orders_spo_id_seq RESTART")
 	DB.MustExec("TRUNCATE TABLE stocking_purchase_order_products")
 	DB.MustExec("ALTER SEQUENCE stocking_purchase_order_products_spop_id_seq RESTART")
+	loadTestSPOs(DB)
+
 	DB.MustExec("TRUNCATE TABLE static_inventory")
 	DB.MustExec("ALTER SEQUENCE static_inventory_si_id_seq RESTART")
+	loadTestStatic(DB)
+
 	DB.MustExec("TRUNCATE TABLE stocking_locations")
+	loadTestStockingLocations(DB)
+
 	DB.MustExec("TRUNCATE TABLE receiving_locations")
+	loadTestReceivingLocations(DB)
+
 	DB.MustExec("TRUNCATE TABLE supplier_shipments")
 	DB.MustExec("ALTER SEQUENCE supplier_shipments_shi_id_seq RESTART")
+	loadTestShipments(DB)
+
 	DB.MustExec("ALTER SEQUENCE pickup_locations_pul_id_seq RESTART")
 	DB.MustExec("TRUNCATE TABLE pickup_locations")
-	DB.MustExec("TRUNCATE TABLE pick_container_locations")
-	DB.MustExec("TRUNCATE TABLE pick_containers")
-
-	loadTestSPOs(DB)
-	loadTestStatic(DB)
-	loadTestShipments(DB)
-	loadTestStockingLocations(DB)
-	loadTestReceivingLocations(DB)
-	loadTestPickContainers(DB)
-	loadTestPickContainerLocations(DB)
 	loadTestPickupLocations(DB)
+
+	DB.MustExec("TRUNCATE TABLE pick_container_locations")
+	loadTestPickContainerLocations(DB)
+
+	DB.MustExec("TRUNCATE TABLE pick_containers")
+	loadTestPickContainers(DB)
+
+	DB.MustExec("TRUNCATE TABLE associates")
+	DB.MustExec("ALTER SEQUENCE associates_as_id_seq RESTART")
+	DB.MustExec("ALTER SEQUENCE associate_stations_ast_id_seq RESTART")
+	DB.MustExec("TRUNCATE TABLE associate_stations")
+	loadTestAssociates(DB)
 	return
 }
 
@@ -119,6 +131,16 @@ func loadTestPickupLocations(DB *sqlx.DB) {
 		panic(err)
 	}
 	loadFromSlice(interfaceSlice(sc), dao.CreatePickupLocation)
+}
+
+func loadTestAssociates(DB *sqlx.DB) {
+	data := loadFromFile("./test_data/associates.json")
+	dao := AssociateDAO{DB: DB}
+	var sc []models.Associate
+	if err := json.Unmarshal(data, &sc); err != nil {
+		panic(err)
+	}
+	loadFromSlice(interfaceSlice(sc), dao.CreateAssociate)
 }
 
 // loadFromFile loads data from a file and panics if there are any errors

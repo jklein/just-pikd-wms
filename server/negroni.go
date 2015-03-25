@@ -28,7 +28,7 @@ func MakeNegroni(router *mux.Router, config *config.Config) *negroni.Negroni {
 	n.Use(static)
 
 	// panic recovery middleware should be registered last
-	// so that its deferred function runs before other middelwares
+	// so that its deferred function runs before other middlewares
 	n.Use(negroni.NewRecovery())
 
 	//add the mux router as the handler for negroni

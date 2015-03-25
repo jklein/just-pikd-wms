@@ -3,6 +3,7 @@
 package server
 
 import (
+	"github.com/codegangsta/negroni"
 	"github.com/gorilla/mux"
 	"github.com/jmoiron/sqlx"
 	"gopkg.in/unrolled/render.v1"
@@ -12,7 +13,6 @@ import (
 
 // MakeRouter creates a gorilla/mux router and sets all routes to hit our controllers
 func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
-	//create gorilla/mux router
 	router := mux.NewRouter()
 
 	//create a render instance used to render JSON
@@ -32,6 +32,7 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	router.HandleFunc("/inventory/static/{id:[0-9]+}", ic.Action(ic.GetStatic)).Methods("GET")
 	router.HandleFunc("/inventory/static", ic.Action(ic.CreateStatic)).Methods("POST")
 	router.HandleFunc("/inventory/static/{id:[0-9]+}", ic.Action(ic.UpdateStatic)).Methods("PATCH")
+	//inventory by sku
 	// /inventory/errors
 	// /inventory/holds
 	if config.IsDev {
@@ -76,7 +77,27 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	// /tasks/pickup (embedded object)
 
 	//associates controller
+	ac := controllers.NewAssociateController(rend, db)
+	router.HandleFunc("/associates/{id:[0-9]+}/logout", ac.Action(ac.Logout)).Methods("POST")
+	router.HandleFunc("/associates/{id:[0-9]+}", ac.Action(ac.GetAssociate)).Methods("GET")
+	router.HandleFunc("/associates/{id:[0-9]+}", ac.Action(ac.UpdateAssociate)).Methods("PATCH")
+	router.HandleFunc("/associates", ac.Action(ac.CreateAssociate)).Methods("POST")
+	// /associates/{id:[0-9]+}/??? endpoint to reassign
 	// /associates
-	// /associate_stations
-	return router
+	// /associate_stations - need something to track when an associate's station changes
+
+	mainRouter := mux.NewRouter().StrictSlash(true)
+	negroniAuth := negroni.New()
+	negroniAuth.Use(NewAuthMiddleware(rend, db))
+	negroniAuth.UseHandler(router)
+	mainRouter.HandleFunc("/associates/login", ac.Action(ac.Login)).Methods("POST") // noAuth endpoint: for login only
+	mainRouter.PathPrefix("/").Handler(negroniAuth)                                 //all other endpoints require auth
+
+	//if you log in ->
+	//clear any existing active logins
+	//all requests require an auth token and login
+	//expiring existing active logins would mean future web requests would fail
+	//but what about resuming work in progress?
+
+	return mainRouter
 }

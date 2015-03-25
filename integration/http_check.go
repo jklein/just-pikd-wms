@@ -10,7 +10,7 @@ import (
 	_ "just-pikd-wms/controllers"
 	_ "just-pikd-wms/daos"
 	_ "just-pikd-wms/models"
-	_ "just-pikd-wms/server"
+	"just-pikd-wms/server"
 	"net/http"
 	"strings"
 	"testing"
@@ -57,6 +57,7 @@ func (c *Checker) Test(method, path string, body string) *Checker {
 
 	assert.Nil(c.t, err, "Failed to make new request")
 	request.Header.Set("Content-Type", "application/json")
+	request.Header.Set("X-Auth-Token", server.STATIC_TOKEN)
 	request.Body.Close()
 
 	c.request = request

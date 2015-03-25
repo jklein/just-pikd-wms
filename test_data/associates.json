@@ -1,0 +1,12 @@
+[{
+  "as_id": 1,
+  "as_first_name": "Scott",
+  "as_last_name": "Sandler",
+  "as_login_pin": "12345"
+},
+{
+  "as_id": 2,
+  "as_first_name": "Jonathan",
+  "as_last_name": "Klein",
+  "as_login_pin": "12346"
+}]
