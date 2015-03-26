@@ -40,10 +40,10 @@ func TestPatchAssociateNonexistent(t *testing.T) {
 func TestLoginAndLogout(t *testing.T) {
 	//easier to test both in one test since logout requires the token that login produces
 	type AuthResponse struct {
-		Token string `json:"X-Auth-Token"`
+		Token string `json:"token"`
 	}
 	body := `{"pin": "12346"}`
-	respbody := H(t).Test("POST", "/associates/login", body).Check().HasStatus(200).BodyContains(`"X-Auth-Token"`).Body
+	respbody := H(t).Test("POST", "/associates/login", body).Check().HasStatus(200).BodyContains(`"token"`).Body
 	var resp AuthResponse
 	err := json.Unmarshal(respbody, &resp)
 	assert.Nil(t, err)

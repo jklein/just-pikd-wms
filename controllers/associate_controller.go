@@ -76,7 +76,7 @@ func (c *associateController) Login(rw http.ResponseWriter, r *http.Request) (er
 	}
 
 	// return auto generated auth token on response
-	c.JSON(rw, http.StatusOK, map[string]string{"X-Auth-Token": token})
+	c.JSON(rw, http.StatusOK, map[string]string{"token": token})
 	return nil, 0
 }
 
