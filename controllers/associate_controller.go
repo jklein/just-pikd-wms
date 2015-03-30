@@ -61,13 +61,6 @@ func (c *associateController) Login(rw http.ResponseWriter, r *http.Request) (er
 		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
-	//associate should NOT have a current station if they are not logged in, so we want a 409 conflict here if they are logged in
-	_, err = c.dao.GetAssociateStation(associate.Id)
-
-	if err != sql.ErrNoRows {
-		return errors.New("Associate is already logged in"), http.StatusConflict
-	}
-
 	//TODO change Other to a constant by auto generating enums
 	token, err := c.dao.CreateAssociateStation(associate.Id, "Other")
 
