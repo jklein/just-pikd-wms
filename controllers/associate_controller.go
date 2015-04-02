@@ -3,7 +3,6 @@
 package controllers
 
 import (
-	"database/sql"
 	"encoding/json"
 	"errors"
 	"github.com/gorilla/mux"
@@ -69,7 +68,7 @@ func (c *associateController) Login(rw http.ResponseWriter, r *http.Request) (er
 	}
 
 	// return auto generated auth token on response
-	c.JSON(rw, http.StatusOK, map[string]string{"token": token})
+	c.JSON(rw, http.StatusOK, map[string]string{"name": associate.FirstName, "token": token})
 	return nil, 0
 }
 
