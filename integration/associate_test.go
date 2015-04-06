@@ -55,3 +55,16 @@ func TestInvalidLogin(t *testing.T) {
 	body := `{"pin": "12347"}`
 	H(t).Test("POST", "/associates/login", body).Check().HasStatus(404)
 }
+
+func TestChangeAssociate(t *testing.T) {
+	body := `{"station": "Receiving"}`
+	H(t).Test("POST", "/associates/1/station", body).Check().HasStatus(201).BodyContains(`"token"`)
+}
+
+//TODO: uncomment once validation is added
+/*
+func TestChangeAssociateInvalidStation(t *testing.T) {
+	body := `{"station": "nonexistent"}`
+	H(t).Test("POST", "/associates/1/station", body).Check().HasStatus(400)
+}
+*/

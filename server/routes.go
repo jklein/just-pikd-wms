@@ -82,6 +82,7 @@ func MakeRouter(db *sqlx.DB, config *config.Config) *mux.Router {
 	router.HandleFunc("/associates/{id:[0-9]+}", ac.Action(ac.GetAssociate)).Methods("GET")
 	router.HandleFunc("/associates/{id:[0-9]+}", ac.Action(ac.UpdateAssociate)).Methods("PATCH")
 	router.HandleFunc("/associates", ac.Action(ac.CreateAssociate)).Methods("POST")
+	router.HandleFunc("/associates/{id:[0-9]+}/station", ac.Action(ac.SetAssociateStation)).Methods("POST")
 	// /associates/{id:[0-9]+}/??? endpoint to reassign
 	// /associates
 	// /associate_stations - need something to track when an associate's station changes

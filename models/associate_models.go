@@ -10,7 +10,7 @@ import (
 type Associate struct {
 	Id        int         `json:"as_id"`
 	FirstName string      `json:"as_first_name"`
-	LtName    string      `json:"as_last_name"`
+	LastName  string      `json:"as_last_name"`
 	LoginPin  null.String `json:"as_login_pin"`
 }
 

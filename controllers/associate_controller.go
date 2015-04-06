@@ -67,8 +67,9 @@ func (c *associateController) Login(rw http.ResponseWriter, r *http.Request) (er
 		return err, c.sqlErrorToStatusCodeAndLog(err)
 	}
 
-	// return auto generated auth token on response
-	c.JSON(rw, http.StatusOK, map[string]string{"name": associate.FirstName, "token": token})
+	// return associate id, name, auto generated auth token on response
+	resp := map[string]string{"id": strconv.Itoa(associate.Id), "name": associate.FirstName, "token": token}
+	c.JSON(rw, http.StatusOK, resp)
 	return nil, 0
 }
 
@@ -159,5 +160,36 @@ func (c *associateController) CreateAssociate(rw http.ResponseWriter, r *http.Re
 	}
 
 	c.JSON(rw, http.StatusCreated, associate)
+	return nil, 0
+}
+
+func (c *associateController) SetAssociateStation(rw http.ResponseWriter, r *http.Request) (error, int) {
+	as_id, _ := strconv.Atoi(mux.Vars(r)["id"])
+	type StationJSON struct {
+		Station string `json:"station"`
+	}
+
+	var sj StationJSON
+	err := jsonDecode(r.Body, &sj)
+
+	if err != nil {
+		return err, http.StatusBadRequest
+	}
+
+	station := sj.Station
+
+	if len(station) == 0 {
+		return errors.New("Invalid request, missing station parameter"), http.StatusBadRequest
+	}
+
+	//TODO validate against list of enums
+	token, err := c.dao.CreateAssociateStation(as_id, station)
+
+	if err != nil {
+		return err, c.sqlErrorToStatusCodeAndLog(err)
+	}
+
+	// return auto generated auth token on response
+	c.JSON(rw, http.StatusCreated, map[string]string{"token": token})
 	return nil, 0
 }
